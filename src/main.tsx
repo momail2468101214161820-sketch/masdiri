@@ -10,6 +10,10 @@ import "@fontsource/ibm-plex-sans-arabic/700.css";
 import App from "./App.tsx";
 import "./index.css";
 import "./styles/editorial.css";
+// Enforce fixed light theme — strip any legacy persisted dark mode.
+document.documentElement.classList.remove("dark");
+try { localStorage.removeItem("theme"); } catch {}
+
 
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
