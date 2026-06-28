@@ -11,6 +11,7 @@ import NotificationPrompt from "@/components/NotificationPrompt";
 import WatermarkedImage from "@/components/WatermarkedImage";
 import SoutAlBaladBot from "@/components/SoutAlBaladBot";
 import MostReadWidget from "@/components/MostReadWidget";
+import HeroBento from "@/components/HeroBento";
 import BackToTop from "@/components/BackToTop";
 import CommandPalette from "@/components/CommandPalette";
 import NewsletterInline from "@/components/NewsletterInline";
@@ -104,8 +105,11 @@ const Index = () => {
   }, []);
 
   const featured = articles.find((a) => a.is_pinned) || articles[0];
-  const sidebarLatest = articles.filter((a) => a.id !== featured?.id).slice(0, 4);
-  const gridArticles = articles.filter((a) => a.id !== featured?.id).slice(4);
+  const rest = articles.filter((a) => a.id !== featured?.id);
+  const heroSecondary = rest[0];
+  const heroTertiary = rest[1];
+  const sidebarLatest = rest.slice(2, 6);
+  const gridArticles = rest.slice(6);
 
   const formatTime = (iso: string) =>
     new Date(iso).toLocaleString("ar-EG-u-nu-arab", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short" });
@@ -183,83 +187,45 @@ const Index = () => {
         )}
 
         <div className="p-6 md:p-10 lg:p-12">
-          {/* Featured + Sidebar Latest */}
+          {/* Hero Bento - Royal Presidential */}
           {!loading && featured && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
-              {/* Featured story */}
-              <motion.a
-                href={`/article/${featured.id}`}
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-                className="lg:col-span-8 group cursor-pointer block"
-              >
-                <div className="relative overflow-hidden mb-6 rounded-2xl shadow-2xl aspect-[4/3] sm:aspect-[16/9] bg-[hsl(var(--primary))] ring-1 ring-[hsl(var(--gold)/0.3)]">
-                  <WatermarkedImage
-                    src={featured.image_url || "/images/logo.png"}
-                    alt={featured.title}
-                    eager
-                    imgClassName={`absolute inset-0 w-full h-full object-center transition-transform duration-[1200ms] group-hover:scale-110 ${featured.image_url ? "object-cover" : "object-contain p-12"}`}
-                  />
-                  {/* Premium dual-gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--primary)/0.4)] via-transparent to-transparent" />
-                  <div className="absolute bottom-0 right-0 left-0 p-5 md:p-8">
-                    <span className="kicker" style={{ color: "hsl(var(--gold-light))" }}>
-                      {featured.is_breaking ? "عاجل" : featured.categories?.name || "تغطية خاصة"}
-                    </span>
-                    <h2 className="headline-xl mt-3" style={{ color: "hsl(var(--primary-foreground))" }}>
-                      {featured.title}
-                    </h2>
-                  </div>
-                </div>
-                {featured.summary && (
-                  <p className="text-muted-foreground leading-relaxed text-base md:text-lg text-justify line-clamp-3 font-editorial">
-                    {featured.summary}
-                  </p>
-                )}
-                <div className="mt-5 meta-line">
-                  {featured.categories?.name && (
-                    <>
-                      <span style={{ color: "hsl(var(--gold-dark))", fontWeight: 700 }}>{featured.categories.name}</span>
-                      <span className="meta-dot" />
-                    </>
-                  )}
-                  <span className="tabular">{formatTime(featured.created_at)}</span>
-                </div>
+            <HeroBento featured={featured as any} secondary={heroSecondary as any} tertiary={heroTertiary as any} />
+          )}
 
-              </motion.a>
-
-              {/* Sidebar Latest */}
-              <aside className="lg:col-span-4">
-                <div className="border-r-4 border-[hsl(var(--gold))] pr-6 bg-gradient-to-l from-[hsl(var(--gold)/0.04)] to-transparent rounded-lg py-4">
-                  <h3 className="text-xl font-bold text-[hsl(var(--primary))] dark:text-[hsl(var(--gold))] mb-8 flex items-center gap-2"
-                    style={{ fontFamily: "'Cairo', sans-serif" }}>
-                    أحدث المستجدات
-                    <span className="flex-1 h-px bg-border" />
-                  </h3>
-                  <div className="space-y-6">
-                    {sidebarLatest.map((a, i) => (
-                      <div key={a.id}>
-                        <a href={`/article/${a.id}`} className="group cursor-pointer block">
-                          <h4 className="text-lg font-bold text-foreground group-hover:text-[hsl(var(--gold))] transition-colors leading-snug mb-2"
-                            style={{ fontFamily: "'Amiri', serif" }}>
-                            {a.title}
-                          </h4>
-                          <div className="flex justify-between items-center text-xs text-muted-foreground font-medium"
-                            style={{ fontFamily: "'Cairo', sans-serif" }}>
-                            <span className="px-2 py-0.5 rounded bg-[hsl(var(--gold)/0.12)] text-[hsl(var(--primary))] dark:text-[hsl(var(--gold))] font-bold">{a.categories?.name || "أخبار"}</span>
-                            <span>{formatTime(a.created_at)}</span>
-                          </div>
-                        </a>
-                        {i < sidebarLatest.length - 1 && <div className="h-px bg-border/70 mt-6" />}
+          {/* Latest rail + Currency */}
+          {!loading && sidebarLatest.length > 0 && (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+              <div className="lg:col-span-8">
+                <div className="section-heading mb-4">
+                  <h2>أحدث المستجدات</h2>
+                </div>
+                <div className="rule-gold mb-6" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {sidebarLatest.map((a) => (
+                    <a key={a.id} href={`/article/${a.id}`}
+                      className="group flex gap-4 p-4 rounded-2xl bg-card border border-border hover:border-[hsl(var(--gold))] hover:shadow-[0_10px_30px_-12px_hsl(var(--gold)/0.35)] transition-all">
+                      <div className="w-24 h-24 shrink-0 rounded-xl overflow-hidden bg-[hsl(var(--primary))] ring-1 ring-[hsl(var(--gold)/0.25)]">
+                        <img src={a.image_url || "/images/logo.png"} alt={a.title}
+                          className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${a.image_url ? "object-cover" : "object-contain p-2 opacity-70"}`}
+                          loading="lazy" />
                       </div>
-                    ))}
-                  </div>
-
-                  {/* Currency widget */}
-                  <div className="mt-10">
-                    <CurrencyWidget />
-                  </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-[10px] font-black tracking-widest text-[hsl(var(--gold-dark))] dark:text-[hsl(var(--gold))]"
+                          style={{ fontFamily: "'Cairo', sans-serif" }}>
+                          {a.categories?.name || "أخبار"}
+                        </span>
+                        <h4 className="text-base font-bold text-foreground group-hover:text-[hsl(var(--gold))] transition-colors leading-snug mt-1 line-clamp-3"
+                          style={{ fontFamily: "'Cairo', sans-serif" }}>
+                          {a.title}
+                        </h4>
+                        <div className="mt-2 text-[10px] tabular text-muted-foreground">{formatTime(a.created_at)}</div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
+              </div>
+              <aside className="lg:col-span-4">
+                <CurrencyWidget />
               </aside>
             </div>
           )}
