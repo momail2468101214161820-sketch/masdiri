@@ -5,7 +5,7 @@ import {
   TrendingUp, Cpu, Coins, Music, HeartPulse, Radio,
 } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import ThemeToggle from "./ThemeToggle";
+
 import OracleSearch from "./OracleSearch";
 import AdSlot from "./AdSlot";
 import InstallAppButton from "./InstallAppButton";
@@ -159,7 +159,7 @@ const SiteHeader = () => {
           <div className="flex items-center gap-1 md:gap-3">
             <OracleSearch />
             <LanguageSwitcher />
-            <ThemeToggle />
+            
             <div className="hidden md:block"><InstallAppButton /></div>
             <div className="hidden md:block text-left">
               <p className="text-xs text-muted-foreground">
