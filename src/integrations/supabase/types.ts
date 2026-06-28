@@ -555,25 +555,31 @@ export type Database = {
           auth: string
           created_at: string
           endpoint: string
+          fingerprint: string | null
           id: string
           p256dh: string
           user_agent: string | null
+          user_id: string | null
         }
         Insert: {
           auth: string
           created_at?: string
           endpoint: string
+          fingerprint?: string | null
           id?: string
           p256dh: string
           user_agent?: string | null
+          user_id?: string | null
         }
         Update: {
           auth?: string
           created_at?: string
           endpoint?: string
+          fingerprint?: string | null
           id?: string
           p256dh?: string
           user_agent?: string | null
+          user_id?: string | null
         }
         Relationships: []
       }
