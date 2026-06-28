@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, GraduationCap } from "lucide-react";
+import {
+  Menu, GraduationCap, Home, Landmark, Trophy, Siren,
+  TrendingUp, Cpu, Coins, Music, HeartPulse, Radio,
+} from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import ThemeToggle from "./ThemeToggle";
 import OracleSearch from "./OracleSearch";
@@ -9,15 +12,15 @@ import InstallAppButton from "./InstallAppButton";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const categories = [
-  { name: "الرئيسية", slug: "/" },
-  { name: "سياسة", slug: "/category/politics" },
-  { name: "رياضة", slug: "/category/sports" },
-  { name: "حوادث", slug: "/category/accidents" },
-  { name: "اقتصاد", slug: "/category/economy" },
-  { name: "تكنولوجيا", slug: "/category/technology" },
-  { name: "أسعار", slug: "/category/prices" },
-  { name: "فن ومنوعات", slug: "/category/entertainment" },
-  { name: "صحة وأسرة", slug: "/category/health" },
+  { name: "الرئيسية", slug: "/", icon: Home },
+  { name: "سياسة", slug: "/category/politics", icon: Landmark },
+  { name: "رياضة", slug: "/category/sports", icon: Trophy },
+  { name: "حوادث", slug: "/category/accidents", icon: Siren },
+  { name: "اقتصاد", slug: "/category/economy", icon: TrendingUp },
+  { name: "تكنولوجيا", slug: "/category/technology", icon: Cpu },
+  { name: "أسعار", slug: "/category/prices", icon: Coins },
+  { name: "فن ومنوعات", slug: "/category/entertainment", icon: Music },
+  { name: "صحة وأسرة", slug: "/category/health", icon: HeartPulse },
 ];
 
 const SiteHeader = () => {
