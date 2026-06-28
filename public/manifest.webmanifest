@@ -1,0 +1,19 @@
+{
+  "name": "صوت البلد — صوتك واصل",
+  "short_name": "صوت البلد",
+  "description": "أخبار مصر العاجلة والتقارير المتعمقة. برئاسة د/ محمد الحاجرى.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c1a3a",
+  "theme_color": "#0c1a3a",
+  "icons": [
+    { "src": "/images/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "categories": ["news", "politics"]
+}

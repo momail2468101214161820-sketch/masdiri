@@ -1,0 +1,16 @@
+# صوت البلد | صوتك واصل
+
+> «صوت البلد | صوتك واصل» — الاسم الرسمي الذي يوصلك بآخر أخبار مصر العاجلة والتقارير المتعمقة في السياسة والرياضة والاقتصاد والتكنولوجيا، ونتائج الإعدادية، وأسعار العملات والذهب لحظة بلحظة. برئاسة د/ محمد الحاجري.
+
+## القيادة
+- برئاسة: د/ محمد الحاجري
+- تطوير التقنيات والمسؤول عن الأنظمة: البشمبرمج والمطور التقني خالد عاطف عبدالحكيم عويس
+
+## روابط رئيسية
+- الرئيسية: https://soutalbalad.lovable.app/
+- من نحن: https://soutalbalad.lovable.app/about
+- اتصل بنا: https://soutalbalad.lovable.app/contact
+- سياسة الخصوصية: https://soutalbalad.lovable.app/privacy
+- شروط الاستخدام: https://soutalbalad.lovable.app/terms
+- نتائج الإعدادية: https://soutalbalad.lovable.app/results/prep
+- خريطة الموقع: https://soutalbalad.lovable.app/sitemap.xml

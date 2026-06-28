@@ -1,0 +1,1 @@
+UPDATE public.articles SET is_pinned = false WHERE id = 'fec8a645-235a-421b-88f8-1347f688c515';

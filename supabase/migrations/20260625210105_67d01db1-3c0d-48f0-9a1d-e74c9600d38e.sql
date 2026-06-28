@@ -1,0 +1,1 @@
+UPDATE public.articles SET is_pinned = false WHERE id IN ('f07a779e-1514-4845-aed5-365f69cae6ee', 'ffa9a8f0-7ce5-4c07-8e24-09af3f1ee5e2');
