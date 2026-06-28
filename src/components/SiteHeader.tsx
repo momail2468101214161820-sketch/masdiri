@@ -81,19 +81,21 @@ const SiteHeader = () => {
               <nav className="flex flex-col p-3 gap-1">
                 {categories.map((cat) => {
                   const active = location.pathname === cat.slug;
+                  const Icon = cat.icon;
                   return (
                     <Link
                       key={cat.slug}
                       to={cat.slug}
                       onClick={() => setMobileOpen(false)}
-                      className={`px-4 py-3 rounded-xl text-sm font-black transition-all ${
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-black transition-all ${
                         active
                           ? "bg-gold-gradient text-primary shadow-gold-glow"
                           : "text-foreground hover:bg-[hsl(var(--gold)/0.1)] border border-transparent hover:border-[hsl(var(--gold)/0.4)]"
                       }`}
                       style={{ fontFamily: "'Cairo', sans-serif" }}
                     >
-                      {cat.name}
+                      <Icon size={18} className={active ? "text-primary" : "text-[hsl(var(--gold))]"} />
+                      <span>{cat.name}</span>
                     </Link>
                   );
                 })}
