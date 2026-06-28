@@ -61,7 +61,7 @@ const InstallAppButton = ({ className = "" }: { className?: string }) => {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-[hsl(var(--primary))]">
               <Smartphone size={20} className="text-[hsl(var(--gold))]" />
-              تنزيل تطبيق صوت البلد
+              تنزيل تطبيق مصدري
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4 text-sm leading-relaxed">
@@ -70,7 +70,7 @@ const InstallAppButton = ({ className = "" }: { className?: string }) => {
               <ol className="list-decimal pr-5 space-y-1 text-muted-foreground font-medium">
                 <li>افتح قائمة المتصفح (⋮) أعلى يمين الشاشة.</li>
                 <li>اختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.</li>
-                <li>اضغط «تثبيت» — سيظهر أيقونة صوت البلد كتطبيق مستقل.</li>
+                <li>اضغط «تثبيت» — سيظهر أيقونة مصدري كتطبيق مستقل.</li>
               </ol>
             </div>
 

@@ -102,7 +102,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
       name: "مصدري للأخبار المصرية والعالمية",
       logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-192.png`, width: 192, height: 192 },
     },
-    author: { "@type": "Organization", name: "صوت البلد", url: BASE_URL },
+    author: { "@type": "Organization", name: "مصدري", url: BASE_URL },
   };
 
   const webPageLd = {
@@ -132,10 +132,10 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
   };
 
   const head = `
-    <title>${esc(title)} | صوت البلد</title>
+    <title>${esc(title)} | مصدري</title>
     <meta name="description" content="${esc(desc)}" />
     <meta name="keywords" content="${esc(tags.join(", "))}" />
-    <meta name="author" content="صوت البلد" />
+    <meta name="author" content="مصدري" />
     <meta name="news_keywords" content="${esc(tags.join(", "))}" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="${esc(canonical)}" />
@@ -292,7 +292,7 @@ async function main() {
       resolve(DIST, "index.html"),
       listingHtml(template, {
         title: "مصدري للأخبار المصرية والعالمية — أحدث الأخبار المصرية والعربية",
-        desc: "تابع آخر الأخبار العاجلة من مصر والعالم العربي على بوابة صوت البلد. سياسة، اقتصاد، رياضة، فن، وأسعار العملات لحظة بلحظة.",
+        desc: "تابع آخر الأخبار العاجلة من مصر والعالم العربي على بوابة مصدري. سياسة، اقتصاد، رياضة، فن، وأسعار العملات لحظة بلحظة.",
         canonical: `${BASE_URL}/`,
         h1: "مصدري للأخبار المصرية والعالمية",
         articles,
@@ -313,7 +313,7 @@ async function main() {
       writeFileSync(
         out,
         listingHtml(template, {
-          title: `${c.name} | صوت البلد`,
+          title: `${c.name} | مصدري`,
           desc: `أحدث أخبار قسم ${c.name} على بوابة مصدري للأخبار المصرية والعالمية.`,
           canonical: `${BASE_URL}/category/${c.slug}`,
           h1: c.name,
@@ -346,8 +346,8 @@ async function main() {
       writeFileSync(
         out,
         listingHtml(template, {
-          title: `#${tag} | صوت البلد`,
-          desc: `كل الأخبار المرتبطة بـ ${tag} على بوابة صوت البلد.`,
+          title: `#${tag} | مصدري`,
+          desc: `كل الأخبار المرتبطة بـ ${tag} على بوابة مصدري.`,
           canonical: `${BASE_URL}/tag/${encodeURIComponent(tag)}`,
           h1: `#${tag}`,
           articles: list,
@@ -374,8 +374,8 @@ async function main() {
       writeFileSync(
         out,
         listingHtml(template, {
-          title: `أرشيف ${y} | صوت البلد`,
-          desc: `أرشيف الأخبار المنشورة عام ${y} على بوابة صوت البلد.`,
+          title: `أرشيف ${y} | مصدري`,
+          desc: `أرشيف الأخبار المنشورة عام ${y} على بوابة مصدري.`,
           canonical: `${BASE_URL}/archive/${y}`,
           h1: `أرشيف عام ${y}`,
           articles: list,
@@ -402,8 +402,8 @@ async function main() {
       <link>${xe(link)}</link>
       <guid isPermaLink="true">${xe(link)}</guid>
       <pubDate>${pub}</pubDate>
-      <dc:creator>صوت البلد</dc:creator>
-      <author>news@soutalbalad.lovable.app (صوت البلد)</author>
+      <dc:creator>مصدري</dc:creator>
+      <author>news@soutalbalad.lovable.app (مصدري)</author>
       ${a.categories?.name ? `<category>${xe(a.categories.name)}</category>` : ""}
       <description>${xe(excerpt)}</description>
       <content:encoded><![CDATA[${a.content || a.summary || a.title || ""}]]></content:encoded>
@@ -441,7 +441,7 @@ ${items}
       return `  <url>
     <loc>${xe(link)}</loc>
     <news:news>
-      <news:publication><news:name>صوت البلد</news:name><news:language>ar</news:language></news:publication>
+      <news:publication><news:name>مصدري</news:name><news:language>ar</news:language></news:publication>
       <news:publication_date>${pub}</news:publication_date>
       <news:title>${xe(a.title)}</news:title>
     </news:news>

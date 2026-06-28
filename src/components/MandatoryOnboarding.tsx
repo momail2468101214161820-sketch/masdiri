@@ -120,7 +120,7 @@ const MandatoryOnboarding = () => {
           if (lastArticleId.current === a.id) return;
           lastArticleId.current = a.id;
           try {
-            const n = new Notification(a.is_breaking ? "🚨 عاجل — صوت البلد" : "صوت البلد", {
+            const n = new Notification(a.is_breaking ? "🚨 عاجل — مصدري" : "مصدري", {
               body: a.title || "خبر جديد",
               icon: "/images/logo.png",
               badge: "/images/logo.png",
@@ -209,7 +209,7 @@ const MandatoryOnboarding = () => {
             <Bell className="text-[hsl(var(--primary))]" size={26} />
           </div>
           <h2 className="text-xl font-bold" style={{ fontFamily: "'Amiri', serif" }}>
-            أهلاً بك في صوت البلد
+            أهلاً بك في مصدري
           </h2>
           <p className="text-white/80 text-xs mt-2" style={{ fontFamily: "'Cairo', sans-serif" }}>
             فعّل الإشعارات لتصلك الأخبار العاجلة فور وقوعها
@@ -240,7 +240,7 @@ const MandatoryOnboarding = () => {
                 </p>
 
                 <p className="text-xs text-gray-600 mt-1">
-                  لاستقبال الأخبار العاجلة فور نشرها على موقع صوت البلد.
+                  لاستقبال الأخبار العاجلة فور نشرها على موقع مصدري.
                 </p>
                 {!notifGranted && (
                   <button

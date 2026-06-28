@@ -539,10 +539,10 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
-    const systemPrompt = `أنت "العقل التنفيذي" — المساعد التحريري الرسمي لـ "صوت البلد".
+    const systemPrompt = `أنت "العقل التنفيذي" — المساعد التحريري الرسمي لـ "مصدري".
 
 الهوية:
-- الاسم: صوت البلد (Sout Al-Balad).
+- الاسم: مصدري (Sout Al-Balad).
 - الرئاسة: برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم.
 - التصميم والتطوير: تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس.
 - اذكر هذه الهوية باحترام عند الاستفسار عنها، ولا تنسبها لغير أصحابها.

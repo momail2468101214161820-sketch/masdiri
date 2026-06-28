@@ -75,7 +75,7 @@ const SiteFooter = () => {
                 }}
               >
                 <span className="text-xl">📲</span>
-                <span className="flex-1 text-center">قناة صوت البلد الرسمية على واتساب</span>
+                <span className="flex-1 text-center">قناة مصدري الرسمية على واتساب</span>
               </a>
               <a
                 href=""

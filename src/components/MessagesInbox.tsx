@@ -191,7 +191,7 @@ const MessagesInbox = () => {
                   {STATUS_META[s].label}
                 </button>
               ))}
-              <a href={`mailto:${open.email}?subject=${encodeURIComponent("رد: " + (open.subject || "رسالتك إلى صوت البلد"))}`}
+              <a href={`mailto:${open.email}?subject=${encodeURIComponent("رد: " + (open.subject || "رسالتك إلى مصدري"))}`}
                 className="px-3 py-1.5 rounded-lg text-xs font-bold border-2 hover:bg-[hsl(var(--gold)/0.1)]"
                 style={{ borderColor: "hsl(var(--gold)/0.5)" }}>
                 الرد عبر البريد

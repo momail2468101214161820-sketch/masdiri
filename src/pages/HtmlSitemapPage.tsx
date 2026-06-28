@@ -36,8 +36,8 @@ const HtmlSitemapPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>خريطة الموقع | صوت البلد</title>
-        <meta name="description" content="خريطة موقع صوت البلد: روابط للأقسام والمحافظات وأحدث الأخبار." />
+        <title>خريطة الموقع | مصدري</title>
+        <meta name="description" content="خريطة موقع مصدري: روابط للأقسام والمحافظات وأحدث الأخبار." />
         <link rel="canonical" href={`${SITE_URL}/sitemap`} />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -45,7 +45,7 @@ const HtmlSitemapPage = () => {
       <Breadcrumbs items={[{ label: "خريطة الموقع" }]} />
       <main className="container py-6 space-y-10">
         <header>
-          <h1 className="newspaper-heading text-3xl border-b-2 border-foreground pb-3 mb-4">خريطة موقع صوت البلد</h1>
+          <h1 className="newspaper-heading text-3xl border-b-2 border-foreground pb-3 mb-4">خريطة موقع مصدري</h1>
           <form onSubmit={onSearch} className="flex gap-2 max-w-md">
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="ابحث في الموقع…" className="flex-1 border border-border rounded-lg px-3 py-2 text-sm bg-background" />
             <button className="px-4 py-2 bg-[hsl(var(--gold))] text-[hsl(var(--primary))] rounded-lg text-sm font-black">بحث</button>

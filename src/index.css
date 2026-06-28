@@ -173,7 +173,7 @@
     border-radius: 0.5rem;
   }
   .ad-placeholder::after {
-    content: 'مساحة إعلانية - صوت البلد';
+    content: 'مساحة إعلانية - مصدري';
     position: absolute; top: 4px; right: 8px;
     font-size: 10px; font-weight: 700;
     color: hsl(var(--accent));

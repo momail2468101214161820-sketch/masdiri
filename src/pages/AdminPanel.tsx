@@ -357,8 +357,8 @@ const AdminPanel = () => {
         // 📣 Auto push notification to all subscribers with the news title + Sout Al-Balad logo
         supabase.functions.invoke("send-push", {
           body: {
-            title: isBreaking ? `🔴 عاجل · ${title}` : `📰 صوت البلد — ${title}`,
-            body: summary || (content ? content.replace(/<[^>]+>/g, "").slice(0, 140) : "خبر جديد من صوت البلد"),
+            title: isBreaking ? `🔴 عاجل · ${title}` : `📰 مصدري — ${title}`,
+            body: summary || (content ? content.replace(/<[^>]+>/g, "").slice(0, 140) : "خبر جديد من مصدري"),
             url: "/",
             image: autoCover || "/images/logo.png",
             icon: "/images/logo.png",
@@ -479,8 +479,8 @@ const AdminPanel = () => {
   return (
     <>
       <Helmet>
-        <title>لوحة التحكم الإدارية — صوت البلد</title>
-        <meta name="description" content="لوحة الإدارة الرسمية لصوت البلد لإدارة المحتوى والإعلانات والتصنيفات." />
+        <title>لوحة التحكم الإدارية — مصدري</title>
+        <meta name="description" content="لوحة الإدارة الرسمية لمصدري لإدارة المحتوى والإعلانات والتصنيفات." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://soutalbalad.lovable.app/admin" />
       </Helmet>
@@ -502,7 +502,7 @@ const AdminPanel = () => {
             </div>
             <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary-foreground drop-shadow-lg"
               style={{ fontFamily: "'Amiri','Cairo',serif", textShadow: "0 2px 18px hsl(var(--gold) / 0.4)" }}>
-              <span style={{ background: "linear-gradient(90deg, hsl(var(--gold)), #fff7c2, hsl(var(--gold)))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>صوت البلد</span>
+              <span style={{ background: "linear-gradient(90deg, hsl(var(--gold)), #fff7c2, hsl(var(--gold)))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>مصدري</span>
             </h1>
             <p className="mt-2 text-sm md:text-base font-bold text-primary-foreground/90">
               برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم · تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس

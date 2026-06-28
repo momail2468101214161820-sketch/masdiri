@@ -88,7 +88,7 @@ const Index = () => {
         if (row && row.is_published) {
           window.dispatchEvent(new CustomEvent("sb-news-refreshed", { detail: row }));
           if ("Notification" in window && Notification.permission === "granted") {
-            try { new Notification("خبر جديد على صوت البلد", { body: row.title?.slice(0, 120) || "اضغط للقراءة", icon: "/images/logo.png" }); } catch {}
+            try { new Notification("خبر جديد على مصدري", { body: row.title?.slice(0, 120) || "اضغط للقراءة", icon: "/images/logo.png" }); } catch {}
           }
         }
         scheduleRefetch();
@@ -122,13 +122,13 @@ const Index = () => {
         <meta property="og:title" content="مصدري للأخبار المصرية والعالمية | أخبار مصر العاجلة" />
         <meta property="og:description" content={homeDesc} />
         <meta property="og:url" content={`${SITE_URL}/`} />
-        <meta property="og:site_name" content="صوت البلد" />
+        <meta property="og:site_name" content="مصدري" />
         <meta property="og:image" content={`${SITE_URL}/images/logo.png`} />
         <meta property="og:image:secure_url" content={`${SITE_URL}/images/logo.png`} />
         <meta property="og:image:width" content="1024" />
         <meta property="og:image:height" content="1024" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="شعار صوت البلد الأصلي" />
+        <meta property="og:image:alt" content="شعار مصدري الأصلي" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="مصدري للأخبار المصرية والعالمية" />
         <meta name="twitter:description" content={homeDesc} />
@@ -136,7 +136,7 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "صوت البلد",
+          name: "مصدري",
           alternateName: "Sout Al Balad",
           url: `${SITE_URL}/`,
           inLanguage: "ar-EG",
@@ -149,7 +149,7 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "NewsMediaOrganization",
-          name: "صوت البلد",
+          name: "مصدري",
           url: `${SITE_URL}/`,
           logo: `${SITE_URL}/images/logo.png`,
           description: homeDesc,

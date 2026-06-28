@@ -83,7 +83,7 @@ const ArticlePage = () => {
           "تغطية شاملة وموثقة من مصدري للأخبار المصرية والعالمية"
         ).trim();
 
-        document.title = `${seoTitle} | صوت البلد`;
+        document.title = `${seoTitle} | مصدري`;
 
         // Canonical URL — prefer the short permanent URL `/{short_id}` when available
         const canonicalPath = articleData.short_id ? `/${articleData.short_id}` : `/article/${articleData.id}`;
@@ -247,7 +247,7 @@ const ArticlePage = () => {
   }, [id]);
 
   // 📸 تشغيل زر الكاميرا الجانبي لإنشاء الكارت التفاعلي فوراً
-  // 📸 فتح نافذة كارت المشاركة (لوجو صوت البلد + برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم + التصميم)
+  // 📸 فتح نافذة كارت المشاركة (لوجو مصدري + برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم + التصميم)
   const handleGenerateCard = () => setCardOpen(true);
 
   // 📝 تقسيم المتن بذكاء برمي دون التأثير على معمارية الصفحة
@@ -255,7 +255,7 @@ const ArticlePage = () => {
     if (!article?.content) return { first: "", second: "" };
     // تنظيف أي CTA قديم محقون داخل المتن (واتساب/تليفون/قناة رسمية)
     const cleaned = article.content
-      .replace(/\n*-{2,}\n*[\s\S]*?(whatsapp\.com\/channel|wa\.me|للتواصل|قناة صوت البلد)[\s\S]*$/i, "")
+      .replace(/\n*-{2,}\n*[\s\S]*?(whatsapp\.com\/channel|wa\.me|للتواصل|قناة مصدري)[\s\S]*$/i, "")
       .replace(/(📲|📱|☎|📞)[^\n]*?(whatsapp\.com\/channel|wa\.me|\+?20[\s\d]+|01[\s\d]+)[^\n]*/gi, "")
       .trim();
     const paragraphs = cleaned.split("\n\n");
@@ -381,7 +381,7 @@ const ArticlePage = () => {
                   </div>
                   <div className="flex flex-col min-w-0">
                     <span className="text-sm font-bold truncate" style={{ color: "hsl(var(--primary))", fontFamily: "'Cairo',sans-serif" }}>
-                      هيئة تحرير صوت البلد
+                      هيئة تحرير مصدري
                     </span>
                     <span className="text-[11px] text-muted-foreground flex items-center gap-2 flex-wrap" style={{ fontFamily: "'Cairo',sans-serif" }}>
                       <Clock size={11} /> {formattedDate}
@@ -513,7 +513,7 @@ const ArticlePage = () => {
 
               {/* Institutional footer */}
               <div className="mt-10 pt-6 border-t border-border/60 text-[11px] text-muted-foreground/80 text-center font-bold tracking-wide" style={{ fontFamily: "'Cairo',sans-serif" }}>
-                صوت البلد — برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
+                مصدري — برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
                 <span className="mx-2 opacity-50">|</span>
                 <span dir="ltr">+20 100 618 8795</span>
               </div>

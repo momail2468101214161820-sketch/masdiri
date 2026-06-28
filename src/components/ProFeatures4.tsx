@@ -62,7 +62,7 @@ export const IdleNudge = () => {
     const reset = () => {
       if (tRef.current) window.clearTimeout(tRef.current);
       tRef.current = window.setTimeout(() => {
-        toast("ابقَ معنا", { description: "تابع آخر المستجدات لحظة بلحظة على صوت البلد", icon: "📰" });
+        toast("ابقَ معنا", { description: "تابع آخر المستجدات لحظة بلحظة على مصدري", icon: "📰" });
       }, 90_000) as unknown as number;
     };
     ["mousemove", "keydown", "touchstart", "scroll"].forEach((e) => window.addEventListener(e, reset, { passive: true }));
@@ -188,7 +188,7 @@ export const SuggestStoryCTA = () => {
           <div onClick={(e) => e.stopPropagation()} className="w-full max-w-md rounded-2xl p-5 shadow-2xl"
             style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--gold)/0.5)" }}>
             <h4 className="font-bold mb-3 flex items-center gap-2" style={{ fontFamily: "'Cairo',sans-serif", color: "hsl(var(--primary))" }}>
-              <Send size={16} /> اقترح خبراً على صوت البلد
+              <Send size={16} /> اقترح خبراً على مصدري
             </h4>
             <textarea value={text} onChange={(e) => setText(e.target.value)} rows={4}
               placeholder="اكتب تفاصيل الخبر هنا..."

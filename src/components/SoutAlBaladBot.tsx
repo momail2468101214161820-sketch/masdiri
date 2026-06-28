@@ -24,7 +24,7 @@ const SoutAlBaladBot = () => {
     {
       role: "assistant",
       content:
-        "السلام عليكم، أنا **بوت صوت البلد** — مساعدكم الرسمي. كيف يمكنني خدمتكم اليوم؟",
+        "السلام عليكم، أنا **بوت مصدري** — مساعدكم الرسمي. كيف يمكنني خدمتكم اليوم؟",
     },
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -49,7 +49,7 @@ const SoutAlBaladBot = () => {
         payload.reply ||
         payload.error ||
         (error?.message
-          ? "نعتذر، الخدمة الذكية مشغولة حالياً. يرجى المحاولة بعد لحظات، أو التواصل المباشر مع إدارة صوت البلد عبر واتساب: **+20 100 618 8795**."
+          ? "نعتذر، الخدمة الذكية مشغولة حالياً. يرجى المحاولة بعد لحظات، أو التواصل المباشر مع إدارة مصدري عبر واتساب: **+20 100 618 8795**."
           : "تعذّر توليد الرد في الوقت الحالي.");
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch {
@@ -58,7 +58,7 @@ const SoutAlBaladBot = () => {
         {
           role: "assistant",
           content:
-            "نعتذر عن التأخير المؤقت في خدمة المساعد الذكي. يمكنكم تصفح أقسام الموقع مباشرة، أو التواصل مع إدارة **صوت البلد** عبر واتساب: **+20 100 618 8795**.",
+            "نعتذر عن التأخير المؤقت في خدمة المساعد الذكي. يمكنكم تصفح أقسام الموقع مباشرة، أو التواصل مع إدارة **مصدري** عبر واتساب: **+20 100 618 8795**.",
         },
       ]);
     } finally {
@@ -71,7 +71,7 @@ const SoutAlBaladBot = () => {
       {/* Animated Floating Bot Launcher — navy/gold, breathing, orbits, halo */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
-        aria-label="بوت صوت البلد"
+        aria-label="بوت مصدري"
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[80] group select-none"
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.92 }}
@@ -167,7 +167,7 @@ const SoutAlBaladBot = () => {
               boxShadow: "0 6px 20px hsl(var(--gold) / 0.3)",
             }}
           >
-            مساعد صوت البلد · اضغط للدردشة
+            مساعد مصدري · اضغط للدردشة
           </div>
         )}
       </motion.button>
@@ -211,7 +211,7 @@ const SoutAlBaladBot = () => {
               </div>
               <div className="flex-1">
                 <div className="font-black text-base" style={{ color: "hsl(var(--gold-light))" }}>
-                  بوت صوت البلد
+                  بوت مصدري
                 </div>
                 <div className="text-[10px] flex items-center gap-1.5 text-white/80">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />

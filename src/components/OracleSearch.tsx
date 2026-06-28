@@ -91,7 +91,7 @@ const OracleSearch = () => {
                 <Search size={20} style={{ color: "hsl(var(--gold))" }} />
                 <input
                   autoFocus value={q} onChange={e => setQ(e.target.value)}
-                  placeholder="ابحث في صوت البلد..."
+                  placeholder="ابحث في مصدري..."
                   className="flex-1 bg-transparent outline-none text-lg font-bold"
                 />
                 <button onClick={() => setOpen(false)} className="p-1"><X size={20} /></button>

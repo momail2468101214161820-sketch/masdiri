@@ -24,11 +24,11 @@ const StaticPage = ({ slug, title, description, children }: StaticPageProps) => 
         <meta name="description" content={description} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${title} | صوت البلد`} />
+        <meta property="og:title" content={`${title} | مصدري`} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${title} | صوت البلد`} />
+        <meta name="twitter:title" content={`${title} | مصدري`} />
         <meta name="twitter:description" content={description} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -142,7 +142,7 @@ const ContactForm = () => {
         <CheckCircle2 className="w-6 h-6 text-[hsl(var(--gold))] shrink-0 mt-0.5" />
         <div>
           <h3 className="font-bold text-lg mb-1">تم استلام رسالتك بنجاح</h3>
-          <p className="text-sm text-muted-foreground m-0">سيتواصل معك فريق صوت البلد في أقرب وقت ممكن عبر القنوات الرسمية.</p>
+          <p className="text-sm text-muted-foreground m-0">سيتواصل معك فريق مصدري في أقرب وقت ممكن عبر القنوات الرسمية.</p>
         </div>
       </div>
     );
@@ -184,13 +184,13 @@ const ContactForm = () => {
         style={{ background: "hsl(var(--gold))" }}>
         {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
       </button>
-      <p className="text-xs text-muted-foreground m-0">سيتم توجيه رسالتك إلى فريق صوت البلد عبر القناة الرسمية. لن نشارك بريدك مع أي طرف ثالث.</p>
+      <p className="text-xs text-muted-foreground m-0">سيتم توجيه رسالتك إلى فريق مصدري عبر القناة الرسمية. لن نشارك بريدك مع أي طرف ثالث.</p>
     </form>
   );
 };
 
 export const ContactPage = () => (
-  <StaticPage slug="contact" title="اتصل بنا" description="تواصل مع فريق صوت البلد عبر النموذج الرسمي أو الواتساب أو البريد الإلكتروني.">
+  <StaticPage slug="contact" title="اتصل بنا" description="تواصل مع فريق مصدري عبر النموذج الرسمي أو الواتساب أو البريد الإلكتروني.">
     <p>يسعدنا تواصلك معنا في أي وقت. يمكنك استخدام النموذج التالي لإرسال رسالتك مباشرة، أو التواصل عبر القنوات الرسمية أسفل الصفحة.</p>
     <h2>نموذج التواصل المباشر</h2>
     <ContactForm />
@@ -198,7 +198,7 @@ export const ContactPage = () => (
     <p dir="ltr"><a href="mailto:support@soutalbalad.app">support@soutalbalad.app</a></p>
     <h2>الواتساب الرسمي</h2>
     <p><a href="" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
-    <h2>قناة صوت البلد على واتساب</h2>
+    <h2>قناة مصدري على واتساب</h2>
     <p><a href="https://whatsapp.com/channel/0029VbCnhMfJJhzc9msXWG0n" target="_blank" rel="noopener noreferrer">انضم للقناة الرسمية</a></p>
     <h2>للإعلانات والرعاية</h2>
     <p>للحجز والاستفسار عن الباقات الإعلانية، تواصل معنا مباشرة على رقم الواتساب الرسمي بالأعلى.</p>
@@ -206,7 +206,7 @@ export const ContactPage = () => (
 );
 
 export const PrivacyPage = () => (
-  <StaticPage slug="privacy-policy" title="سياسة الخصوصية" description="سياسة خصوصية صوت البلد: جمع البيانات، الكوكيز، إعلانات Google AdSense، وحقوق المستخدم.">
+  <StaticPage slug="privacy-policy" title="سياسة الخصوصية" description="سياسة خصوصية مصدري: جمع البيانات، الكوكيز، إعلانات Google AdSense، وحقوق المستخدم.">
     <p>آخر تحديث: 28 يونيو 2026</p>
     <p>نحرص في <strong>مصدري للأخبار المصرية والعالمية</strong> على حماية خصوصية زوارنا والتعامل مع بياناتهم بأعلى درجات الأمانة والشفافية. توضّح هذه السياسة طبيعة البيانات التي نجمعها وكيفية استخدامها وحقوقك تجاهها.</p>
 
@@ -222,7 +222,7 @@ export const PrivacyPage = () => (
     <p>نستخدم ملفات الكوكيز لتحسين تجربتك، حفظ تفضيلاتك (مثل الوضع الليلي)، وقياس أداء الموقع. يمكنك التحكم بها أو حذفها من إعدادات متصفحك في أي وقت.</p>
 
     <h2>3. خدمة Google AdSense والإعلانات</h2>
-    <p>يستعين موقع صوت البلد بخدمة <strong>Google AdSense</strong> لعرض الإعلانات. تستخدم Google ومزوّدوها الخارجيون ملفات تعريف الارتباط لعرض إعلانات مبنية على زياراتك السابقة لهذا الموقع أو لمواقع أخرى على الإنترنت.</p>
+    <p>يستعين موقع مصدري بخدمة <strong>Google AdSense</strong> لعرض الإعلانات. تستخدم Google ومزوّدوها الخارجيون ملفات تعريف الارتباط لعرض إعلانات مبنية على زياراتك السابقة لهذا الموقع أو لمواقع أخرى على الإنترنت.</p>
     <ul>
       <li>تستخدم Google ملف الكوكيز DART لعرض الإعلانات حسب اهتمام المستخدم.</li>
       <li>يمكنك إيقاف استخدام كوكيز DART بزيارة <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">سياسة إعلانات Google</a>.</li>
@@ -230,7 +230,7 @@ export const PrivacyPage = () => (
     </ul>
 
     <h2>4. المعلنون من الأطراف الثالثة</h2>
-    <p>قد يستخدم المعلنون الخارجيون أو شبكات الإعلانات تقنيات مثل الكوكيز و JavaScript وإشارات الويب (Web Beacons) لقياس فعالية إعلاناتهم وتخصيص محتواها. لا يصل صوت البلد إلى هذه المعلومات ولا يتحكم بها، ويخضع استخدامها لسياسات الخصوصية الخاصة بهم.</p>
+    <p>قد يستخدم المعلنون الخارجيون أو شبكات الإعلانات تقنيات مثل الكوكيز و JavaScript وإشارات الويب (Web Beacons) لقياس فعالية إعلاناتهم وتخصيص محتواها. لا يصل مصدري إلى هذه المعلومات ولا يتحكم بها، ويخضع استخدامها لسياسات الخصوصية الخاصة بهم.</p>
 
     <h2>5. كيفية استخدامنا للبيانات</h2>
     <ul>
@@ -257,7 +257,7 @@ export const PrivacyPage = () => (
     <p>لممارسة أي من هذه الحقوق، راسلنا على <a href="mailto:support@soutalbalad.app" dir="ltr">support@soutalbalad.app</a>.</p>
 
     <h2>9. خصوصية الأطفال</h2>
-    <p>لا يستهدف موقع صوت البلد الأطفال دون سن 13 عاماً، ولا نجمع عن قصد أي بيانات شخصية منهم.</p>
+    <p>لا يستهدف موقع مصدري الأطفال دون سن 13 عاماً، ولا نجمع عن قصد أي بيانات شخصية منهم.</p>
 
     <h2>10. التحديثات على هذه السياسة</h2>
     <p>قد نقوم بتحديث سياسة الخصوصية من حين لآخر. ستُنشر أي تعديلات على هذه الصفحة مع تحديث تاريخ "آخر تحديث" بالأعلى.</p>
@@ -268,10 +268,10 @@ export const PrivacyPage = () => (
 );
 
 export const TermsPage = () => (
-  <StaticPage slug="terms" title="شروط الاستخدام" description="القواعد المنظِّمة لاستخدامك صوت البلد.">
+  <StaticPage slug="terms" title="شروط الاستخدام" description="القواعد المنظِّمة لاستخدامك مصدري.">
     <p>باستخدامك مصدري للأخبار المصرية والعالمية فإنك توافق على الشروط التالية:</p>
     <h2>الملكية الفكرية</h2>
-    <p>جميع الأخبار والصور والتصاميم والشعارات حقوقها محفوظة لصوت البلد. يُمنع إعادة النشر دون إذن رسمي مكتوب أو دون الإشارة الواضحة للمصدر.</p>
+    <p>جميع الأخبار والصور والتصاميم والشعارات حقوقها محفوظة لمصدري. يُمنع إعادة النشر دون إذن رسمي مكتوب أو دون الإشارة الواضحة للمصدر.</p>
     <h2>استخدام المحتوى</h2>
     <ul>
       <li>الاستخدام الشخصي مسموح به مع ذكر المصدر.</li>
@@ -281,13 +281,13 @@ export const TermsPage = () => (
     <h2>التعليقات والمشاركات</h2>
     <p>أنت مسؤول عن أي محتوى تشاركه. نحتفظ بحق حذف أي محتوى مسيء أو مخالف للقانون أو للذوق العام.</p>
     <h2>إخلاء المسؤولية</h2>
-    <p>نبذل قصارى جهدنا لتقديم محتوى دقيق، ولكنّ صوت البلد غير مسؤول عن أي قرارات تُتّخذ بناءً على المحتوى المنشور.</p>
+    <p>نبذل قصارى جهدنا لتقديم محتوى دقيق، ولكنّ مصدري غير مسؤول عن أي قرارات تُتّخذ بناءً على المحتوى المنشور.</p>
   </StaticPage>
 );
 
 export const CookiesPage = () => (
-  <StaticPage slug="cookies" title="سياسة ملفات تعريف الارتباط" description="كيف يستخدم صوت البلد ملفات الكوكيز لتحسين تجربتك.">
-    <p>تستخدم صوت البلد ملفات تعريف الارتباط (Cookies) لتحسين تجربة المستخدم وتسريع التصفّح.</p>
+  <StaticPage slug="cookies" title="سياسة ملفات تعريف الارتباط" description="كيف يستخدم مصدري ملفات الكوكيز لتحسين تجربتك.">
+    <p>تستخدم مصدري ملفات تعريف الارتباط (Cookies) لتحسين تجربة المستخدم وتسريع التصفّح.</p>
     <h2>أنواع الكوكيز التي نستخدمها</h2>
     <ul>
       <li><strong>ضرورية:</strong> لتشغيل الموقع وحفظ تفضيلاتك (الوضع الليلي، اللغة).</li>
@@ -302,7 +302,7 @@ export const CookiesPage = () => (
 );
 
 export const EditorialPolicyPage = () => (
-  <StaticPage slug="editorial-policy" title="السياسة التحريرية" description="المبادئ والمعايير التي يلتزم بها صوت البلد في انتقاء الأخبار والتحقق منها ونشرها.">
+  <StaticPage slug="editorial-policy" title="السياسة التحريرية" description="المبادئ والمعايير التي يلتزم بها مصدري في انتقاء الأخبار والتحقق منها ونشرها.">
     <p>يلتزم <strong>مصدري للأخبار المصرية والعالمية</strong> بأعلى معايير الصحافة المهنية في كل ما يُنشر على منصاته. تُحدد هذه السياسة المبادئ والإجراءات التي تحكم العملية التحريرية.</p>
 
     <h2>1. المبادئ الأساسية</h2>
@@ -346,7 +346,7 @@ export const EditorialPolicyPage = () => (
 );
 
 export const CorrectionsPolicyPage = () => (
-  <StaticPage slug="corrections" title="سياسة التصحيحات" description="آلية صوت البلد في تصحيح الأخطاء وضمان دقة المحتوى المنشور.">
+  <StaticPage slug="corrections" title="سياسة التصحيحات" description="آلية مصدري في تصحيح الأخطاء وضمان دقة المحتوى المنشور.">
     <p>الدقة قيمة عُليا في <strong>مصدري للأخبار المصرية والعالمية</strong>. نتعامل مع أي خطأ بشفافية تامة وفقًا للسياسة التالية:</p>
 
     <h2>1. الإبلاغ عن خطأ</h2>
@@ -385,11 +385,11 @@ export const CorrectionsPolicyPage = () => (
 );
 
 export const OwnershipPage = () => (
-  <StaticPage slug="ownership" title="الملكية والتمويل" description="ملكية صوت البلد، مصادر تمويله، وهيكله الإداري بشفافية كاملة.">
+  <StaticPage slug="ownership" title="الملكية والتمويل" description="ملكية مصدري، مصادر تمويله، وهيكله الإداري بشفافية كاملة.">
     <p>إيمانًا بمبدأ الشفافية الذي نطالب به الآخرين، نوضّح فيما يلي كل ما يتعلق بملكية وتمويل <strong>مصدري للأخبار المصرية والعالمية</strong>.</p>
 
     <h2>الملكية</h2>
-    <p>صوت البلد منصة إعلامية رقمية مستقلة مملوكة بالكامل لمؤسسيها، ولا تتبع لأي حزب سياسي أو جهة حكومية أو كيان أجنبي.</p>
+    <p>مصدري منصة إعلامية رقمية مستقلة مملوكة بالكامل لمؤسسيها، ولا تتبع لأي حزب سياسي أو جهة حكومية أو كيان أجنبي.</p>
 
     <h2>القيادة</h2>
     <ul>

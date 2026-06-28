@@ -58,7 +58,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
       <div className={`w-full bg-muted/20 animate-pulse border-2 border-dashed border-border flex items-center justify-center rounded-xl ${
         slot === "header" ? "h-20 md:h-24" : slot === "sidebar" ? "h-72 md:h-96" : "h-40 md:h-56"
       } ${className}`}>
-        <span className="text-xs text-muted-foreground font-bold font-sans">صوت البلد — جارٍ التحميل...</span>
+        <span className="text-xs text-muted-foreground font-bold font-sans">مصدري — جارٍ التحميل...</span>
       </div>
     );
   }
@@ -110,7 +110,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
       >
         <img
           src={ad.image_url}
-          alt="إعلان — صوت البلد"
+          alt="إعلان — مصدري"
           className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
           loading="lazy"
           onError={(e) => {
@@ -177,7 +177,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
               WebkitTextFillColor: "transparent",
               filter: "drop-shadow(0 4px 14px hsl(var(--gold)/0.45))",
             }}>
-            صوت البلد
+            مصدري
           </span>
           <p className="mt-2 text-[11px] md:text-sm font-bold tracking-wide" style={{ color: "hsl(var(--gold-light, var(--gold)))" }}>
             برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم

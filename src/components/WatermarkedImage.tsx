@@ -55,12 +55,12 @@ const WatermarkedImage = ({
 
       {/* Logo — top center */}
       <div className="absolute top-1.5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 bg-black/35 backdrop-blur-sm px-2.5 py-1 rounded-full border border-[hsl(var(--gold)/0.45)] shadow-md pointer-events-none">
-        <img src="/images/logo.png" alt="صوت البلد" className="h-5 w-5 object-contain" />
+        <img src="/images/logo.png" alt="مصدري" className="h-5 w-5 object-contain" />
         <span
           className="text-[10px] font-black text-white tracking-wide"
           style={{ fontFamily: "'Cairo', sans-serif" }}
         >
-          صوت البلد
+          مصدري
         </span>
       </div>
 

@@ -132,7 +132,7 @@ const NewsFetcherPanel = () => {
               </span>
             </h3>
             <p className="text-[11px] sm:text-xs text-muted-foreground font-bold mt-1 leading-snug">
-              يجلب الأخبار، يصيغها بأسلوب "صوت البلد"، ويصنّفها تلقائياً — وينشئ القسم إن لم يكن موجوداً.
+              يجلب الأخبار، يصيغها بأسلوب "مصدري"، ويصنّفها تلقائياً — وينشئ القسم إن لم يكن موجوداً.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ const NewsFetcherPanel = () => {
       <div className="grid grid-cols-3 gap-2">
         {[
           { icon: <Clock size={14} />, label: "التشغيل", value: "كل دقيقة" },
-          { icon: <Sparkles size={14} className="text-[hsl(var(--gold))]" />, label: "الصياغة", value: "AI صوت البلد" },
+          { icon: <Sparkles size={14} className="text-[hsl(var(--gold))]" />, label: "الصياغة", value: "AI مصدري" },
           { icon: <Tag size={14} />, label: "التصنيف", value: "تلقائي ذكي" },
         ].map((p, i) => (
           <div key={i} className="flex items-center gap-1.5 bg-muted/40 border border-border rounded-xl px-2 py-2">

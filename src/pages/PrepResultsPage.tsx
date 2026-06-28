@@ -128,10 +128,10 @@ const PrepResultsPage = () => {
   return (
     <div className="min-h-screen bg-background text-right" dir="rtl">
       <Helmet>
-        <title>نتائج الشهادة الإعدادية 2026 | صوت البلد</title>
+        <title>نتائج الشهادة الإعدادية 2026 | مصدري</title>
         <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على مصدري للأخبار المصرية والعالمية." />
         <link rel="canonical" href="https://soutalbalad.lovable.app/prep-results" />
-        <meta property="og:title" content="نتائج الشهادة الإعدادية 2026 | صوت البلد" />
+        <meta property="og:title" content="نتائج الشهادة الإعدادية 2026 | مصدري" />
         <meta property="og:description" content="استعلم عن نتيجتك فوراً برقم الجلوس." />
         <meta property="og:url" content="https://soutalbalad.lovable.app/prep-results" />
         <meta property="og:type" content="website" />
@@ -154,7 +154,7 @@ const PrepResultsPage = () => {
             نتيجة الشهادة الإعدادية ٢٠٢٦
           </h1>
           <p className="text-base md:text-lg text-muted-foreground font-bold">
-            صوت البلد · بوابة نتائج المحافظات الرسمية
+            مصدري · بوابة نتائج المحافظات الرسمية
           </p>
           <p className="text-xs text-muted-foreground mt-2">
             اختر محافظتك من الأسفل ثم استعلم برقم الجلوس أو باسم الطالب
@@ -330,9 +330,9 @@ const ResultCard = ({ r }: { r: StudentResult }) => {
         {/* شريط الهوية (يظهر في الصورة المنزّلة) */}
         <div className="flex items-center justify-between px-5 py-3 bg-gradient-to-l from-yellow-500 to-yellow-600 text-white">
           <div className="flex items-center gap-3">
-            <img src="/images/logo.png" alt="صوت البلد" crossOrigin="anonymous" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
+            <img src="/images/logo.png" alt="مصدري" crossOrigin="anonymous" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
             <div>
-              <p className="font-black text-base leading-tight">صوت البلد</p>
+              <p className="font-black text-base leading-tight">مصدري</p>
               <p className="text-[11px] opacity-95 font-bold">برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم</p>
             </div>
           </div>
@@ -412,7 +412,7 @@ const ResultCard = ({ r }: { r: StudentResult }) => {
           </div>
 
           <div className="mt-6 pt-4 border-t border-border text-center text-[11px] text-muted-foreground space-y-1">
-            <p className="font-black">صوت البلد · برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم</p>
+            <p className="font-black">مصدري · برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم</p>
             <p className="font-bold">تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس</p>
           </div>
         </div>

@@ -69,7 +69,7 @@ const SiteHeader = () => {
                   <img src="/images/logo.png" alt="" className="w-12 h-12 rounded-full border-2 border-[hsl(var(--gold))]" />
                   <div className="text-right">
                     <div className="text-lg font-black text-gold-shine" style={{ fontFamily: "'Amiri', serif" }}>
-                      صوت البلد
+                      مصدري
                     </div>
                     <div className="text-[10px] opacity-80">مصدري للأخبار المصرية والعالمية</div>
                   </div>
@@ -116,7 +116,7 @@ const SiteHeader = () => {
           <Link to="/" className="flex items-center gap-2 md:gap-3 min-w-0">
             <img
               src="/images/logo.png"
-              alt="صوت البلد"
+              alt="مصدري"
               className="h-10 w-10 md:h-16 md:w-16 rounded-full logo-3d object-cover flex-shrink-0"
             />
             <div className="min-w-0">
@@ -125,14 +125,14 @@ const SiteHeader = () => {
                   className="newspaper-heading text-base md:text-xl leading-tight truncate"
                   style={{ color: "hsl(var(--primary))" }}
                 >
-                  صوت البلد — أحدث أخبار مصر، الرياضة، الاقتصاد، والنتائج
+                  مصدري — أحدث أخبار مصر، الرياضة، الاقتصاد، والنتائج
                 </h1>
               ) : (
                 <div
                   className="newspaper-heading text-base md:text-xl leading-tight truncate"
                   style={{ color: "hsl(var(--primary))" }}
                 >
-                  صوت البلد <span className="hidden sm:inline" style={{ color: "hsl(var(--accent))" }}>— مصدري للأخبار المصرية والعالمية</span>
+                  مصدري <span className="hidden sm:inline" style={{ color: "hsl(var(--accent))" }}>— مصدري للأخبار المصرية والعالمية</span>
                 </div>
               )}
               <p className="hidden md:flex items-center gap-2 text-[12px] mt-1 font-black" style={{ color: "hsl(var(--gold))", fontFamily: "'Amiri', serif" }}>

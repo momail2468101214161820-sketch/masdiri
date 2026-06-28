@@ -124,8 +124,8 @@ const CollectionPage = ({ mode }: Props) => {
     return () => { cancelled = true; };
   }, [mode, params.slug, params.yyyy, params.mm, params.dd, q]);
 
-  const pageTitle = `${meta.name} | صوت البلد`;
-  const pageDesc = `${meta.name} — تغطية مستمرة وموثقة من صوت البلد. اطلع على أحدث ما يخص ${meta.name} مرتبة زمنيًا.`;
+  const pageTitle = `${meta.name} | مصدري`;
+  const pageDesc = `${meta.name} — تغطية مستمرة وموثقة من مصدري. اطلع على أحدث ما يخص ${meta.name} مرتبة زمنيًا.`;
   const canonical = `${SITE_URL}${meta.path}`;
   const crumbs: Crumb[] = [{ label: meta.name }];
 
@@ -148,7 +148,7 @@ const CollectionPage = ({ mode }: Props) => {
           name: pageTitle,
           url: canonical,
           inLanguage: "ar",
-          isPartOf: { "@type": "WebSite", name: "صوت البلد", url: `${SITE_URL}/` },
+          isPartOf: { "@type": "WebSite", name: "مصدري", url: `${SITE_URL}/` },
           mainEntity: {
             "@type": "ItemList",
             numberOfItems: rows.length,
