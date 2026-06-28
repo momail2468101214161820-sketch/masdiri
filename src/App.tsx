@@ -31,6 +31,7 @@ const FloatingWhatsApp = lazy(() => import("./components/FloatingWhatsApp"));
 const StickyAdTowers = lazy(() => import("./components/StickyAdTowers"));
 const MobileBottomNav = lazy(() => import("./components/MobileBottomNav"));
 const MandatoryOnboarding = lazy(() => import("./components/MandatoryOnboarding"));
+const DesktopSideRail = lazy(() => import("./components/DesktopSideRail"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -98,6 +99,7 @@ const App = () => {
         <Suspense fallback={null}>
           <FloatingWhatsApp />
           <MobileBottomNav />
+          <DesktopSideRail />
           <MandatoryOnboarding />
         </Suspense>
       </BrowserRouter>

@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* Sout El-Balad Palette: Navy / Crimson / Gold */
-    --background: 0 0% 100%;
-    --foreground: 220 60% 10%;
-    --card: 0 0% 99%;
-    --card-foreground: 220 60% 10%;
+    /* مصدري Palette: Modern Newsroom — Clean White / Deep Navy / Royal Gold */
+    --background: 210 25% 98%;       /* #FAFBFC */
+    --foreground: 213 73% 15%;       /* deep navy ink */
+    --card: 0 0% 100%;
+    --card-foreground: 213 73% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 60% 10%;
-    --primary: 220 65% 18%;          /* Navy Blue */
-    --primary-foreground: 45 80% 92%;
-    --secondary: 220 30% 95%;
-    --secondary-foreground: 220 60% 15%;
-    --muted: 220 15% 94%;
-    --muted-foreground: 220 10% 40%;
-    --accent: 0 75% 42%;             /* Crimson Red */
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 50%;
+    --popover-foreground: 213 73% 15%;
+    --primary: 213 73% 15%;          /* #0A2540 Deep Navy */
+    --primary-foreground: 45 60% 96%;
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 213 73% 15%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 213 20% 42%;
+    --accent: 46 65% 52%;            /* #D4AF37 Royal Gold */
+    --accent-foreground: 213 73% 12%;
+    --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 88%;
-    --input: 220 20% 88%;
-    --ring: 220 65% 18%;
-    --gold: 42 75% 52%;
-    --gold-light: 45 90% 70%;
-    --gold-dark: 38 70% 38%;
-    --royal-blue: 220 65% 18%;
-    --royal-blue-light: 220 50% 35%;
-    --royal-blue-dark: 222 70% 12%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 99%;
-    --sidebar-foreground: 220 60% 10%;
-    --sidebar-primary: 220 65% 18%;
-    --sidebar-primary-foreground: 45 80% 92%;
-    --sidebar-accent: 220 30% 95%;
-    --sidebar-accent-foreground: 220 60% 15%;
-    --sidebar-border: 220 20% 88%;
-    --sidebar-ring: 220 65% 18%;
+    --border: 213 25% 88%;
+    --input: 213 25% 90%;
+    --ring: 46 65% 52%;
+    --gold: 46 65% 52%;
+    --gold-light: 46 85% 68%;
+    --gold-dark: 42 60% 38%;
+    --royal-blue: 213 73% 15%;
+    --royal-blue-light: 211 47% 43%; /* #3B6FA0 */
+    --royal-blue-dark: 215 80% 10%;
+    --radius: 0.75rem;
+    --sidebar-background: 213 73% 15%;
+    --sidebar-foreground: 45 60% 92%;
+    --sidebar-primary: 46 65% 52%;
+    --sidebar-primary-foreground: 213 73% 12%;
+    --sidebar-accent: 213 50% 22%;
+    --sidebar-accent-foreground: 46 80% 70%;
+    --sidebar-border: 213 40% 25%;
+    --sidebar-ring: 46 65% 52%;
 
     /* === Royal Gradients & Shadows === */
-    --gradient-royal: linear-gradient(135deg, hsl(220 70% 12%) 0%, hsl(220 65% 22%) 50%, hsl(220 60% 16%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 90% 60%) 0%, hsl(42 80% 50%) 50%, hsl(38 75% 42%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(220 65% 22% / 0.95) 0%, hsl(222 70% 8%) 70%);
-    --shadow-royal: 0 20px 50px -15px hsl(220 70% 10% / 0.55), 0 8px 20px -8px hsl(45 80% 50% / 0.25);
-    --shadow-gold-glow: 0 0 30px hsl(45 90% 55% / 0.4), 0 0 60px hsl(45 90% 55% / 0.18);
-    --shadow-elegant: 0 10px 30px -10px hsl(220 60% 10% / 0.3);
+    --gradient-royal: linear-gradient(135deg, hsl(213 80% 10%) 0%, hsl(213 73% 18%) 50%, hsl(211 47% 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(46 85% 65%) 0%, hsl(46 70% 52%) 50%, hsl(42 60% 40%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(213 73% 18% / 0.95) 0%, hsl(215 80% 8%) 70%);
+    --shadow-royal: 0 20px 50px -15px hsl(213 80% 10% / 0.45), 0 8px 20px -8px hsl(46 75% 50% / 0.22);
+    --shadow-gold-glow: 0 0 24px hsl(46 80% 55% / 0.45), 0 0 50px hsl(46 80% 55% / 0.18);
+    --shadow-elegant: 0 10px 30px -10px hsl(213 60% 12% / 0.25);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -93,6 +93,28 @@
     letter-spacing: -0.01em;
   }
   .section-divider { @apply border-t-2 border-foreground; }
+
+  /* === Golden Circle Icon Badge === */
+  .icon-circle-gold {
+    @apply inline-flex items-center justify-center rounded-full;
+    width: 2.5rem; height: 2.5rem;
+    color: hsl(var(--gold-dark));
+    background: hsl(var(--background));
+    border: 1.5px solid hsl(var(--gold) / 0.7);
+    transition: var(--transition-smooth);
+  }
+  .icon-circle-gold:hover {
+    color: hsl(var(--primary-foreground));
+    background: var(--gradient-gold);
+    border-color: hsl(var(--gold));
+    box-shadow: var(--shadow-gold-glow);
+    transform: translateY(-2px);
+  }
+  .icon-circle-gold[data-active="true"] {
+    background: var(--gradient-royal);
+    color: hsl(var(--gold-light));
+    border-color: hsl(var(--gold));
+  }
 
   /* === Glassmorphism Header === */
   .glass-header {
