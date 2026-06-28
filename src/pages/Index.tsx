@@ -187,9 +187,6 @@ const Index = () => {
         )}
 
         <div className="p-6 md:p-10 lg:p-12">
-          {/* Featured + Sidebar Latest */}
-          {!loading && featured && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
           {/* Hero Bento - Royal Presidential */}
           {!loading && featured && (
             <HeroBento featured={featured as any} secondary={heroSecondary as any} tertiary={heroTertiary as any} />
