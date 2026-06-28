@@ -20,7 +20,7 @@ import { resolve, dirname } from "node:path";
 const SUPABASE_URL = "https://texdxiafabzbampcswsn.supabase.co";
 const ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRleGR4aWFmYWJ6YmFtcGNzd3NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxODkwODUsImV4cCI6MjA4OTc2NTA4NX0.3FeZQivXN99E-ariQ-nj7IPeCj3Mb_GmJxHS3LJczb4";
-const BASE_URL = "https://soutalbalad.lovable.app";
+const BASE_URL = "https://masdiri.lovable.app";
 const DIST = resolve("dist");
 const TEMPLATE_PATH = resolve("dist/index.html");
 
@@ -403,7 +403,7 @@ async function main() {
       <guid isPermaLink="true">${xe(link)}</guid>
       <pubDate>${pub}</pubDate>
       <dc:creator>مصدري</dc:creator>
-      <author>news@soutalbalad.lovable.app (مصدري)</author>
+      <author>news@masdiri.lovable.app (مصدري)</author>
       ${a.categories?.name ? `<category>${xe(a.categories.name)}</category>` : ""}
       <description>${xe(excerpt)}</description>
       <content:encoded><![CDATA[${a.content || a.summary || a.title || ""}]]></content:encoded>
