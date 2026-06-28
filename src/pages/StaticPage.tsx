@@ -196,10 +196,6 @@ export const ContactPage = () => (
     <ContactForm />
     <h2>البريد الإلكتروني للدعم</h2>
     <p dir="ltr"><a href="mailto:support@soutalbalad.app">support@soutalbalad.app</a></p>
-    <h2>الواتساب الرسمي</h2>
-    <p><a href="" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
-    <h2>قناة مصدري على واتساب</h2>
-    <p><a href="https://whatsapp.com/channel/0029VbCnhMfJJhzc9msXWG0n" target="_blank" rel="noopener noreferrer">انضم للقناة الرسمية</a></p>
     <h2>للإعلانات والرعاية</h2>
     <p>للحجز والاستفسار عن الباقات الإعلانية، تواصل معنا مباشرة على رقم الواتساب الرسمي بالأعلى.</p>
   </StaticPage>
@@ -413,7 +409,6 @@ export const OwnershipPage = () => (
 
     <h2>للتواصل المؤسسي</h2>
     <p>الإدارة العامة: <a href="mailto:management@soutalbalad.app" dir="ltr">management@soutalbalad.app</a></p>
-    <p>الإعلانات والشراكات: <a href="" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
   </StaticPage>
 );
 

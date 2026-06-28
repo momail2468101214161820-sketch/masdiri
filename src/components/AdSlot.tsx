@@ -185,15 +185,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
           <p className="text-[9px] md:text-[11px] mt-1 font-bold tracking-wide text-white/75">
             تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس
           </p>
-          <span className="mt-2 inline-block text-[11px] md:text-sm font-black tracking-[0.18em] px-3 py-1 rounded-full" dir="ltr"
-            style={{
-              background: "hsl(var(--royal-blue-dark, var(--primary))/0.55)",
-              border: "1px solid hsl(var(--gold)/0.4)",
-              color: "hsl(var(--gold-light, var(--gold)))",
-              backdropFilter: "blur(4px)",
-            }}>
-            +20 100 618 8795
-          </span>
+          
         </div>
       </a>
     );

@@ -64,20 +64,6 @@ const SiteFooter = () => {
                 </button>
               </form>
               <a
-                href="https://whatsapp.com/channel/0029VbCnhMfJJhzc9msXWG0n"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 mt-4 px-4 py-3 rounded font-bold text-sm border-2"
-                style={{
-                  borderColor: "hsl(var(--gold))",
-                  background: "linear-gradient(135deg, #25D366, #128C7E)",
-                  color: "white",
-                }}
-              >
-                <span className="text-xl">📲</span>
-                <span className="flex-1 text-center">قناة مصدري الرسمية على واتساب</span>
-              </a>
-              <a
                 href=""
                 target="_blank"
                 rel="noopener noreferrer"
@@ -89,7 +75,6 @@ const SiteFooter = () => {
                 }}
                 dir="ltr"
               >
-                ☎ +20 100 618 8795
               </a>
             </div>
 
