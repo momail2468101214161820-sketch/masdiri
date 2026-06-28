@@ -7,10 +7,10 @@
 @layer base {
   :root {
     /* مصدري Palette — Logo-Derived (Black + White + Crimson Red) */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 6%;
+    --background: 30 20% 98%;        /* warm off-white, easier on eyes */
+    --foreground: 0 0% 12%;          /* softened from pure black */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 6%;
+    --card-foreground: 0 0% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 6%;
     --primary: 0 0% 6%;              /* Logo Black */
