@@ -94,6 +94,28 @@
   }
   .section-divider { @apply border-t-2 border-foreground; }
 
+  /* === Golden Circle Icon Badge === */
+  .icon-circle-gold {
+    @apply inline-flex items-center justify-center rounded-full;
+    width: 2.5rem; height: 2.5rem;
+    color: hsl(var(--gold-dark));
+    background: hsl(var(--background));
+    border: 1.5px solid hsl(var(--gold) / 0.7);
+    transition: var(--transition-smooth);
+  }
+  .icon-circle-gold:hover {
+    color: hsl(var(--primary-foreground));
+    background: var(--gradient-gold);
+    border-color: hsl(var(--gold));
+    box-shadow: var(--shadow-gold-glow);
+    transform: translateY(-2px);
+  }
+  .icon-circle-gold[data-active="true"] {
+    background: var(--gradient-royal);
+    color: hsl(var(--gold-light));
+    border-color: hsl(var(--gold));
+  }
+
   /* === Glassmorphism Header === */
   .glass-header {
     background: hsl(var(--background) / 0.75);
