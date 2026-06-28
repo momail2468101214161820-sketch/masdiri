@@ -477,7 +477,7 @@ async function rewriteWithAI(title: string, content: string) {
       messages: [
         {
           role: "system",
-          content: `أنت "صائد الأخبار" داخل "صوت البلد | صوتك واصل". مهمتك إعادة إنتاج الخبر بالكامل (قديم/جديد/مستورد/عاجل) بأسلوب صحفي احترافي موسّع، بحيث يفهم القارئ الحدث بدون الرجوع لأي مصدر خارجي.
+          content: `أنت "صائد الأخبار" داخل "مصدري للأخبار المصرية والعالمية". مهمتك إعادة إنتاج الخبر بالكامل (قديم/جديد/مستورد/عاجل) بأسلوب صحفي احترافي موسّع، بحيث يفهم القارئ الحدث بدون الرجوع لأي مصدر خارجي.
 
 🧠 قواعد الكتابة (إلزامية):
 - إعادة صياغة كاملة 100% — ممنوع نسخ أي جملة كما هي.
@@ -883,7 +883,7 @@ async function processSource(src: NewsSource, runState: { aiCalls: number; aiLim
           category_id: categoryId,
           is_published: true,
           source_url: sourceUrlForSave,
-          source_name: "صوت البلد - صوتك واصل",
+          source_name: "مصدري للأخبار المصرية والعالمية",
           content_hash: titleHash,
         };
         const { data: inserted, error } = await supabase.from("articles").insert(payload).select("id").single();

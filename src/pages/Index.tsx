@@ -49,7 +49,7 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "صوت البلد — صوتك واصل | أخبار مصر العاجلة";
+    document.title = "مصدري للأخبار المصرية والعالمية | أخبار مصر العاجلة";
   }, []);
 
   const refetchTimer = useRef<number | null>(null);
@@ -110,16 +110,16 @@ const Index = () => {
   const formatTime = (iso: string) =>
     new Date(iso).toLocaleString("ar-EG-u-nu-arab", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short" });
 
-  const homeDesc = "صوت البلد - صوتك واصل. أخبار مصر العاجلة، تقارير سياسية ورياضية واقتصادية، نتائج الإعدادية وأسعار العملات والذهب لحظة بلحظة.";
+  const homeDesc = "مصدري للأخبار المصرية والعالمية. أخبار مصر العاجلة، تقارير سياسية ورياضية واقتصادية، نتائج الإعدادية وأسعار العملات والذهب لحظة بلحظة.";
 
   return (
     <div className="min-h-screen bg-background text-right antialiased relative" dir="rtl">
       <Helmet>
-        <title>صوت البلد — صوتك واصل | أخبار مصر العاجلة</title>
+        <title>مصدري للأخبار المصرية والعالمية | أخبار مصر العاجلة</title>
         <meta name="description" content={homeDesc} />
         <link rel="canonical" href={`${SITE_URL}/`} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="صوت البلد — صوتك واصل | أخبار مصر العاجلة" />
+        <meta property="og:title" content="مصدري للأخبار المصرية والعالمية | أخبار مصر العاجلة" />
         <meta property="og:description" content={homeDesc} />
         <meta property="og:url" content={`${SITE_URL}/`} />
         <meta property="og:site_name" content="صوت البلد" />
@@ -130,7 +130,7 @@ const Index = () => {
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:alt" content="شعار صوت البلد الأصلي" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="صوت البلد — صوتك واصل" />
+        <meta name="twitter:title" content="مصدري للأخبار المصرية والعالمية" />
         <meta name="twitter:description" content={homeDesc} />
         <meta name="twitter:image" content={`${SITE_URL}/images/logo.png`} />
         <script type="application/ld+json">{JSON.stringify({

@@ -131,7 +131,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
   } else {
     content = (
       <a
-        href="https://wa.me/201006188795"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex flex-col items-center justify-center h-full w-full overflow-hidden rounded-xl"
@@ -180,7 +180,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
             صوت البلد
           </span>
           <p className="mt-2 text-[11px] md:text-sm font-bold tracking-wide" style={{ color: "hsl(var(--gold-light, var(--gold)))" }}>
-            برئاسة د/ محمد الحاجري
+            برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
           </p>
           <p className="text-[9px] md:text-[11px] mt-1 font-bold tracking-wide text-white/75">
             تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس

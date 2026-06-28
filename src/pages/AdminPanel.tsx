@@ -505,7 +505,7 @@ const AdminPanel = () => {
               <span style={{ background: "linear-gradient(90deg, hsl(var(--gold)), #fff7c2, hsl(var(--gold)))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>صوت البلد</span>
             </h1>
             <p className="mt-2 text-sm md:text-base font-bold text-primary-foreground/90">
-              برئاسة د/ محمد الحاجري · تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس
+              برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم · تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس
             </p>
             <div className="mt-3 flex flex-wrap justify-center gap-2 text-[10px] font-black">
               {[

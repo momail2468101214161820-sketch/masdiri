@@ -13,7 +13,7 @@ const ShareButtons = ({ title, url, compact }: ShareButtonsProps) => {
 
   // نص ورابط الواتساب الديناميكي
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-    `📰 ${title}\n\n${currentUrl}\n\n— صوت البلد · برئاسة د/ محمد الحاجري`
+    `📰 ${title}\n\n${currentUrl}\n\n— صوت البلد · برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم`
   )}`;
 
   // وظيفة نسخ الرابط

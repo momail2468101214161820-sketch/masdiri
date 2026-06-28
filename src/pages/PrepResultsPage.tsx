@@ -129,7 +129,7 @@ const PrepResultsPage = () => {
     <div className="min-h-screen bg-background text-right" dir="rtl">
       <Helmet>
         <title>نتائج الشهادة الإعدادية 2026 | صوت البلد</title>
-        <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على صوت البلد — صوتك واصل." />
+        <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على مصدري للأخبار المصرية والعالمية." />
         <link rel="canonical" href="https://soutalbalad.lovable.app/prep-results" />
         <meta property="og:title" content="نتائج الشهادة الإعدادية 2026 | صوت البلد" />
         <meta property="og:description" content="استعلم عن نتيجتك فوراً برقم الجلوس." />
@@ -333,7 +333,7 @@ const ResultCard = ({ r }: { r: StudentResult }) => {
             <img src="/images/logo.png" alt="صوت البلد" crossOrigin="anonymous" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
             <div>
               <p className="font-black text-base leading-tight">صوت البلد</p>
-              <p className="text-[11px] opacity-95 font-bold">برئاسة د/ محمد الحاجري</p>
+              <p className="text-[11px] opacity-95 font-bold">برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم</p>
             </div>
           </div>
           <p className="text-xs font-black opacity-95">نتيجة الإعدادية ٢٠٢٦</p>
@@ -412,7 +412,7 @@ const ResultCard = ({ r }: { r: StudentResult }) => {
           </div>
 
           <div className="mt-6 pt-4 border-t border-border text-center text-[11px] text-muted-foreground space-y-1">
-            <p className="font-black">صوت البلد · برئاسة د/ محمد الحاجري</p>
+            <p className="font-black">صوت البلد · برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم</p>
             <p className="font-bold">تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس</p>
           </div>
         </div>

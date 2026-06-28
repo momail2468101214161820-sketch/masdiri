@@ -35,7 +35,7 @@ const SiteFooter = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div>
               <h3 className="newspaper-heading text-2xl mb-2" style={{ color: "hsl(var(--gold))" }}>
-                صوت البلد — صوتك واصل
+                مصدري للأخبار المصرية والعالمية
               </h3>
             </div>
 
@@ -78,7 +78,7 @@ const SiteFooter = () => {
                 <span className="flex-1 text-center">قناة صوت البلد الرسمية على واتساب</span>
               </a>
               <a
-                href="https://wa.me/201006188795"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-2 px-4 py-2 rounded font-bold text-sm border-2"
@@ -104,7 +104,7 @@ const SiteFooter = () => {
                 }}
               >
                 <p className="newspaper-heading text-xl leading-tight text-gold-shine" style={{ fontFamily: "'Amiri', serif" }}>
-                  برئاسة د/ محمد الحاجري
+                  برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
                 </p>
                 <div className="my-3 h-px bg-[hsl(var(--gold)/0.4)]" />
                 <p className="font-black text-base leading-tight" style={{ color: "hsl(var(--gold-light))", fontFamily: "'Amiri', serif" }}>
@@ -152,7 +152,7 @@ const SiteFooter = () => {
               للتواصل والاستفسارات: <span className="opacity-90 font-normal">متاح قريبًا</span>
             </p>
             <p className="text-xs opacity-60">
-              © {new Date().getFullYear()} صوت البلد | صوتك واصل — جميع الحقوق محفوظة
+              © {new Date().getFullYear()} مصدري للأخبار المصرية والعالمية — جميع الحقوق محفوظة
             </p>
           </div>
 

@@ -20,7 +20,7 @@ const StaticPage = ({ slug, title, description, children }: StaticPageProps) => 
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{`${title} | صوت البلد | صوتك واصل`}</title>
+        <title>{`${title} | مصدري للأخبار المصرية والعالمية`}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
@@ -37,7 +37,7 @@ const StaticPage = ({ slug, title, description, children }: StaticPageProps) => 
           description,
           url,
           inLanguage: "ar",
-          isPartOf: { "@type": "WebSite", name: "صوت البلد | صوتك واصل", url: SITE },
+          isPartOf: { "@type": "WebSite", name: "مصدري للأخبار المصرية والعالمية", url: SITE },
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -76,13 +76,13 @@ const StaticPage = ({ slug, title, description, children }: StaticPageProps) => 
 };
 
 export const AboutPage = () => (
-  <StaticPage slug="about" title="من نحن" description="صوت البلد | صوتك واصل — تعرّف على هويتنا وقيادتنا ورسالتنا.">
-    <p><strong>صوت البلد | صوتك واصل</strong> هو الاسم الرسمي الذي يصلك من قلب الحدث، نقدّم لك الخبر المصري بصدق وسرعة ودقة، ونرافقك على مدار الساعة في السياسة والاقتصاد والرياضة والتكنولوجيا وكل ما يهم الشارع المصري.</p>
+  <StaticPage slug="about" title="من نحن" description="مصدري للأخبار المصرية والعالمية — تعرّف على هويتنا وقيادتنا ورسالتنا.">
+    <p><strong>مصدري للأخبار المصرية والعالمية</strong> هو الاسم الرسمي الذي يصلك من قلب الحدث، نقدّم لك الخبر المصري بصدق وسرعة ودقة، ونرافقك على مدار الساعة في السياسة والاقتصاد والرياضة والتكنولوجيا وكل ما يهم الشارع المصري.</p>
     <h2>قيادتنا</h2>
-    <p>برئاسة <strong>د/ محمد الحاجري</strong>.</p>
+    <p>برئاسة <strong>البشمبرمج/ خالد عاطف عبدالحكيم</strong>.</p>
     <p>تطوير التقنيات والمسؤول عن الأنظمة: <strong>البشمبرمج والمطور التقني خالد عاطف عبدالحكيم عويس</strong>.</p>
     <h2>رسالتنا</h2>
-    <p>«صوتك واصل» — شعار نلتزم به: نسمع منك، ننقل عنك، ونوصل صوتك للمسؤول وللرأي العام.</p>
+    <p>«مصدري للأخبار المصرية والعالمية» — شعار نلتزم به: نسمع منك، ننقل عنك، ونوصل صوتك للمسؤول وللرأي العام.</p>
     <h2>قِيَمنا</h2>
     <ul>
       <li>المصداقية أولاً قبل السبق.</li>
@@ -128,7 +128,7 @@ const ContactForm = () => {
         return;
       }
       const body = `الاسم: ${parsed.data.name}\nالبريد: ${parsed.data.email}\n\n${parsed.data.message}`;
-      const wa = `https://wa.me/201006188795?text=${encodeURIComponent(body)}`;
+      const wa = `?text=${encodeURIComponent(body)}`;
       window.open(wa, "_blank", "noopener,noreferrer");
       setSent(true);
     } finally {
@@ -197,7 +197,7 @@ export const ContactPage = () => (
     <h2>البريد الإلكتروني للدعم</h2>
     <p dir="ltr"><a href="mailto:support@soutalbalad.app">support@soutalbalad.app</a></p>
     <h2>الواتساب الرسمي</h2>
-    <p><a href="https://wa.me/201006188795" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
+    <p><a href="" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
     <h2>قناة صوت البلد على واتساب</h2>
     <p><a href="https://whatsapp.com/channel/0029VbCnhMfJJhzc9msXWG0n" target="_blank" rel="noopener noreferrer">انضم للقناة الرسمية</a></p>
     <h2>للإعلانات والرعاية</h2>
@@ -208,7 +208,7 @@ export const ContactPage = () => (
 export const PrivacyPage = () => (
   <StaticPage slug="privacy-policy" title="سياسة الخصوصية" description="سياسة خصوصية صوت البلد: جمع البيانات، الكوكيز، إعلانات Google AdSense، وحقوق المستخدم.">
     <p>آخر تحديث: 28 يونيو 2026</p>
-    <p>نحرص في <strong>صوت البلد | صوتك واصل</strong> على حماية خصوصية زوارنا والتعامل مع بياناتهم بأعلى درجات الأمانة والشفافية. توضّح هذه السياسة طبيعة البيانات التي نجمعها وكيفية استخدامها وحقوقك تجاهها.</p>
+    <p>نحرص في <strong>مصدري للأخبار المصرية والعالمية</strong> على حماية خصوصية زوارنا والتعامل مع بياناتهم بأعلى درجات الأمانة والشفافية. توضّح هذه السياسة طبيعة البيانات التي نجمعها وكيفية استخدامها وحقوقك تجاهها.</p>
 
     <h2>1. البيانات التي نجمعها</h2>
     <ul>
@@ -269,7 +269,7 @@ export const PrivacyPage = () => (
 
 export const TermsPage = () => (
   <StaticPage slug="terms" title="شروط الاستخدام" description="القواعد المنظِّمة لاستخدامك صوت البلد.">
-    <p>باستخدامك صوت البلد | صوتك واصل فإنك توافق على الشروط التالية:</p>
+    <p>باستخدامك مصدري للأخبار المصرية والعالمية فإنك توافق على الشروط التالية:</p>
     <h2>الملكية الفكرية</h2>
     <p>جميع الأخبار والصور والتصاميم والشعارات حقوقها محفوظة لصوت البلد. يُمنع إعادة النشر دون إذن رسمي مكتوب أو دون الإشارة الواضحة للمصدر.</p>
     <h2>استخدام المحتوى</h2>
@@ -303,7 +303,7 @@ export const CookiesPage = () => (
 
 export const EditorialPolicyPage = () => (
   <StaticPage slug="editorial-policy" title="السياسة التحريرية" description="المبادئ والمعايير التي يلتزم بها صوت البلد في انتقاء الأخبار والتحقق منها ونشرها.">
-    <p>يلتزم <strong>صوت البلد | صوتك واصل</strong> بأعلى معايير الصحافة المهنية في كل ما يُنشر على منصاته. تُحدد هذه السياسة المبادئ والإجراءات التي تحكم العملية التحريرية.</p>
+    <p>يلتزم <strong>مصدري للأخبار المصرية والعالمية</strong> بأعلى معايير الصحافة المهنية في كل ما يُنشر على منصاته. تُحدد هذه السياسة المبادئ والإجراءات التي تحكم العملية التحريرية.</p>
 
     <h2>1. المبادئ الأساسية</h2>
     <ul>
@@ -347,7 +347,7 @@ export const EditorialPolicyPage = () => (
 
 export const CorrectionsPolicyPage = () => (
   <StaticPage slug="corrections" title="سياسة التصحيحات" description="آلية صوت البلد في تصحيح الأخطاء وضمان دقة المحتوى المنشور.">
-    <p>الدقة قيمة عُليا في <strong>صوت البلد | صوتك واصل</strong>. نتعامل مع أي خطأ بشفافية تامة وفقًا للسياسة التالية:</p>
+    <p>الدقة قيمة عُليا في <strong>مصدري للأخبار المصرية والعالمية</strong>. نتعامل مع أي خطأ بشفافية تامة وفقًا للسياسة التالية:</p>
 
     <h2>1. الإبلاغ عن خطأ</h2>
     <p>إذا اكتشفت خطأً في أي خبر أو معلومة منشورة، نرحب بإبلاغنا فورًا عبر:</p>
@@ -386,14 +386,14 @@ export const CorrectionsPolicyPage = () => (
 
 export const OwnershipPage = () => (
   <StaticPage slug="ownership" title="الملكية والتمويل" description="ملكية صوت البلد، مصادر تمويله، وهيكله الإداري بشفافية كاملة.">
-    <p>إيمانًا بمبدأ الشفافية الذي نطالب به الآخرين، نوضّح فيما يلي كل ما يتعلق بملكية وتمويل <strong>صوت البلد | صوتك واصل</strong>.</p>
+    <p>إيمانًا بمبدأ الشفافية الذي نطالب به الآخرين، نوضّح فيما يلي كل ما يتعلق بملكية وتمويل <strong>مصدري للأخبار المصرية والعالمية</strong>.</p>
 
     <h2>الملكية</h2>
     <p>صوت البلد منصة إعلامية رقمية مستقلة مملوكة بالكامل لمؤسسيها، ولا تتبع لأي حزب سياسي أو جهة حكومية أو كيان أجنبي.</p>
 
     <h2>القيادة</h2>
     <ul>
-      <li><strong>الرئيس التنفيذي ورئيس التحرير:</strong> د/ محمد الحاجري</li>
+      <li><strong>الرئيس التنفيذي ورئيس التحرير:</strong> البشمبرمج/ خالد عاطف عبدالحكيم</li>
       <li><strong>المدير التقني والمطور الرئيسي:</strong> البشمبرمج خالد عاطف عبدالحكيم عويس</li>
     </ul>
 
@@ -413,7 +413,7 @@ export const OwnershipPage = () => (
 
     <h2>للتواصل المؤسسي</h2>
     <p>الإدارة العامة: <a href="mailto:management@soutalbalad.app" dir="ltr">management@soutalbalad.app</a></p>
-    <p>الإعلانات والشراكات: <a href="https://wa.me/201006188795" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
+    <p>الإعلانات والشراكات: <a href="" target="_blank" rel="noopener noreferrer" dir="ltr">+20 100 618 8795</a></p>
   </StaticPage>
 );
 
