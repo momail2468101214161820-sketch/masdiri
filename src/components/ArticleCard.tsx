@@ -106,6 +106,8 @@ const ArticleCard = ({
         <WatermarkedImage
           src={src}
           alt={title}
+          title={title}
+          hideTitle
           imgClassName={`absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-[1.04] ${objectMode ? "object-cover object-center" : "object-contain p-8"}`}
         />
         <div className="absolute top-2 left-2 z-10">
