@@ -6,72 +6,72 @@
 <title>أنت غير متصل — صوت البلد</title>
 <link rel="icon" href="/favicon.ico" />
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; min-height: 100vh;
-    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #0a1428 0%, #1a2847 100%);
-    color: #f5f5f5;
-    display: flex; align-items: center; justify-content: center;
-    padding: 24px;
-  }
-  .card {
-    max-width: 480px; width: 100%; text-align: center;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(212,175,55,0.35);
-    border-radius: 24px; padding: 40px 28px;
-    backdrop-filter: blur(12px);
-  }
-  .logo {
-    width: 84px; height: 84px; margin: 0 auto 20px;
-    border-radius: 50%; background: linear-gradient(135deg, #d4af37, #f0d77c);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 36px; font-weight: 900; color: #0a1428;
-  }
-  h1 {
-    font-family: 'Amiri', serif; font-size: 28px; margin: 0 0 12px;
-    background: linear-gradient(90deg, #f0d77c, #d4af37);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  p { color: #cbd5e1; line-height: 1.7; margin: 0 0 24px; font-size: 15px; }
-  .actions { display: flex; flex-direction: column; gap: 10px; }
-  a, button {
-    display: block; width: 100%; padding: 13px 18px;
-    border-radius: 12px; text-decoration: none; font-weight: 800;
-    font-family: inherit; font-size: 14px; cursor: pointer; border: 0;
-  }
-  .primary {
-    background: linear-gradient(135deg, #d4af37, #b8941f); color: #0a1428;
-  }
-  .secondary {
-    background: transparent; color: #f0d77c;
-    border: 1px solid rgba(212,175,55,0.4);
-  }
-  .status { font-size: 12px; color: #94a3b8; margin-top: 16px; }
+ :root { color-scheme: dark; }
+ * { box-sizing: border-box; }
+ body {
+ margin: 0; min-height: 100vh;
+ font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+ background: linear-gradient(135deg, #0a1428 0%, #1a2847 100%);
+ color: #f5f5f5;
+ display: flex; align-items: center; justify-content: center;
+ padding: 24px;
+ }
+ .card {
+ max-width: 480px; width: 100%; text-align: center;
+ background: rgba(255,255,255,0.04);
+ border: 1px solid rgba(212,175,55,0.35);
+ border-radius: 24px; padding: 40px 28px;
+ backdrop-filter: blur(12px);
+ }
+ .logo {
+ width: 84px; height: 84px; margin: 0 auto 20px;
+ border-radius: 50%; background: linear-gradient(135deg, #d4af37, #f0d77c);
+ display: flex; align-items: center; justify-content: center;
+ font-size: 36px; font-weight: 900; color: #0a1428;
+ }
+ h1 {
+ font-family: 'Amiri', serif; font-size: 28px; margin: 0 0 12px;
+ background: linear-gradient(90deg, #f0d77c, #d4af37);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ p { color: #cbd5e1; line-height: 1.7; margin: 0 0 24px; font-size: 15px; }
+ .actions { display: flex; flex-direction: column; gap: 10px; }
+ a, button {
+ display: block; width: 100%; padding: 13px 18px;
+ border-radius: 12px; text-decoration: none; font-weight: 800;
+ font-family: inherit; font-size: 14px; cursor: pointer; border: 0;
+ }
+ .primary {
+ background: linear-gradient(135deg, #d4af37, #b8941f); color: #0a1428;
+ }
+ .secondary {
+ background: transparent; color: #f0d77c;
+ border: 1px solid rgba(212,175,55,0.4);
+ }
+ .status { font-size: 12px; color: #94a3b8; margin-top: 16px; }
 </style>
 </head>
 <body>
-  <main class="card">
-    <div class="logo">ص</div>
-    <h1>لا يوجد اتصال بالإنترنت</h1>
-    <p>تعذّر الوصول إلى صوت البلد الآن. تحقق من اتصالك ثم حاول مجدداً — يمكنك تصفّح آخر الأخبار التي زرتها مسبقاً.</p>
-    <div class="actions">
-      <button class="primary" onclick="location.reload()">إعادة المحاولة</button>
-      <a class="secondary" href="/latest">آخر الأخبار المحفوظة</a>
-      <a class="secondary" href="/">الصفحة الرئيسية</a>
-    </div>
-    <p class="status" id="status">جارٍ مراقبة الاتصال…</p>
-  </main>
-  <script>
-    const status = document.getElementById('status');
-    const update = () => {
-      if (navigator.onLine) { status.textContent = '✓ عاد الاتصال — جارٍ إعادة التحميل'; setTimeout(() => location.reload(), 800); }
-      else status.textContent = '⚠ ما زلت بدون اتصال';
-    };
-    window.addEventListener('online', update);
-    window.addEventListener('offline', update);
-    update();
-  </script>
+ <main class="card">
+ <div class="logo">ص</div>
+ <h1>لا يوجد اتصال بالإنترنت</h1>
+ <p>تعذّر الوصول إلى صوت البلد الآن. تحقق من اتصالك ثم حاول مجدداً — يمكنك تصفّح آخر الأخبار التي زرتها مسبقاً.</p>
+ <div class="actions">
+ <button class="primary" onclick="location.reload">إعادة المحاولة</button>
+ <a class="secondary" href="/latest">آخر الأخبار المحفوظة</a>
+ <a class="secondary" href="/">الصفحة الرئيسية</a>
+ </div>
+ <p class="status" id="status">جارٍ مراقبة الاتصال…</p>
+ </main>
+ <script>
+ const status = document.getElementById('status');
+ const update = => {
+ if (navigator.onLine) { status.textContent = '✓ عاد الاتصال — جارٍ إعادة التحميل'; setTimeout( => location.reload, 800); }
+ else status.textContent = '⚠ ما زلت بدون اتصال';
+ };
+ window.addEventListener('online', update);
+ window.addEventListener('offline', update);
+ update;
+ </script>
 </body>
 </html>
