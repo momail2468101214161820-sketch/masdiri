@@ -27,13 +27,31 @@ const ALLOWED_TABLES = new Set([
   "messages",
 ]);
 
+function normalizePin(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  if (/^\d{4}$/.test(trimmed)) return trimmed;
+
+  // Older writes accidentally saved the text column as a JSON-looking string
+  // (for example: '"0000"'). Accept and repair that shape safely.
+  try {
+    const parsed = JSON.parse(trimmed);
+    if (typeof parsed === "string" && /^\d{4}$/.test(parsed)) return parsed;
+  } catch {
+    // Not JSON; fall through to null.
+  }
+
+  return null;
+}
+
 async function getCurrentPin(): Promise<string> {
   const { data } = await supabase
     .from("admin_settings")
     .select("value")
     .eq("key", "admin_code")
     .maybeSingle();
-  if (data?.value && typeof data.value === "string") return data.value;
+  const storedPin = normalizePin(data?.value);
+  if (storedPin) return storedPin;
   return Deno.env.get("ADMIN_PIN") ?? "7777";
 }
 
