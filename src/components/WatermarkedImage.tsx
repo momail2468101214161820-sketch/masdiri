@@ -71,7 +71,7 @@ const WatermarkedImage = ({
           style={{ fontFamily: "'Cairo', sans-serif" }}
           dir="rtl"
         >
-          برئاسة د/ محمد الحاجري
+          برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
           <span className="mx-1 opacity-70">•</span>
           تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس
         </p>

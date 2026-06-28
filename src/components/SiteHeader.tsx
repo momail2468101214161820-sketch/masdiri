@@ -71,7 +71,7 @@ const SiteHeader = () => {
                     <div className="text-lg font-black text-gold-shine" style={{ fontFamily: "'Amiri', serif" }}>
                       صوت البلد
                     </div>
-                    <div className="text-[10px] opacity-80">صوتك واصل</div>
+                    <div className="text-[10px] opacity-80">مصدري للأخبار المصرية والعالمية</div>
                   </div>
                 </SheetTitle>
               </SheetHeader>
@@ -107,8 +107,8 @@ const SiteHeader = () => {
                 <InstallAppButton className="w-full justify-center" />
               </div>
               <div className="p-4 mt-2 border-t border-border text-[10px] text-muted-foreground text-center font-bold">
-                برئاسة د/ محمد الحاجري
-                <div dir="ltr" className="opacity-70 mt-1">01006188795</div>
+                برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
+                <div dir="ltr" className="opacity-70 mt-1"></div>
               </div>
             </SheetContent>
           </Sheet>
@@ -132,12 +132,12 @@ const SiteHeader = () => {
                   className="newspaper-heading text-base md:text-xl leading-tight truncate"
                   style={{ color: "hsl(var(--primary))" }}
                 >
-                  صوت البلد <span className="hidden sm:inline" style={{ color: "hsl(var(--accent))" }}>— صوتك واصل</span>
+                  صوت البلد <span className="hidden sm:inline" style={{ color: "hsl(var(--accent))" }}>— مصدري للأخبار المصرية والعالمية</span>
                 </div>
               )}
               <p className="hidden md:flex items-center gap-2 text-[12px] mt-1 font-black" style={{ color: "hsl(var(--gold))", fontFamily: "'Amiri', serif" }}>
                 <span className="text-[hsl(var(--gold-light))]">✦</span>
-                برئاسة د/ محمد الحاجري
+                برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
                 <span className="text-[hsl(var(--gold-light))]">✦</span>
               </p>
               <p className="hidden md:block text-[10px] opacity-90 tracking-wide font-bold" style={{ color: "hsl(var(--gold-light))" }}>

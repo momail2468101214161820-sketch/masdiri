@@ -223,7 +223,7 @@ Deno.serve(async (req) => {
                       marginTop: 4,
                       display: "flex",
                     },
-                    children: "صوتك واصل",
+                    children: "مصدري للأخبار المصرية والعالمية",
                   },
                 },
               ],
@@ -296,7 +296,7 @@ Deno.serve(async (req) => {
                 fontWeight: 900,
                 display: "flex",
               },
-              children: "برئاسة د/ محمد الحاجري",
+              children: "برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم",
             },
           },
           // Credits — Developer

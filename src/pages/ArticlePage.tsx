@@ -80,7 +80,7 @@ const ArticlePage = () => {
         const seoDesc = (
           (articleData as any).seo_description ||
           articleData.summary ||
-          "تغطية شاملة وموثقة من صوت البلد | صوتك واصل"
+          "تغطية شاملة وموثقة من مصدري للأخبار المصرية والعالمية"
         ).trim();
 
         document.title = `${seoTitle} | صوت البلد`;
@@ -115,7 +115,7 @@ const ArticlePage = () => {
           { property: "og:image:alt", content: articleData.title },
           { property: "og:url", content: canonicalUrl },
           { property: "og:type", content: "article" },
-          { property: "og:site_name", content: "صوت البلد | صوتك واصل" },
+          { property: "og:site_name", content: "مصدري للأخبار المصرية والعالمية" },
           { property: "og:locale", content: "ar_EG" },
           { property: "article:published_time", content: articleData.created_at },
           { property: "twitter:card", content: "summary_large_image" },
@@ -247,7 +247,7 @@ const ArticlePage = () => {
   }, [id]);
 
   // 📸 تشغيل زر الكاميرا الجانبي لإنشاء الكارت التفاعلي فوراً
-  // 📸 فتح نافذة كارت المشاركة (لوجو صوت البلد + برئاسة د/ محمد الحاجري + التصميم)
+  // 📸 فتح نافذة كارت المشاركة (لوجو صوت البلد + برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم + التصميم)
   const handleGenerateCard = () => setCardOpen(true);
 
   // 📝 تقسيم المتن بذكاء برمي دون التأثير على معمارية الصفحة
@@ -513,7 +513,7 @@ const ArticlePage = () => {
 
               {/* Institutional footer */}
               <div className="mt-10 pt-6 border-t border-border/60 text-[11px] text-muted-foreground/80 text-center font-bold tracking-wide" style={{ fontFamily: "'Cairo',sans-serif" }}>
-                صوت البلد — برئاسة د/ محمد الحاجري
+                صوت البلد — برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
                 <span className="mx-2 opacity-50">|</span>
                 <span dir="ltr">+20 100 618 8795</span>
               </div>

@@ -56,7 +56,7 @@ serve(async (req) => {
 
     const channelTitle = categorySlug
       ? `صوت البلد | ${categoryName}`
-      : "صوت البلد | صوتك واصل";
+      : "مصدري للأخبار المصرية والعالمية";
     const channelLink = categorySlug ? `${BASE_URL}/category/${categorySlug}` : `${BASE_URL}/`;
     const selfLink = categorySlug
       ? `${Deno.env.get("SUPABASE_URL")}/functions/v1/dynamic-rss?category=${categorySlug}`

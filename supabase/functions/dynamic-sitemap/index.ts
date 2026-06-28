@@ -43,7 +43,7 @@ function urlEntry(opts: {
   }
   if (opts.news) {
     parts.push(`    <news:news>`);
-    parts.push(`      <news:publication><news:name>صوت البلد | صوتك واصل</news:name><news:language>ar</news:language></news:publication>`);
+    parts.push(`      <news:publication><news:name>مصدري للأخبار المصرية والعالمية</news:name><news:language>ar</news:language></news:publication>`);
     parts.push(`      <news:publication_date>${opts.news.published}</news:publication_date>`);
     parts.push(`      <news:title>${xmlEscape(opts.news.title)}</news:title>`);
     parts.push(`    </news:news>`);

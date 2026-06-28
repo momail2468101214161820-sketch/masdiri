@@ -40,7 +40,7 @@ const BrandShareTool = () => {
   const selected = articles.find((a) => a.id === selectedId);
   const realUrl = customUrl.trim() ||
     (selected ? `${REAL_BASE}/article/${selected.id}` : REAL_BASE);
-  const title = customTitle.trim() || selected?.title || "صوت البلد — صوتك واصل";
+  const title = customTitle.trim() || selected?.title || "مصدري للأخبار المصرية والعالمية";
   const displayUrl = shortUrl || realUrl;
 
   // إعادة تصفير الرابط القصير لما الرابط الأصلي يتغير
@@ -57,7 +57,7 @@ const BrandShareTool = () => {
   const shareText =
     `📰 ${title}\n` +
     `\n👉 ${displayUrl}\n` +
-    `\n— صوت البلد | صوتك واصل`;
+    `\n— مصدري للأخبار المصرية والعالمية`;
 
   const copy = async (text: string, label = "تم النسخ") => {
     await navigator.clipboard.writeText(text);

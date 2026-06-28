@@ -77,7 +77,7 @@ function injectBody(template: string, bodyHtml: string): string {
 function articleHtml(template: string, a: any, related: any[] = [], latest: any[] = []): string {
   const slug = a.short_id || `article/${a.id}`;
   const canonical = `${BASE_URL}/${slug}`;
-  const title = a.title || "صوت البلد | صوتك واصل";
+  const title = a.title || "مصدري للأخبار المصرية والعالمية";
   const desc = (a.summary || a.content || a.title || "").toString().slice(0, 280);
   const ogImage = `${SUPABASE_URL}/functions/v1/og-image?id=${encodeURIComponent(
     a.short_id || a.id
@@ -99,7 +99,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
     inLanguage: "ar",
     publisher: {
       "@type": "NewsMediaOrganization",
-      name: "صوت البلد | صوتك واصل",
+      name: "مصدري للأخبار المصرية والعالمية",
       logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-192.png`, width: 192, height: 192 },
     },
     author: { "@type": "Organization", name: "صوت البلد", url: BASE_URL },
@@ -113,7 +113,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
     name: title,
     description: desc,
     inLanguage: "ar",
-    isPartOf: { "@type": "WebSite", name: "صوت البلد | صوتك واصل", url: `${BASE_URL}/` },
+    isPartOf: { "@type": "WebSite", name: "مصدري للأخبار المصرية والعالمية", url: `${BASE_URL}/` },
     primaryImageOfPage: a.image_url ? { "@type": "ImageObject", url: a.image_url } : undefined,
     datePublished: a.created_at,
     dateModified: a.updated_at || a.created_at,
@@ -140,7 +140,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="${esc(canonical)}" />
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="صوت البلد | صوتك واصل" />
+    <meta property="og:site_name" content="مصدري للأخبار المصرية والعالمية" />
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(desc)}" />
@@ -180,7 +180,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
         <h1 itemprop="headline">${esc(title)}</h1>
         <p itemprop="description">${esc(desc)}</p>
         <time itemprop="datePublished" datetime="${esc(a.created_at)}">${esc(a.created_at)}</time>
-        <address itemprop="publisher">صوت البلد | صوتك واصل</address>
+        <address itemprop="publisher">مصدري للأخبار المصرية والعالمية</address>
       </header>
       ${a.image_url ? `<figure><img src="${esc(a.image_url)}" alt="${esc(title)}" itemprop="image" loading="eager" /><figcaption>${esc(title)}</figcaption></figure>` : ""}
       <section itemprop="articleBody">${esc(a.content || a.summary || "")
@@ -208,7 +208,7 @@ function listingHtml(
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="${esc(canonical)}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="صوت البلد | صوتك واصل" />
+    <meta property="og:site_name" content="مصدري للأخبار المصرية والعالمية" />
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(desc)}" />
@@ -291,10 +291,10 @@ async function main() {
     writeFileSync(
       resolve(DIST, "index.html"),
       listingHtml(template, {
-        title: "صوت البلد | صوتك واصل — أحدث الأخبار المصرية والعربية",
+        title: "مصدري للأخبار المصرية والعالمية — أحدث الأخبار المصرية والعربية",
         desc: "تابع آخر الأخبار العاجلة من مصر والعالم العربي على بوابة صوت البلد. سياسة، اقتصاد، رياضة، فن، وأسعار العملات لحظة بلحظة.",
         canonical: `${BASE_URL}/`,
-        h1: "صوت البلد | صوتك واصل",
+        h1: "مصدري للأخبار المصرية والعالمية",
         articles,
       })
     );
@@ -314,7 +314,7 @@ async function main() {
         out,
         listingHtml(template, {
           title: `${c.name} | صوت البلد`,
-          desc: `أحدث أخبار قسم ${c.name} على بوابة صوت البلد — صوتك واصل.`,
+          desc: `أحدث أخبار قسم ${c.name} على بوابة مصدري للأخبار المصرية والعالمية.`,
           canonical: `${BASE_URL}/category/${c.slug}`,
           h1: c.name,
           articles: list,
@@ -414,7 +414,7 @@ async function main() {
     const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>صوت البلد | صوتك واصل — Google News Feed</title>
+    <title>مصدري للأخبار المصرية والعالمية — Google News Feed</title>
     <link>${BASE_URL}/</link>
     <atom:link href="${BASE_URL}/news.xml" rel="self" type="application/rss+xml" />
     <description>أحدث الأخبار المصرية والعربية — تحديث فوري لجوجل نيوز.</description>
