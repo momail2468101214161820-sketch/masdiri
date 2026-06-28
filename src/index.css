@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* مصدري Palette — Royal Imperial Edition (Deep Navy + Brilliant Gold) */
-    --background: 210 25% 98%;
-    --foreground: 215 78% 10%;       /* #0a1628 deeper navy ink */
+    /* مصدري Palette — Logo-Derived (Black + White + Crimson Red) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6%;
     --card: 0 0% 100%;
-    --card-foreground: 215 78% 10%;
+    --card-foreground: 0 0% 6%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 78% 10%;
-    --primary: 215 78% 10%;          /* #0a1628 Imperial Navy */
-    --primary-foreground: 45 78% 92%;
-    --secondary: 215 35% 96%;
-    --secondary-foreground: 215 78% 10%;
-    --muted: 215 22% 94%;
-    --muted-foreground: 215 22% 40%;
-    --accent: 44 56% 54%;            /* #c9a84c Royal Gold */
-    --accent-foreground: 215 78% 8%;
-    --destructive: 0 75% 50%;
+    --popover-foreground: 0 0% 6%;
+    --primary: 0 0% 6%;              /* Logo Black */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 6%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 78% 42%;             /* Logo Crimson #bf1717 */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 48%;
     --destructive-foreground: 0 0% 100%;
-    --border: 215 28% 86%;
-    --input: 215 28% 90%;
-    --ring: 44 56% 54%;
-    --gold: 44 56% 54%;              /* #c9a84c */
-    --gold-light: 44 82% 78%;        /* #f0d78c */
-    --gold-dark: 40 60% 36%;
-    --royal-blue: 215 50% 18%;       /* #1a2942 */
-    --royal-blue-light: 215 40% 32%;
-    --royal-blue-dark: 215 78% 8%;   /* deeper than #0a1628 */
+    --border: 0 0% 88%;
+    --input: 0 0% 92%;
+    --ring: 0 78% 42%;
+    --gold: 0 78% 42%;               /* legacy alias → crimson */
+    --gold-light: 0 78% 60%;
+    --gold-dark: 0 78% 30%;
+    --royal-blue: 0 0% 6%;           /* legacy alias → black */
+    --royal-blue-light: 0 0% 18%;
+    --royal-blue-dark: 0 0% 0%;
     --radius: 0.75rem;
-    --sidebar-background: 215 78% 10%;
-    --sidebar-foreground: 45 78% 92%;
-    --sidebar-primary: 44 56% 54%;
-    --sidebar-primary-foreground: 215 78% 8%;
-    --sidebar-accent: 215 50% 18%;
-    --sidebar-accent-foreground: 44 82% 78%;
-    --sidebar-border: 215 40% 22%;
-    --sidebar-ring: 44 56% 54%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 78% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 78% 60%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 78% 42%;
 
-    /* === Royal Gradients & Shadows — Imperial Edition === */
-    --gradient-royal: linear-gradient(135deg, hsl(215 78% 8%) 0%, hsl(215 60% 14%) 50%, hsl(215 40% 26%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(44 82% 72%) 0%, hsl(44 60% 52%) 50%, hsl(40 65% 38%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(215 60% 14% / 0.96) 0%, hsl(215 80% 6%) 70%);
-    --shadow-royal: 0 24px 60px -18px hsl(215 80% 6% / 0.55), 0 10px 24px -10px hsl(44 75% 50% / 0.28);
-    --shadow-gold-glow: 0 0 28px hsl(44 80% 55% / 0.55), 0 0 58px hsl(44 80% 55% / 0.22);
-    --shadow-elegant: 0 12px 32px -10px hsl(215 60% 10% / 0.3);
+    /* === Gradients & Shadows — Black / White / Crimson === */
+    --gradient-royal: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 12%) 50%, hsl(0 60% 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(0 85% 55%) 0%, hsl(0 78% 42%) 50%, hsl(0 70% 28%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(0 0% 10% / 0.96) 0%, hsl(0 0% 2%) 70%);
+    --shadow-royal: 0 24px 60px -18px hsl(0 0% 0% / 0.55), 0 10px 24px -10px hsl(0 78% 42% / 0.32);
+    --shadow-gold-glow: 0 0 28px hsl(0 80% 50% / 0.55), 0 0 58px hsl(0 80% 50% / 0.22);
+    --shadow-elegant: 0 12px 32px -10px hsl(0 0% 0% / 0.3);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -362,7 +362,7 @@
 
   /* Gold shimmering text */
   .text-gold-shine {
-    background: linear-gradient(100deg, hsl(45 85% 50%) 0%, hsl(48 95% 78%) 30%, hsl(42 80% 45%) 50%, hsl(48 95% 78%) 70%, hsl(45 85% 50%) 100%);
+    background: linear-gradient(100deg, hsl(0 78% 38%) 0%, hsl(0 90% 65%) 30%, hsl(0 70% 32%) 50%, hsl(0 90% 65%) 70%, hsl(0 78% 38%) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
