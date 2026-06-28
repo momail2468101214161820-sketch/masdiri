@@ -344,7 +344,6 @@ const Index = () => {
                       </a>
                     </li>
                   </ul>
-                  </ul>
                 </div>
 
                 <div className="bg-card p-3 rounded-2xl border border-border text-center">
