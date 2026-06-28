@@ -8,6 +8,14 @@ const corsHeaders = {
 };
 
 async function verifyAdmin(req: Request): Promise<boolean> {
+  // Cron / server-to-server bypass via CRON_SECRET (Authorization: Bearer <CRON_SECRET> or x-cron-secret header)
+  const cronSecret = Deno.env.get("CRON_SECRET");
+  if (cronSecret) {
+    const auth = req.headers.get("authorization") || req.headers.get("Authorization") || "";
+    const bearer = auth.toLowerCase().startsWith("bearer ") ? auth.slice(7).trim() : "";
+    const xcron = req.headers.get("x-cron-secret") || req.headers.get("X-Cron-Secret") || "";
+    if (bearer === cronSecret || xcron === cronSecret) return true;
+  }
   const provided = req.headers.get("x-admin-pin") || req.headers.get("X-Admin-Pin");
   if (!provided) return false;
   const { data } = await supabase.from("admin_settings").select("value").eq("key", "admin_code").maybeSingle();
