@@ -161,7 +161,7 @@ const ContactForm = () => {
         <label htmlFor="c-email" className="text-sm font-semibold">البريد الإلكتروني</label>
         <input id="c-email" type="email" required maxLength={200} value={form.email} dir="ltr"
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          placeholder="you@example.com"
+          placeholder="تحت الإنشاء"
           className="w-full rounded-lg border-2 px-3 py-2.5 bg-background focus:outline-none focus:border-[hsl(var(--gold))]"
           style={{ borderColor: "hsl(var(--gold)/0.3)" }} />
       </div>
@@ -195,7 +195,7 @@ export const ContactPage = () => (
     <h2>نموذج التواصل المباشر</h2>
     <ContactForm />
     <h2>البريد الإلكتروني للدعم</h2>
-    <p dir="ltr"><a href="mailto:support@soutalbalad.app">support@soutalbalad.app</a></p>
+    <p dir="ltr"><span dir="ltr">تحت الإنشاء</span></p>
     <h2>للإعلانات والرعاية</h2>
     <p>للحجز والاستفسار عن الباقات الإعلانية، تواصل معنا مباشرة على رقم الواتساب الرسمي بالأعلى.</p>
   </StaticPage>
@@ -250,7 +250,7 @@ export const PrivacyPage = () => (
       <li>الحق في سحب الموافقة على الإشعارات أو النشرة في أي وقت.</li>
       <li>الحق في الاعتراض على معالجة بياناتك لأغراض الإعلانات المُخصّصة.</li>
     </ul>
-    <p>لممارسة أي من هذه الحقوق، راسلنا على <a href="mailto:support@soutalbalad.app" dir="ltr">support@soutalbalad.app</a>.</p>
+    <p>لممارسة أي من هذه الحقوق، راسلنا على <span dir="ltr">تحت الإنشاء</span>.</p>
 
     <h2>9. خصوصية الأطفال</h2>
     <p>لا يستهدف موقع مصدري الأطفال دون سن 13 عاماً، ولا نجمع عن قصد أي بيانات شخصية منهم.</p>
@@ -259,7 +259,7 @@ export const PrivacyPage = () => (
     <p>قد نقوم بتحديث سياسة الخصوصية من حين لآخر. ستُنشر أي تعديلات على هذه الصفحة مع تحديث تاريخ "آخر تحديث" بالأعلى.</p>
 
     <h2>11. التواصل</h2>
-    <p>لأي استفسار يخص الخصوصية، تواصل معنا عبر <a href="/contact">صفحة الاتصال</a> أو على البريد <a href="mailto:support@soutalbalad.app" dir="ltr">support@soutalbalad.app</a>.</p>
+    <p>لأي استفسار يخص الخصوصية، تواصل معنا عبر <a href="/contact">صفحة الاتصال</a> أو على البريد <span dir="ltr">تحت الإنشاء</span>.</p>
   </StaticPage>
 );
 
@@ -331,13 +331,13 @@ export const EditorialPolicyPage = () => (
     <p>نلتزم باللغة العربية الرسمية الراقية، ونتجنب الألفاظ المسيئة أو التحريضية أو الطائفية. يُحظر الترويج للعنف أو خطاب الكراهية أو التمييز.</p>
 
     <h2>7. حقوق الملكية الفكرية</h2>
-    <p>نحترم حقوق الآخرين، ولا نعيد نشر محتوى محمي بحقوق نشر دون إذن أو إسناد واضح. للإبلاغ عن انتهاك، راسلنا على <a href="mailto:legal@soutalbalad.app" dir="ltr">legal@soutalbalad.app</a>.</p>
+    <p>نحترم حقوق الآخرين، ولا نعيد نشر محتوى محمي بحقوق نشر دون إذن أو إسناد واضح. للإبلاغ عن انتهاك، راسلنا على <span dir="ltr">تحت الإنشاء</span>.</p>
 
     <h2>8. التحديث والمراجعة</h2>
     <p>تُراجَع هذه السياسة دوريًا. أي تحديث جوهري يُعلَن عنه بوضوح على هذه الصفحة.</p>
 
     <h2>9. التواصل التحريري</h2>
-    <p>للاستفسارات التحريرية أو الملاحظات المهنية: <a href="mailto:editor@soutalbalad.app" dir="ltr">editor@soutalbalad.app</a></p>
+    <p>للاستفسارات التحريرية أو الملاحظات المهنية: <span dir="ltr">تحت الإنشاء</span></p>
   </StaticPage>
 );
 
@@ -348,7 +348,7 @@ export const CorrectionsPolicyPage = () => (
     <h2>1. الإبلاغ عن خطأ</h2>
     <p>إذا اكتشفت خطأً في أي خبر أو معلومة منشورة، نرحب بإبلاغنا فورًا عبر:</p>
     <ul>
-      <li>البريد المخصص للتصحيحات: <a href="mailto:corrections@soutalbalad.app" dir="ltr">corrections@soutalbalad.app</a></li>
+      <li>البريد المخصص للتصحيحات: <span dir="ltr">تحت الإنشاء</span></li>
       <li>أو عبر <a href="/contact">نموذج التواصل الرسمي</a> مع تحديد رابط الخبر ووصف الخطأ.</li>
     </ul>
 
@@ -370,7 +370,7 @@ export const CorrectionsPolicyPage = () => (
     <p>لا نسحب الأخبار المنشورة إلا في حالات نادرة جدًا (مثل الأخبار الكاذبة الكاملة أو الأوامر القضائية). في حال السحب، يحل محل الخبر بيان توضيحي يشرح السبب.</p>
 
     <h2>5. حق الرد</h2>
-    <p>يحق لأي شخص أو جهة وردت في أحد أخبارنا الحصول على فرصة الرد. ترسل طلبات الرد على: <a href="mailto:reply@soutalbalad.app" dir="ltr">reply@soutalbalad.app</a> ويُنشر الرد بنفس مستوى البروز قدر الإمكان.</p>
+    <p>يحق لأي شخص أو جهة وردت في أحد أخبارنا الحصول على فرصة الرد. ترسل طلبات الرد على: <span dir="ltr">تحت الإنشاء</span> ويُنشر الرد بنفس مستوى البروز قدر الإمكان.</p>
 
     <h2>6. سجل التصحيحات</h2>
     <p>نحتفظ بسجل عام للتصحيحات الجوهرية للشفافية الكاملة مع جمهورنا.</p>
@@ -408,7 +408,7 @@ export const OwnershipPage = () => (
     <p>جمهورية مصر العربية.</p>
 
     <h2>للتواصل المؤسسي</h2>
-    <p>الإدارة العامة: <a href="mailto:management@soutalbalad.app" dir="ltr">management@soutalbalad.app</a></p>
+    <p>الإدارة العامة: <span dir="ltr">تحت الإنشاء</span></p>
   </StaticPage>
 );
 
