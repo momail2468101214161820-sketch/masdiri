@@ -171,8 +171,9 @@
     gap: 0.55rem;
     padding: 0.4rem 0.75rem 0.4rem 0.55rem;
     border-radius: 999px;
-    background: linear-gradient(135deg, hsl(215 78% 8% / 0.94), hsl(215 50% 18% / 0.94));
-    border: 1.5px solid hsl(var(--gold) / 0.7);
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.96), hsl(210 40% 97% / 0.96));
+    border: 1.5px solid hsl(var(--primary) / 0.5);
+
     box-shadow:
       0 10px 30px -10px hsl(215 80% 5% / 0.6),
       0 0 0 1px hsl(var(--gold) / 0.25) inset,
