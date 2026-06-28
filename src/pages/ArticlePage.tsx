@@ -522,6 +522,7 @@ const ArticlePage = () => {
 
 
             <Suspense fallback={null}>
+              <ArticleReactions articleId={article.id} />
               <RelatedArticles
                 currentId={article.id}
                 categoryId={article.category_id || null}
