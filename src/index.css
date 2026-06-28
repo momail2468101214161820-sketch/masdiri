@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* مصدري Palette: Modern Newsroom — Clean White / Deep Navy / Royal Gold */
-    --background: 210 25% 98%;       /* #FAFBFC */
-    --foreground: 213 73% 15%;       /* deep navy ink */
+    /* مصدري Palette — Royal Imperial Edition (Deep Navy + Brilliant Gold) */
+    --background: 210 25% 98%;
+    --foreground: 215 78% 10%;       /* #0a1628 deeper navy ink */
     --card: 0 0% 100%;
-    --card-foreground: 213 73% 15%;
+    --card-foreground: 215 78% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 213 73% 15%;
-    --primary: 213 73% 15%;          /* #0A2540 Deep Navy */
-    --primary-foreground: 45 60% 96%;
-    --secondary: 210 30% 96%;
-    --secondary-foreground: 213 73% 15%;
-    --muted: 210 20% 94%;
-    --muted-foreground: 213 20% 42%;
-    --accent: 46 65% 52%;            /* #D4AF37 Royal Gold */
-    --accent-foreground: 213 73% 12%;
+    --popover-foreground: 215 78% 10%;
+    --primary: 215 78% 10%;          /* #0a1628 Imperial Navy */
+    --primary-foreground: 45 78% 92%;
+    --secondary: 215 35% 96%;
+    --secondary-foreground: 215 78% 10%;
+    --muted: 215 22% 94%;
+    --muted-foreground: 215 22% 40%;
+    --accent: 44 56% 54%;            /* #c9a84c Royal Gold */
+    --accent-foreground: 215 78% 8%;
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 213 25% 88%;
-    --input: 213 25% 90%;
-    --ring: 46 65% 52%;
-    --gold: 46 65% 52%;
-    --gold-light: 46 85% 68%;
-    --gold-dark: 42 60% 38%;
-    --royal-blue: 213 73% 15%;
-    --royal-blue-light: 211 47% 43%; /* #3B6FA0 */
-    --royal-blue-dark: 215 80% 10%;
+    --border: 215 28% 86%;
+    --input: 215 28% 90%;
+    --ring: 44 56% 54%;
+    --gold: 44 56% 54%;              /* #c9a84c */
+    --gold-light: 44 82% 78%;        /* #f0d78c */
+    --gold-dark: 40 60% 36%;
+    --royal-blue: 215 50% 18%;       /* #1a2942 */
+    --royal-blue-light: 215 40% 32%;
+    --royal-blue-dark: 215 78% 8%;   /* deeper than #0a1628 */
     --radius: 0.75rem;
-    --sidebar-background: 213 73% 15%;
-    --sidebar-foreground: 45 60% 92%;
-    --sidebar-primary: 46 65% 52%;
-    --sidebar-primary-foreground: 213 73% 12%;
-    --sidebar-accent: 213 50% 22%;
-    --sidebar-accent-foreground: 46 80% 70%;
-    --sidebar-border: 213 40% 25%;
-    --sidebar-ring: 46 65% 52%;
+    --sidebar-background: 215 78% 10%;
+    --sidebar-foreground: 45 78% 92%;
+    --sidebar-primary: 44 56% 54%;
+    --sidebar-primary-foreground: 215 78% 8%;
+    --sidebar-accent: 215 50% 18%;
+    --sidebar-accent-foreground: 44 82% 78%;
+    --sidebar-border: 215 40% 22%;
+    --sidebar-ring: 44 56% 54%;
 
-    /* === Royal Gradients & Shadows === */
-    --gradient-royal: linear-gradient(135deg, hsl(213 80% 10%) 0%, hsl(213 73% 18%) 50%, hsl(211 47% 28%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(46 85% 65%) 0%, hsl(46 70% 52%) 50%, hsl(42 60% 40%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(213 73% 18% / 0.95) 0%, hsl(215 80% 8%) 70%);
-    --shadow-royal: 0 20px 50px -15px hsl(213 80% 10% / 0.45), 0 8px 20px -8px hsl(46 75% 50% / 0.22);
-    --shadow-gold-glow: 0 0 24px hsl(46 80% 55% / 0.45), 0 0 50px hsl(46 80% 55% / 0.18);
-    --shadow-elegant: 0 10px 30px -10px hsl(213 60% 12% / 0.25);
+    /* === Royal Gradients & Shadows — Imperial Edition === */
+    --gradient-royal: linear-gradient(135deg, hsl(215 78% 8%) 0%, hsl(215 60% 14%) 50%, hsl(215 40% 26%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(44 82% 72%) 0%, hsl(44 60% 52%) 50%, hsl(40 65% 38%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(215 60% 14% / 0.96) 0%, hsl(215 80% 6%) 70%);
+    --shadow-royal: 0 24px 60px -18px hsl(215 80% 6% / 0.55), 0 10px 24px -10px hsl(44 75% 50% / 0.28);
+    --shadow-gold-glow: 0 0 28px hsl(44 80% 55% / 0.55), 0 0 58px hsl(44 80% 55% / 0.22);
+    --shadow-elegant: 0 12px 32px -10px hsl(215 60% 10% / 0.3);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
