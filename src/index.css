@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* مصدري Palette: Modern Newsroom — Clean White / Deep Navy / Royal Gold */
-    --background: 210 25% 98%;       /* #FAFBFC */
-    --foreground: 213 73% 15%;       /* deep navy ink */
+    /* مصدري Palette — Royal Imperial Edition (Deep Navy + Brilliant Gold) */
+    --background: 210 25% 98%;
+    --foreground: 215 78% 10%;       /* #0a1628 deeper navy ink */
     --card: 0 0% 100%;
-    --card-foreground: 213 73% 15%;
+    --card-foreground: 215 78% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 213 73% 15%;
-    --primary: 213 73% 15%;          /* #0A2540 Deep Navy */
-    --primary-foreground: 45 60% 96%;
-    --secondary: 210 30% 96%;
-    --secondary-foreground: 213 73% 15%;
-    --muted: 210 20% 94%;
-    --muted-foreground: 213 20% 42%;
-    --accent: 46 65% 52%;            /* #D4AF37 Royal Gold */
-    --accent-foreground: 213 73% 12%;
+    --popover-foreground: 215 78% 10%;
+    --primary: 215 78% 10%;          /* #0a1628 Imperial Navy */
+    --primary-foreground: 45 78% 92%;
+    --secondary: 215 35% 96%;
+    --secondary-foreground: 215 78% 10%;
+    --muted: 215 22% 94%;
+    --muted-foreground: 215 22% 40%;
+    --accent: 44 56% 54%;            /* #c9a84c Royal Gold */
+    --accent-foreground: 215 78% 8%;
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 213 25% 88%;
-    --input: 213 25% 90%;
-    --ring: 46 65% 52%;
-    --gold: 46 65% 52%;
-    --gold-light: 46 85% 68%;
-    --gold-dark: 42 60% 38%;
-    --royal-blue: 213 73% 15%;
-    --royal-blue-light: 211 47% 43%; /* #3B6FA0 */
-    --royal-blue-dark: 215 80% 10%;
+    --border: 215 28% 86%;
+    --input: 215 28% 90%;
+    --ring: 44 56% 54%;
+    --gold: 44 56% 54%;              /* #c9a84c */
+    --gold-light: 44 82% 78%;        /* #f0d78c */
+    --gold-dark: 40 60% 36%;
+    --royal-blue: 215 50% 18%;       /* #1a2942 */
+    --royal-blue-light: 215 40% 32%;
+    --royal-blue-dark: 215 78% 8%;   /* deeper than #0a1628 */
     --radius: 0.75rem;
-    --sidebar-background: 213 73% 15%;
-    --sidebar-foreground: 45 60% 92%;
-    --sidebar-primary: 46 65% 52%;
-    --sidebar-primary-foreground: 213 73% 12%;
-    --sidebar-accent: 213 50% 22%;
-    --sidebar-accent-foreground: 46 80% 70%;
-    --sidebar-border: 213 40% 25%;
-    --sidebar-ring: 46 65% 52%;
+    --sidebar-background: 215 78% 10%;
+    --sidebar-foreground: 45 78% 92%;
+    --sidebar-primary: 44 56% 54%;
+    --sidebar-primary-foreground: 215 78% 8%;
+    --sidebar-accent: 215 50% 18%;
+    --sidebar-accent-foreground: 44 82% 78%;
+    --sidebar-border: 215 40% 22%;
+    --sidebar-ring: 44 56% 54%;
 
-    /* === Royal Gradients & Shadows === */
-    --gradient-royal: linear-gradient(135deg, hsl(213 80% 10%) 0%, hsl(213 73% 18%) 50%, hsl(211 47% 28%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(46 85% 65%) 0%, hsl(46 70% 52%) 50%, hsl(42 60% 40%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(213 73% 18% / 0.95) 0%, hsl(215 80% 8%) 70%);
-    --shadow-royal: 0 20px 50px -15px hsl(213 80% 10% / 0.45), 0 8px 20px -8px hsl(46 75% 50% / 0.22);
-    --shadow-gold-glow: 0 0 24px hsl(46 80% 55% / 0.45), 0 0 50px hsl(46 80% 55% / 0.18);
-    --shadow-elegant: 0 10px 30px -10px hsl(213 60% 12% / 0.25);
+    /* === Royal Gradients & Shadows — Imperial Edition === */
+    --gradient-royal: linear-gradient(135deg, hsl(215 78% 8%) 0%, hsl(215 60% 14%) 50%, hsl(215 40% 26%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(44 82% 72%) 0%, hsl(44 60% 52%) 50%, hsl(40 65% 38%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(215 60% 14% / 0.96) 0%, hsl(215 80% 6%) 70%);
+    --shadow-royal: 0 24px 60px -18px hsl(215 80% 6% / 0.55), 0 10px 24px -10px hsl(44 75% 50% / 0.28);
+    --shadow-gold-glow: 0 0 28px hsl(44 80% 55% / 0.55), 0 0 58px hsl(44 80% 55% / 0.22);
+    --shadow-elegant: 0 12px 32px -10px hsl(215 60% 10% / 0.3);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -125,30 +125,114 @@
     box-shadow: 0 4px 24px -6px hsl(var(--gold) / 0.35), 0 0 0 1px hsl(var(--gold) / 0.15) inset;
   }
 
-  /* === 3D Logo with Shimmer === */
+  /* === 3D Logo with Shimmer — Imperial === */
   .logo-3d {
     position: relative;
-    filter: drop-shadow(0 6px 10px hsl(var(--gold) / 0.45)) drop-shadow(0 2px 3px hsl(220 60% 5% / 0.4));
+    filter:
+      drop-shadow(0 8px 14px hsl(var(--gold) / 0.55))
+      drop-shadow(0 3px 5px hsl(215 80% 5% / 0.55));
     transform: translateZ(0);
-    transition: transform .35s ease;
-    animation: logo-rotate 18s linear infinite;
+    transition: transform .35s ease, filter .35s ease;
+    animation: logo-rotate 14s linear infinite;
+    outline: 2px solid hsl(var(--gold) / 0.6);
+    outline-offset: 2px;
+    box-shadow:
+      inset 0 0 0 2px hsl(var(--gold-light) / 0.7),
+      0 0 24px hsl(var(--gold) / 0.45);
   }
   .logo-3d::after {
     content: '';
     position: absolute; inset: 0; border-radius: inherit;
-    background: linear-gradient(115deg, transparent 30%, hsl(var(--gold-light) / 0.85) 50%, transparent 70%);
+    background: linear-gradient(115deg, transparent 28%, hsl(var(--gold-light) / 0.95) 50%, transparent 72%);
     mix-blend-mode: overlay;
+    animation: logo-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .logo-3d:hover {
+    transform: translateY(-3px) scale(1.06);
+    filter: drop-shadow(0 12px 22px hsl(var(--gold) / 0.75)) drop-shadow(0 4px 8px hsl(215 80% 5% / 0.6));
+  }
+  @keyframes logo-rotate {
+    0%,100% { transform: rotateY(0deg) rotateZ(0deg); }
+    50%     { transform: rotateY(18deg) rotateZ(-2deg); }
+  }
+  @keyframes logo-shimmer {
+    0%, 75%, 100% { opacity: 0; transform: translateX(-100%); }
+    82%, 92%      { opacity: 1; transform: translateX(100%); }
+  }
+
+  /* === Founder Signature Badge — يظهر في كل صفحة === */
+  .founder-sig {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.75rem 0.4rem 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, hsl(215 78% 8% / 0.94), hsl(215 50% 18% / 0.94));
+    border: 1.5px solid hsl(var(--gold) / 0.7);
+    box-shadow:
+      0 10px 30px -10px hsl(215 80% 5% / 0.6),
+      0 0 0 1px hsl(var(--gold) / 0.25) inset,
+      0 0 24px -4px hsl(var(--gold) / 0.45);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    max-width: min(78vw, 280px);
+  }
+  .founder-sig:hover {
+    transform: translateY(-3px);
+    border-color: hsl(var(--gold));
+    box-shadow:
+      0 16px 40px -12px hsl(215 80% 5% / 0.7),
+      0 0 0 1px hsl(var(--gold) / 0.4) inset,
+      0 0 36px -4px hsl(var(--gold) / 0.7);
+  }
+  .founder-sig__crest {
+    flex: 0 0 auto;
+    width: 34px; height: 34px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 999px;
+    background: var(--gradient-gold);
+    color: hsl(var(--royal-blue-dark));
+    font-family: 'Amiri', serif;
+    font-weight: 900;
+    font-size: 1.05rem;
+    box-shadow:
+      inset 0 0 0 1.5px hsl(var(--gold-light) / 0.8),
+      0 4px 10px -2px hsl(215 80% 5% / 0.55);
+    position: relative;
+    overflow: hidden;
+  }
+  .founder-sig__crest::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(115deg, transparent 30%, hsl(0 0% 100% / 0.6) 50%, transparent 70%);
     animation: logo-shimmer 5s ease-in-out infinite;
     pointer-events: none;
   }
-  .logo-3d:hover { transform: translateY(-2px) scale(1.04); }
-  @keyframes logo-rotate {
-    0%,100% { transform: rotateY(0deg); }
-    50%     { transform: rotateY(12deg); }
+  .founder-sig__text {
+    display: flex; flex-direction: column; line-height: 1.05;
+    min-width: 0;
   }
-  @keyframes logo-shimmer {
-    0%, 80%, 100% { opacity: 0; transform: translateX(-100%); }
-    85%, 95%      { opacity: 1; transform: translateX(100%); }
+  .founder-sig__line1 {
+    font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em;
+    color: hsl(var(--gold-light));
+    text-transform: none;
+    opacity: 0.85;
+  }
+  .founder-sig__line2 {
+    font-family: 'Amiri', serif;
+    font-size: 13.5px; font-weight: 900;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media (max-width: 480px) {
+    .founder-sig { padding: 0.32rem 0.6rem 0.32rem 0.42rem; max-width: 72vw; }
+    .founder-sig__crest { width: 28px; height: 28px; font-size: 0.95rem; }
+    .founder-sig__line2 { font-size: 12px; }
+    .founder-sig__line1 { font-size: 9px; }
   }
 
   /* === Digital Seal of Authenticity === */
