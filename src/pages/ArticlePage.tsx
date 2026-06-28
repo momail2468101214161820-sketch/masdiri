@@ -584,6 +584,7 @@ const ArticlePage = () => {
       </main>
       
       <Suspense fallback={null}>
+        <ReadingProgress />
         <FloatingShareBar title={article.title} url={`${window.location.origin}${article.short_id ? `/${article.short_id}` : `/article/${article.id}`}`} onShareImage={handleGenerateCard} />
         {cardOpen && (
           <ShareImageCard
