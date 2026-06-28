@@ -72,27 +72,59 @@
   }
   .section-divider { @apply border-t-2 border-foreground; }
 
-  /* === Golden Circle Icon Badge === */
+  /* === Professional Icon Badge — refined, layered, tactile === */
   .icon-circle-gold {
     @apply inline-flex items-center justify-center rounded-full;
-    width: 2.5rem; height: 2.5rem;
-    color: hsl(var(--gold-dark));
-    background: hsl(var(--background));
-    border: 1.5px solid hsl(var(--gold) / 0.7);
+    position: relative;
+    width: 2.75rem; height: 2.75rem;
+    color: hsl(var(--primary));
+    background:
+      radial-gradient(circle at 30% 25%, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 55%, hsl(210 30% 94%) 100%);
+    border: 1px solid hsl(220 13% 86%);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100%),
+      inset 0 -1px 0 hsl(220 15% 90%),
+      0 1px 2px hsl(222 47% 11% / 0.06),
+      0 4px 10px -4px hsl(222 47% 11% / 0.08);
     transition: var(--transition-smooth);
   }
+  .icon-circle-gold::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: inherit;
+    background: linear-gradient(180deg, hsl(0 0% 100% / 0.6), transparent 45%);
+    pointer-events: none;
+  }
+  .icon-circle-gold > * { position: relative; z-index: 1; stroke-width: 1.75; }
   .icon-circle-gold:hover {
-    color: hsl(var(--primary-foreground));
-    background: var(--gradient-gold);
-    border-color: hsl(var(--gold));
-    box-shadow: var(--shadow-gold-glow);
+    color: hsl(var(--gold-dark));
+    border-color: hsl(var(--gold) / 0.55);
+    background:
+      radial-gradient(circle at 30% 25%, hsl(45 100% 96%) 0%, hsl(45 90% 90%) 60%, hsl(42 80% 82%) 100%);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100%),
+      0 2px 6px hsl(42 78% 50% / 0.18),
+      0 10px 22px -8px hsl(42 78% 50% / 0.35);
     transform: translateY(-2px);
   }
   .icon-circle-gold[data-active="true"] {
-    background: var(--gradient-royal);
-    color: hsl(var(--gold-light));
-    border-color: hsl(var(--gold));
+    color: hsl(0 0% 100%);
+    border-color: transparent;
+    background: linear-gradient(160deg, hsl(222 47% 22%) 0%, hsl(222 47% 14%) 55%, hsl(222 50% 9%) 100%);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.12),
+      inset 0 0 0 1px hsl(var(--gold) / 0.35),
+      0 6px 16px -6px hsl(222 47% 11% / 0.45),
+      0 0 0 3px hsl(var(--gold) / 0.10);
   }
+  .icon-circle-gold[data-active="true"]::after {
+    content: '';
+    position: absolute; left: 50%; bottom: -7px;
+    transform: translateX(-50%);
+    width: 5px; height: 5px; border-radius: 999px;
+    background: hsl(var(--gold));
+    box-shadow: 0 0 8px hsl(var(--gold) / 0.8);
+  }
+
 
   /* === Glassmorphism Header === */
   .glass-header {
