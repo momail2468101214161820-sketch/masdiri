@@ -57,9 +57,11 @@ const ArticleCard = ({
           <WatermarkedImage
             src={src}
             alt={title}
+            title={title}
+            hideTitle
             imgClassName={`absolute inset-0 w-full h-full transition-transform duration-[1200ms] group-hover:scale-105 ${objectMode ? "object-cover object-center" : "object-contain p-12"}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
           <div className="absolute top-3 left-3 z-10">
             <BookmarkButton id={id} title={title} image_url={image_url} />
           </div>
