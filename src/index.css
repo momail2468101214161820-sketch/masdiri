@@ -6,78 +6,53 @@
 
 @layer base {
   :root {
-    /* === Royal Navy + Gold === */
-    --background: 222 60% 7%;             /* Deep royal navy */
-    --foreground: 45 70% 92%;             /* Warm cream/gold text */
-    --card: 222 55% 10%;
-    --card-foreground: 45 70% 92%;
-    --popover: 222 55% 10%;
-    --popover-foreground: 45 70% 92%;
-    --primary: 45 70% 53%;                /* Royal gold */
-    --primary-foreground: 222 60% 8%;
-    --secondary: 218 45% 18%;
-    --secondary-foreground: 45 70% 90%;
-    --muted: 222 35% 15%;
-    --muted-foreground: 45 25% 70%;
-    --accent: 45 70% 53%;
-    --accent-foreground: 222 60% 8%;
-    --destructive: 0 75% 50%;
+    /* === Editorial White + News Red + Deep Navy (Fixed, no dark mode) === */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 8%;             /* Deep navy near-black */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 8%;
+    --primary: 0 72% 48%;                  /* News red */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 222 15% 40%;
+    --accent: 0 72% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 100%;
-    --border: 218 40% 22%;
-    --input: 218 40% 22%;
-    --ring: 45 70% 53%;
-    --gold: 45 70% 53%;
-    --gold-light: 45 85% 70%;
-    --gold-dark: 38 65% 40%;
-    --royal-blue: 218 55% 25%;
-    --royal-blue-light: 215 50% 38%;
-    --royal-blue-dark: 222 60% 8%;
+    --border: 220 13% 88%;
+    --input: 220 13% 90%;
+    --ring: 0 72% 48%;
+    --gold: 0 72% 48%;
+    --gold-light: 0 80% 62%;
+    --gold-dark: 0 75% 38%;
+    --royal-blue: 222 47% 11%;
+    --royal-blue-light: 222 40% 25%;
+    --royal-blue-dark: 222 47% 8%;
     --radius: 0.75rem;
-    --sidebar-background: 222 60% 7%;
-    --sidebar-foreground: 45 60% 88%;
-    --sidebar-primary: 45 70% 53%;
-    --sidebar-primary-foreground: 222 60% 8%;
-    --sidebar-accent: 218 45% 16%;
-    --sidebar-accent-foreground: 45 80% 65%;
-    --sidebar-border: 218 40% 22%;
-    --sidebar-ring: 45 70% 53%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 0 72% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 0 72% 42%;
+    --sidebar-border: 220 13% 88%;
+    --sidebar-ring: 0 72% 48%;
 
-    /* === Royal Gradients & Glowing Shadows === */
-    --gradient-royal: linear-gradient(135deg, hsl(222 60% 7%) 0%, hsl(218 55% 14%) 50%, hsl(215 50% 22%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 85% 65%) 0%, hsl(45 70% 53%) 50%, hsl(38 65% 40%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(218 55% 18%) 0%, hsl(222 60% 7%) 70%);
-    --shadow-royal: 0 20px 50px -20px hsl(222 60% 4% / 0.6), 0 8px 20px -10px hsl(45 70% 53% / 0.15);
-    --shadow-gold-glow: 0 0 24px hsl(45 70% 53% / 0.5), 0 0 50px hsl(45 70% 53% / 0.25);
-    --shadow-elegant: 0 10px 28px -12px hsl(222 60% 4% / 0.5);
+    /* === Editorial Gradients & Shadows === */
+    --gradient-royal: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 50%, hsl(0 0% 96%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(0 80% 58%) 0%, hsl(0 72% 48%) 50%, hsl(0 75% 38%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(0 60% 97%) 0%, hsl(0 0% 100%) 70%);
+    --shadow-royal: 0 20px 50px -20px hsl(222 47% 11% / 0.18), 0 8px 20px -10px hsl(222 47% 11% / 0.08);
+    --shadow-gold-glow: 0 0 24px hsl(0 72% 48% / 0.30), 0 0 50px hsl(0 72% 48% / 0.12);
+    --shadow-elegant: 0 10px 28px -12px hsl(222 47% 11% / 0.15);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
-
-
-  .dark {
-    --background: 222 70% 6%;
-    --foreground: 45 60% 92%;
-    --card: 222 60% 10%;
-    --card-foreground: 45 60% 92%;
-    --popover: 222 60% 10%;
-    --popover-foreground: 45 60% 92%;
-    --primary: 45 75% 55%;           /* Gold becomes primary in dark */
-    --primary-foreground: 222 70% 8%;
-    --secondary: 222 40% 15%;
-    --secondary-foreground: 45 60% 88%;
-    --muted: 222 30% 14%;
-    --muted-foreground: 45 20% 65%;
-    --accent: 0 75% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 222 40% 18%;
-    --input: 222 40% 18%;
-    --ring: 45 75% 55%;
-    --gold: 45 80% 60%;
-    --gold-light: 48 92% 75%;
-    --gold-dark: 38 70% 42%;
-  }
 }
+
 
 @layer base {
   * { @apply border-border; }
