@@ -12,7 +12,7 @@ import "./index.css";
 import "./styles/editorial.css";
 
 createRoot(document.getElementById("root")!).render(
- <HelmetProvider>
- <App />
- </HelmetProvider>
+  <HelmetProvider>
+    <App />
+  </HelmetProvider>
 );

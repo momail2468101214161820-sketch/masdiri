@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=index</loc></sitemap>
- <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap</loc></sitemap>
- <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=news</loc></sitemap>
- <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=image</loc></sitemap>
+  <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=index</loc></sitemap>
+  <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap</loc></sitemap>
+  <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=news</loc></sitemap>
+  <sitemap><loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=image</loc></sitemap>
 </sitemapindex>

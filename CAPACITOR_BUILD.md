@@ -53,9 +53,9 @@ npx cap open android
 1. انتظر اكتمال Gradle Sync (أول مرة قد تستغرق دقائق).
 2. من القائمة العلوية: **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
 3. عند اكتمال البناء، اضغط **locate** في الإشعار. ستجد الملف في:
- ```
- android/app/build/outputs/apk/debug/app-debug.apk
- ```
+   ```
+   android/app/build/outputs/apk/debug/app-debug.apk
+   ```
 4. انقل هذا الملف إلى أي هاتف أندرويد وافتحه للتثبيت (فعّل "تثبيت من مصادر غير معروفة").
 
 ### 5) (اختياري) APK موقّع للتوزيع / Play Store
@@ -67,9 +67,9 @@ npx cap open android
 3. أنشئ **Keystore جديد** (احفظه! ستحتاجه لكل تحديث) → املأ البيانات
 4. اختر **release** → اضغط **Finish**
 5. الملف الناتج:
- ```
- android/app/build/outputs/apk/release/app-release.apk
- ```
+   ```
+   android/app/build/outputs/apk/release/app-release.apk
+   ```
 
 ---
 
@@ -86,18 +86,18 @@ npx cap run android
 
 - `capacitor.config.ts` مُهيّأ بـ **Hot-Reload مباشر** من سيرفر Lovable — أي تعديل تنشره في Lovable يظهر فوراً في التطبيق المثبّت على الموبايل دون إعادة بناء.
 - لو أردت تطبيقاً يعمل **بدون إنترنت** (يحمل ويب التطبيق داخل APK)، احذف قسم `server` من `capacitor.config.ts` ثم أعد:
- ```bash
- npm run build && npx cap sync android
- ```
+  ```bash
+  npm run build && npx cap sync android
+  ```
 - لتغيير الأيقونة وشاشة البداية: ضع الصور في `android/app/src/main/res/` أو استخدم:
- ```bash
- npm i -D @capacitor/assets
- npx capacitor-assets generate --android
- ```
+  ```bash
+  npm i -D @capacitor/assets
+  npx capacitor-assets generate --android
+  ```
 - بعد أي تحديث للأكواد:
- ```bash
- git pull && npm install && npm run build && npx cap sync
- ```
+  ```bash
+  git pull && npm install && npm run build && npx cap sync
+  ```
 
 ---
 

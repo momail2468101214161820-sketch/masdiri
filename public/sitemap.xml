@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Static fallback. The authoritative live sitemap is the dynamic edge function below,
- which is regenerated continuously and covers every article, category, tag,
- governorate, and collection page. -->
+     which is regenerated continuously and covers every article, category, tag,
+     governorate, and collection page. -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- <sitemap>
- <loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=index</loc>
- </sitemap>
- <sitemap>
- <loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap</loc>
- </sitemap>
- <sitemap>
- <loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=news</loc>
- </sitemap>
+  <sitemap>
+    <loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=index</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://texdxiafabzbampcswsn.supabase.co/functions/v1/dynamic-sitemap?type=news</loc>
+  </sitemap>
 </sitemapindex>
