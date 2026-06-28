@@ -23,6 +23,7 @@ const ArticleComments = lazy(() => import("@/components/ArticleComments"));
 const FloatingShareBar = lazy(() => import("@/components/FloatingShareBar"));
 const ShareImageCard = lazy(() => import("@/components/ShareImageCard"));
 const ReadingProgress = lazy(() => import("@/components/ReadingProgress"));
+const ArticleReactions = lazy(() => import("@/components/ArticleReactions"));
 
 
 type ArticleImage = string | { url: string; position: "start" | "middle" | "end" };
@@ -522,6 +523,7 @@ const ArticlePage = () => {
 
 
             <Suspense fallback={null}>
+              <ArticleReactions articleId={article.id} />
               <RelatedArticles
                 currentId={article.id}
                 categoryId={article.category_id || null}
