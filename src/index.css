@@ -6,50 +6,51 @@
 
 @layer base {
   :root {
-    /* مصدري Palette — Logo-Derived (Black + White + Crimson Red) */
-    --background: 30 20% 98%;        /* warm off-white, easier on eyes */
-    --foreground: 0 0% 12%;          /* softened from pure black */
+    /* مصدري Palette — Logo-Derived (Navy #0c1a3a + Crimson #d4202a + White) */
+    --background: 30 25% 98%;        /* warm off-white */
+    --foreground: 222 50% 12%;       /* deep navy ink */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 222 50% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 30 16% 95%;
-    --secondary-foreground: 0 0% 12%;
-    --muted: 30 14% 93%;
-    --muted-foreground: 0 0% 38%;
-    --accent: 224 76% 40%;           /* Royal Blue #1e40af */
+    --popover-foreground: 222 50% 12%;
+    --primary: 222 66% 14%;          /* Navy #0c1a3a */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 30% 95%;
+    --secondary-foreground: 222 50% 12%;
+    --muted: 222 20% 93%;
+    --muted-foreground: 222 18% 38%;
+    --accent: 357 74% 48%;           /* Crimson #d4202a */
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 75% 48%;
+    --destructive: 357 78% 45%;
     --destructive-foreground: 0 0% 100%;
-    --border: 30 14% 86%;
-    --input: 30 14% 90%;
-    --ring: 224 76% 40%;
-    --gold: 224 76% 40%;             /* alias → royal blue */
-    --gold-light: 217 91% 68%;       /* #60a5fa */
-    --gold-dark: 224 76% 28%;
-    --royal-blue: 0 0% 10%;
-    --royal-blue-light: 0 0% 22%;
-    --royal-blue-dark: 0 0% 4%;
+    --border: 222 20% 86%;
+    --input: 222 20% 90%;
+    --ring: 357 74% 48%;
+    --gold: 357 74% 48%;             /* alias → crimson red */
+    --gold-light: 355 80% 62%;
+    --gold-dark: 357 80% 38%;
+    --royal-blue: 222 66% 14%;
+    --royal-blue-light: 224 64% 28%;
+    --royal-blue-dark: 222 70% 8%;
     --radius: 0.75rem;
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 30 20% 96%;
-    --sidebar-primary: 224 76% 40%;
+    --sidebar-background: 222 66% 14%;
+    --sidebar-foreground: 30 25% 96%;
+    --sidebar-primary: 357 74% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 14%;
-    --sidebar-accent-foreground: 217 91% 68%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 224 76% 40%;
+    --sidebar-accent: 222 50% 20%;
+    --sidebar-accent-foreground: 355 80% 70%;
+    --sidebar-border: 222 50% 22%;
+    --sidebar-ring: 357 74% 48%;
 
-    /* === Harmonized Gradients & Shadows — Paper / Ink / Royal Blue === */
-    --gradient-royal: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 14%) 50%, hsl(224 60% 28%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 76% 40%) 50%, hsl(224 76% 28%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(0 0% 12% / 0.96) 0%, hsl(0 0% 4%) 70%);
-    --shadow-royal: 0 24px 60px -18px hsl(0 0% 0% / 0.45), 0 10px 24px -10px hsl(224 76% 40% / 0.28);
-    --shadow-gold-glow: 0 0 24px hsl(224 80% 50% / 0.45), 0 0 50px hsl(224 80% 50% / 0.18);
-    --shadow-elegant: 0 12px 32px -10px hsl(0 0% 0% / 0.22);
+    /* === Harmonized Gradients & Shadows — Navy / White / Crimson === */
+    --gradient-royal: linear-gradient(135deg, hsl(222 70% 10%) 0%, hsl(222 66% 16%) 50%, hsl(224 60% 24%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(355 80% 58%) 0%, hsl(357 74% 48%) 50%, hsl(357 80% 38%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(222 66% 14% / 0.96) 0%, hsl(222 70% 8%) 70%);
+    --shadow-royal: 0 24px 60px -18px hsl(222 70% 6% / 0.45), 0 10px 24px -10px hsl(357 74% 48% / 0.28);
+    --shadow-gold-glow: 0 0 24px hsl(357 80% 52% / 0.45), 0 0 50px hsl(357 80% 52% / 0.18);
+    --shadow-elegant: 0 12px 32px -10px hsl(222 70% 6% / 0.22);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
   }
 
   .dark {
@@ -362,7 +363,7 @@
 
   /* Gold shimmering text */
   .text-gold-shine {
-    background: linear-gradient(100deg, hsl(224 76% 38%) 0%, hsl(217 91% 70%) 30%, hsl(224 76% 32%) 50%, hsl(217 91% 70%) 70%, hsl(224 76% 38%) 100%);
+    background: linear-gradient(100deg, hsl(355 80% 56%) 0%, hsl(355 90% 72%) 30%, hsl(357 80% 44%) 50%, hsl(355 90% 72%) 70%, hsl(355 80% 56%) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
