@@ -101,6 +101,7 @@ const App = () => {
           <MobileBottomNav />
           <DesktopSideRail />
           <MandatoryOnboarding />
+          <FounderSignature />
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
