@@ -7,48 +7,49 @@
 @layer base {
   :root {
     /* مصدري Palette — Light & Clean (White + Black + Crimson) */
-    --background: 220 20% 99%;        /* airy off-white with a hint of cool */
-    --foreground: 220 15% 25%;        /* soft slate ink, not pure black */
+    /* === Warm Desert Sand Palette — Cream #FDFBF7 + Deep Petroleum #083344 + Stone === */
+    --background: 38 50% 98%;          /* #FDFBF7 warm cream */
+    --foreground: 30 8% 15%;           /* stone-900 ink */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 30 8% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
-    --primary: 220 15% 30%;           /* soft slate */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 25% 97%;
-    --secondary-foreground: 220 15% 30%;
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 10% 50%;
-    --accent: 220 15% 30%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 60% 60%;
+    --popover-foreground: 30 8% 15%;
+    --primary: 196 79% 15%;            /* #083344 deep petroleum */
+    --primary-foreground: 38 50% 98%;
+    --secondary: 36 27% 94%;           /* #F5F2EC warm sand surface */
+    --secondary-foreground: 30 10% 20%;
+    --muted: 36 22% 95%;
+    --muted-foreground: 30 6% 42%;
+    --accent: 196 79% 15%;             /* same deep petroleum for accents */
+    --accent-foreground: 38 50% 98%;
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 18% 92%;
-    --input: 220 18% 95%;
-    --ring: 220 15% 60%;
-    --gold: 220 15% 55%;
-    --gold-light: 220 15% 75%;
-    --gold-dark: 220 15% 35%;
-    --royal-blue: 220 15% 30%;
-    --royal-blue-light: 220 15% 55%;
-    --royal-blue-dark: 220 15% 20%;
+    --border: 30 14% 88%;              /* stone-200 */
+    --input: 30 14% 92%;
+    --ring: 196 79% 25%;
+    --gold: 196 79% 25%;
+    --gold-light: 195 60% 45%;
+    --gold-dark: 196 85% 12%;
+    --royal-blue: 196 79% 15%;
+    --royal-blue-light: 196 60% 28%;
+    --royal-blue-dark: 196 85% 10%;
     --radius: 0.75rem;
-    --sidebar-background: 220 20% 98%;
-    --sidebar-foreground: 220 15% 30%;
-    --sidebar-primary: 220 15% 30%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 94%;
-    --sidebar-accent-foreground: 220 15% 25%;
-    --sidebar-border: 220 18% 90%;
-    --sidebar-ring: 220 15% 60%;
+    --sidebar-background: 38 50% 98%;
+    --sidebar-foreground: 30 8% 20%;
+    --sidebar-primary: 196 79% 15%;
+    --sidebar-primary-foreground: 38 50% 98%;
+    --sidebar-accent: 36 27% 94%;
+    --sidebar-accent-foreground: 196 79% 15%;
+    --sidebar-border: 30 14% 88%;
+    --sidebar-ring: 196 79% 25%;
 
-    /* === Soft Light Gradients & Shadows === */
-    --gradient-royal: linear-gradient(135deg, hsl(220 18% 96%) 0%, hsl(220 22% 98%) 50%, hsl(0 0% 100%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(220 15% 55%) 0%, hsl(220 15% 40%) 50%, hsl(220 15% 30%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(220 25% 98%) 0%, hsl(220 20% 95%) 70%);
-    --shadow-royal: 0 18px 50px -20px hsl(220 30% 30% / 0.18), 0 6px 18px -8px hsl(220 30% 30% / 0.10);
-    --shadow-gold-glow: 0 0 24px hsl(220 30% 60% / 0.18), 0 0 50px hsl(220 30% 60% / 0.08);
-    --shadow-elegant: 0 10px 28px -12px hsl(220 30% 30% / 0.12);
+    /* === Warm Sand Gradients & Shadows === */
+    --gradient-royal: linear-gradient(135deg, hsl(196 85% 10%) 0%, hsl(196 79% 15%) 50%, hsl(196 60% 22%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(196 60% 28%) 0%, hsl(196 79% 18%) 50%, hsl(196 85% 12%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(36 27% 96%) 0%, hsl(38 50% 98%) 70%);
+    --shadow-royal: 0 20px 50px -20px hsl(196 85% 12% / 0.25), 0 8px 20px -10px hsl(196 85% 12% / 0.12);
+    --shadow-gold-glow: 0 0 24px hsl(196 60% 30% / 0.20), 0 0 50px hsl(196 60% 30% / 0.08);
+    --shadow-elegant: 0 10px 28px -12px hsl(196 85% 12% / 0.15);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
   }
