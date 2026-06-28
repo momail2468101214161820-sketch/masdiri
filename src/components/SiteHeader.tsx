@@ -170,29 +170,79 @@ const SiteHeader = () => {
         </div>
       </div>
 
+      {/* Gradient primary nav */}
       <nav className="bg-royal-gradient border-y border-[hsl(var(--gold)/0.55)] shadow-elegant">
-        <div className="container hidden md:flex items-center gap-1">
-          {categories.map((cat) => {
-            const active = location.pathname === cat.slug;
-            return (
-              <Link
-                key={cat.slug}
-                to={cat.slug}
-                className={`relative px-5 py-3 text-sm font-bold transition-smooth ${
-                  active ? "text-gold-shine" : "text-primary-foreground/90 hover:text-[hsl(var(--gold-light))]"
-                }`}
-              >
-                {cat.name}
-                <span
-                  className={`absolute bottom-0 right-1/2 translate-x-1/2 h-[2px] bg-gold-gradient rounded-full transition-all duration-300 ${
-                    active ? "w-2/3 shadow-gold-glow" : "w-0"
+        <div className="container hidden md:flex items-center justify-between gap-1">
+          <div className="flex items-center">
+            {categories.map((cat) => {
+              const active = location.pathname === cat.slug;
+              const Icon = cat.icon;
+              return (
+                <Link
+                  key={cat.slug}
+                  to={cat.slug}
+                  className={`relative flex items-center gap-2 px-4 py-3 text-sm font-bold transition-smooth ${
+                    active ? "text-gold-shine" : "text-primary-foreground/90 hover:text-[hsl(var(--gold-light))]"
                   }`}
-                />
-              </Link>
-            );
-          })}
+                >
+                  <Icon size={16} className={active ? "text-[hsl(var(--gold))]" : "opacity-80"} />
+                  <span>{cat.name}</span>
+                  <span
+                    className={`absolute bottom-0 right-1/2 translate-x-1/2 h-[2px] bg-gold-gradient rounded-full transition-all duration-300 ${
+                      active ? "w-2/3 shadow-gold-glow" : "w-0"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+          <Link
+            to="/results/prep"
+            className="hidden lg:flex items-center gap-2 mr-2 px-4 py-1.5 rounded-full bg-gold-gradient text-primary text-xs font-black shadow-gold-glow hover:scale-105 transition-transform"
+          >
+            <Radio size={14} className="animate-pulse" />
+            <span>نتيجة الإعدادية</span>
+          </Link>
         </div>
       </nav>
+
+      {/* Professional icon strip (desktop) */}
+      <div className="hidden md:block bg-background/95 backdrop-blur-sm border-b border-[hsl(var(--gold)/0.25)]">
+        <div className="container py-3 overflow-x-auto">
+          <ul className="flex items-center justify-between min-w-max gap-3 lg:gap-4">
+            {categories.map((cat) => {
+              const active = location.pathname === cat.slug;
+              const Icon = cat.icon;
+              return (
+                <li key={`icon-${cat.slug}`}>
+                  <Link
+                    to={cat.slug}
+                    className="group flex flex-col items-center gap-1.5"
+                  >
+                    <span
+                      className={`w-12 h-12 rounded-2xl flex items-center justify-center border transition-all duration-300 ${
+                        active
+                          ? "bg-gold-gradient text-primary border-[hsl(var(--gold))] shadow-gold-glow"
+                          : "bg-card text-[hsl(var(--primary))] border-[hsl(var(--gold)/0.3)] group-hover:bg-royal-gradient group-hover:text-[hsl(var(--gold-light))] group-hover:border-[hsl(var(--gold))] group-hover:shadow-gold-glow"
+                      }`}
+                    >
+                      <Icon size={20} strokeWidth={2.2} />
+                    </span>
+                    <span
+                      className={`text-[11px] font-black tracking-tight ${
+                        active ? "text-[hsl(var(--gold))]" : "text-[hsl(var(--primary))] group-hover:text-[hsl(var(--gold))]"
+                      }`}
+                      style={{ fontFamily: "'Cairo', sans-serif" }}
+                    >
+                      {cat.name}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     </header>
   );
 };
