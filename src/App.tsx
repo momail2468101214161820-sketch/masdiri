@@ -96,7 +96,7 @@ const App = () => {
           </Routes>
         </Suspense>
         <Suspense fallback={null}>
-          <FloatingWhatsApp />
+          
           <MobileBottomNav />
           <DesktopSideRail />
           <MandatoryOnboarding />
