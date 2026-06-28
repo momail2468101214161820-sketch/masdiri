@@ -20,11 +20,11 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>الصفحة غير موجودة (404) — صوت البلد</title>
-        <meta name="description" content="عذراً، الصفحة التي تبحث عنها غير موجودة على موقع صوت البلد. عُد للرئيسية لتصفح آخر الأخبار." />
+        <title>الصفحة غير موجودة (404) — مصدري</title>
+        <meta name="description" content="عذراً، الصفحة التي تبحث عنها غير موجودة على موقع مصدري. عُد للرئيسية لتصفح آخر الأخبار." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={`https://soutalbalad.lovable.app${location.pathname}`} />
-        <meta property="og:title" content="الصفحة غير موجودة — صوت البلد" />
+        <meta property="og:title" content="الصفحة غير موجودة — مصدري" />
         <meta property="og:description" content="الصفحة المطلوبة غير متاحة." />
         <meta property="og:url" content={`https://soutalbalad.lovable.app${location.pathname}`} />
       </Helmet>

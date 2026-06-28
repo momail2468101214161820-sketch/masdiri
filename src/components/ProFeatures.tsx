@@ -138,7 +138,7 @@ export const SelectionShare = () => {
   }, []);
   if (!sel) return null;
   const share = async () => {
-    const text = `"${sel.text}" — صوت البلد ${window.location.href}`;
+    const text = `"${sel.text}" — مصدري ${window.location.href}`;
     try { await navigator.clipboard.writeText(text); toast.success("تم نسخ الاقتباس"); } catch {}
     setSel(null);
   };
@@ -188,7 +188,7 @@ export const ArticleReactions = ({ articleId }: { articleId: string }) => {
 /* 10. Copy as Markdown for the current article element */
 export const CopyAsMarkdown = ({ title, url }: { title: string; url?: string }) => {
   const copy = async () => {
-    const md = `# ${title}\n\n${url || window.location.href}\n\n— صوت البلد`;
+    const md = `# ${title}\n\n${url || window.location.href}\n\n— مصدري`;
     await navigator.clipboard.writeText(md);
     toast.success("تم النسخ كـ Markdown");
   };
@@ -297,7 +297,7 @@ export const CookieConsent = () => {
       <Sparkles size={18} style={{ color: "hsl(var(--gold))" }} className="shrink-0 mt-0.5" />
       <div className="flex-1">
         <p className="font-semibold mb-1">نستخدم ملفات تعريف الارتباط</p>
-        <p className="text-xs text-muted-foreground">لتحسين تجربتك على صوت البلد. باستخدامك للموقع فأنت توافق على ذلك.</p>
+        <p className="text-xs text-muted-foreground">لتحسين تجربتك على مصدري. باستخدامك للموقع فأنت توافق على ذلك.</p>
       </div>
       <button onClick={() => { localStorage.setItem("sb-cookies-ok", "1"); setShow(false); }}
         className="shrink-0 px-3 py-1.5 rounded-full text-xs font-bold"

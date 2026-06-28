@@ -20,7 +20,7 @@ const NewsletterInline = () => {
     }
     setDone(true);
     setEmail("");
-    toast.success("تم الاشتراك في نشرة صوت البلد");
+    toast.success("تم الاشتراك في نشرة مصدري");
   };
 
   return (

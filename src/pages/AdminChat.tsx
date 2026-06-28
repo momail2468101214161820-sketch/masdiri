@@ -148,8 +148,8 @@ const AdminChat = ({ embedded = false }: { embedded?: boolean } = {}) => {
     <>
       {!embedded && (
         <Helmet>
-          <title>المساعد التحريري الذكي — صوت البلد</title>
-          <meta name="description" content="غرفة الأخبار الذكية لصوت البلد — صياغة ونشر فوري للأخبار بأسلوب رسمي." />
+          <title>المساعد التحريري الذكي — مصدري</title>
+          <meta name="description" content="غرفة الأخبار الذكية لمصدري — صياغة ونشر فوري للأخبار بأسلوب رسمي." />
           <meta name="robots" content="noindex, nofollow" />
           <link rel="canonical" href="https://soutalbalad.lovable.app/admin/chat" />
         </Helmet>

@@ -61,7 +61,7 @@ const UtilityBar = () => {
             </Group>
             <Group icon={<Share2 size={11} />} title="الإجراءات">
               <CopyLinkButton />
-              <NativeShareButton title="صوت البلد" />
+              <NativeShareButton title="مصدري" />
               <BookmarkChip />
               <NotificationBell />
               <VoiceSearchButton />

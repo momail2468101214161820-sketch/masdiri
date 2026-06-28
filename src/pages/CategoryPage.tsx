@@ -69,8 +69,8 @@ const CategoryPage = () => {
   }, [slug]);
 
   const catName = categoryNames[slug!] || slug || "قسم";
-  const catTitle = `${catName} | صوت البلد`;
-  const catDesc = `أحدث أخبار ${catName} من صوت البلد — تغطية متجددة، تحليلات وتقارير حصرية حول ${catName} في مصر والعالم.`;
+  const catTitle = `${catName} | مصدري`;
+  const catDesc = `أحدث أخبار ${catName} من مصدري — تغطية متجددة، تحليلات وتقارير حصرية حول ${catName} في مصر والعالم.`;
   const catUrl = `${SITE_URL}/category/${slug}`;
 
   return (
@@ -85,13 +85,13 @@ const CategoryPage = () => {
         <meta property="og:title" content={catTitle} />
         <meta property="og:description" content={catDesc} />
         <meta property="og:url" content={catUrl} />
-        <meta property="og:site_name" content="صوت البلد" />
+        <meta property="og:site_name" content="مصدري" />
         <meta property="og:image" content={`${SITE_URL}/images/logo.png`} />
         <meta property="og:image:secure_url" content={`${SITE_URL}/images/logo.png`} />
         <meta property="og:image:width" content="1024" />
         <meta property="og:image:height" content="1024" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content={`شعار صوت البلد الأصلي - ${catName}`} />
+        <meta property="og:image:alt" content={`شعار مصدري الأصلي - ${catName}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={catTitle} />
         <meta name="twitter:description" content={catDesc} />
@@ -103,7 +103,7 @@ const CategoryPage = () => {
           description: catDesc,
           url: catUrl,
           inLanguage: "ar",
-          isPartOf: { "@type": "WebSite", name: "صوت البلد", url: `${SITE_URL}/` },
+          isPartOf: { "@type": "WebSite", name: "مصدري", url: `${SITE_URL}/` },
           mainEntity: {
             "@type": "ItemList",
             numberOfItems: articles.length,

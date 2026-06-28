@@ -11,7 +11,7 @@ const FACE_COUNT = 4;
 
 const NewsCube3D = ({ articles }: { articles: CubeArticle[] }) => {
   const items = articles.slice(0, FACE_COUNT);
-  while (items.length < FACE_COUNT) items.push(items[0] || { id: "", title: "صوت البلد", image_url: null });
+  while (items.length < FACE_COUNT) items.push(items[0] || { id: "", title: "مصدري", image_url: null });
 
   // Cube: 4 vertical faces (front/right/back/left), translateZ by half-side
   // Approximate side based on container width via CSS variable trick: use fixed depth.

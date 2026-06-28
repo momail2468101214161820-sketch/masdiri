@@ -61,7 +61,7 @@ const NumericKeypad = ({ onSuccess }: NumericKeypadProps) => {
             <Settings size={18} />
           </button>
           <Lock className="mx-auto mb-3" size={28} style={{ color: "hsl(var(--gold))" }} />
-          <h2 className="newspaper-heading text-xl">صوت البلد</h2>
+          <h2 className="newspaper-heading text-xl">مصدري</h2>
           <p className="text-muted-foreground text-sm mt-1">{showSettings ? "مركز الأمان — تغيير رمز الدخول" : "أدخل رمز الدخول"}</p>
         </div>
 

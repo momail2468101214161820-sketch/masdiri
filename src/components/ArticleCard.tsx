@@ -84,7 +84,7 @@ const ArticleCard = ({
             )}
             <div className="mt-3 flex items-center gap-3 text-white/70">
               <span className="meta-line tabular text-white/70">
-                <span className="text-[hsl(var(--gold-light))]">صوت البلد</span>
+                <span className="text-[hsl(var(--gold-light))]">مصدري</span>
                 <span className="meta-dot bg-white/40" />
                 {dateStr}
                 <span className="meta-dot bg-white/40" />

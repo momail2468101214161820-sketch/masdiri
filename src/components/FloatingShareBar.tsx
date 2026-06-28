@@ -9,7 +9,7 @@ interface Props {
 
 const FloatingShareBar = ({ title, url, onShareImage }: Props) => {
   const enc = encodeURIComponent;
-  const wa = `https://api.whatsapp.com/send?text=${enc(`📰 ${title}\n${url}\n— صوت البلد`)}`;
+  const wa = `https://api.whatsapp.com/send?text=${enc(`📰 ${title}\n${url}\n— مصدري`)}`;
   const fb = `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`;
   const sc = `https://www.snapchat.com/scan?attachmentUrl=${enc(url)}`;
   const tg = `https://t.me/share/url?url=${enc(url)}&text=${enc(title)}`;

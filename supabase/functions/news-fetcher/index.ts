@@ -1,5 +1,5 @@
 // Auto news fetcher: pulls from Youm7 + Al-Masry Al-Youm RSS, rewrites with Gemini
-// in "صوت البلد" style, and publishes automatically. Skips duplicates by hash.
+// in "مصدري" style, and publishes automatically. Skips duplicates by hash.
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 
 const corsHeaders = {
@@ -297,7 +297,7 @@ function summarize(text: string): string {
 // Returns an English slug matching public.categories.slug.
 // Weighted scoring: each keyword group contributes a score; title hits weigh 3x.
 // If max score < threshold → safe fallback "general" (auto-created in DB).
-// 22-category official taxonomy (الهيكلية الرسمية لصوت البلد)
+// 22-category official taxonomy (الهيكلية الرسمية لمصدري)
 const CATEGORY_RULES: Array<{ slug: string; patterns: RegExp[]; weight?: number }> = [
   { slug: "obituaries", patterns: [
     /\b(وفاة|نعى|نعي|نعت|ينعى|عزاء|تشييع|الجنازة|جنازة|الراحل|الفقيد|الفقيدة|في ذمة الله|إلى رحمة الله|الصلاة على)\b/g,
@@ -394,11 +394,11 @@ function inferCategory(title: string, content: string): string {
 
 // Diverse paragraph pools — picked randomly so no two articles read the same.
 const OPENERS = [
-  (t: string) => `كشفت مصادر متابعة لـ"صوت البلد" تفاصيل جديدة بشأن ${t}، في تطور يفرض نفسه على أجندة المتابعين خلال الساعات الأخيرة.`,
-  (t: string) => `تتصدر قضية ${t} اهتمام الرأي العام، وتضع "صوت البلد" القارئ في قلب المشهد بكل تفاصيله وخلفياته الموثقة.`,
-  (t: string) => `في خطوة لافتة، برز ملف ${t} على السطح ليثير موجة واسعة من التفاعل، وترصد "صوت البلد" أبرز ما جرى وما يتوقع أن يجري لاحقاً.`,
-  (t: string) => `حالة من الترقب تسود الشارع بعد تطورات ${t}، وتقدم "صوت البلد" قراءة هادئة ومنظمة لأبعاد الحدث بعيداً عن التهويل.`,
-  (t: string) => `أعادت تطورات ${t} ترتيب الأولويات الإخبارية اليوم، حيث تتابع "صوت البلد" المستجدات لحظة بلحظة من مصادرها الخاصة.`,
+  (t: string) => `كشفت مصادر متابعة لـ"مصدري" تفاصيل جديدة بشأن ${t}، في تطور يفرض نفسه على أجندة المتابعين خلال الساعات الأخيرة.`,
+  (t: string) => `تتصدر قضية ${t} اهتمام الرأي العام، وتضع "مصدري" القارئ في قلب المشهد بكل تفاصيله وخلفياته الموثقة.`,
+  (t: string) => `في خطوة لافتة، برز ملف ${t} على السطح ليثير موجة واسعة من التفاعل، وترصد "مصدري" أبرز ما جرى وما يتوقع أن يجري لاحقاً.`,
+  (t: string) => `حالة من الترقب تسود الشارع بعد تطورات ${t}، وتقدم "مصدري" قراءة هادئة ومنظمة لأبعاد الحدث بعيداً عن التهويل.`,
+  (t: string) => `أعادت تطورات ${t} ترتيب الأولويات الإخبارية اليوم، حيث تتابع "مصدري" المستجدات لحظة بلحظة من مصادرها الخاصة.`,
 ];
 const CONTEXTS = [
   (b: string) => `وتشير المعطيات الأولية إلى ${b}، في وقت تتسارع فيه الخطوات لاستيضاح الصورة كاملة أمام الرأي العام.`,
@@ -420,10 +420,10 @@ const IMPACTS = [
   `ولا يمكن فصل هذا الحدث عن سياقه الأوسع، إذ يلامس مباشرة قطاعات تمس الحياة اليومية للمواطن المصري.`,
 ];
 const CLOSERS = [
-  `وتواصل "صوت البلد" متابعة الملف لحظة بلحظة، على وعد بنقل كل جديد فور وروده من مصادره الموثوقة، بصياغة مهنية تليق بقرائها.`,
-  `وتؤكد "صوت البلد" التزامها بتقديم المعلومة كاملة دون اجتزاء، مع تحديث القارئ بكل ما يستجد على هذا الملف.`,
-  `ويبقى المشهد مفتوحاً على كل الاحتمالات، وتظل "صوت البلد" منبراً أميناً لنقل الحقيقة كما هي دون زيادة أو نقصان.`,
-  `وفي انتظار ما ستكشفه الساعات المقبلة، تواصل "صوت البلد" متابعاتها الميدانية لإطلاع جمهورها أولاً بأول.`,
+  `وتواصل "مصدري" متابعة الملف لحظة بلحظة، على وعد بنقل كل جديد فور وروده من مصادره الموثوقة، بصياغة مهنية تليق بقرائها.`,
+  `وتؤكد "مصدري" التزامها بتقديم المعلومة كاملة دون اجتزاء، مع تحديث القارئ بكل ما يستجد على هذا الملف.`,
+  `ويبقى المشهد مفتوحاً على كل الاحتمالات، وتظل "مصدري" منبراً أميناً لنقل الحقيقة كما هي دون زيادة أو نقصان.`,
+  `وفي انتظار ما ستكشفه الساعات المقبلة، تواصل "مصدري" متابعاتها الميدانية لإطلاع جمهورها أولاً بأول.`,
 ];
 function pick<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
 
@@ -496,7 +496,7 @@ async function rewriteWithAI(title: string, content: string) {
 - العبارات: "نقلاً عن"، "بحسب موقع"، "ذكرت جريدة"، "أفاد موقع"، "وفقاً لما نشرته".
 - الكلمات: منصة، موقع، صحيفة، جريدة، مؤسسة إعلامية، News، Media، Press، Magazine.
 - أي روابط/URLs داخل النص.
-- الاسم الوحيد المسموح: "صوت البلد".
+- الاسم الوحيد المسموح: "مصدري".
 
 🔍 SEO إلزامي:
 - Meta Title قوي SEO Friendly (≤ 65 حرف، بدون اسم مصدر).
@@ -896,7 +896,7 @@ async function processSource(src: NewsSource, runState: { aiCalls: number; aiLim
             method: "POST",
             headers: { "Content-Type": "application/json", "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}` },
             body: JSON.stringify({
-              title: "📰 صوت البلد — خبر جديد",
+              title: "📰 مصدري — خبر جديد",
               body: finalTitle,
               url: `/article/${inserted?.id || ""}`,
               image: displayImageUrl || undefined,

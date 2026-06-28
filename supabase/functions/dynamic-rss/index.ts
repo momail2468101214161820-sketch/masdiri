@@ -55,7 +55,7 @@ serve(async (req) => {
     const { articles, categoryName } = await fetchArticles(slugOrFlag);
 
     const channelTitle = categorySlug
-      ? `صوت البلد | ${categoryName}`
+      ? `مصدري | ${categoryName}`
       : "مصدري للأخبار المصرية والعالمية";
     const channelLink = categorySlug ? `${BASE_URL}/category/${categorySlug}` : `${BASE_URL}/`;
     const selfLink = categorySlug
@@ -84,7 +84,7 @@ serve(async (req) => {
     <title>${xmlEscape(channelTitle)}</title>
     <link>${xmlEscape(channelLink)}</link>
     <atom:link href="${xmlEscape(selfLink)}" rel="self" type="application/rss+xml" />
-    <description>أحدث أخبار صوت البلد لحظة بلحظة.</description>
+    <description>أحدث أخبار مصدري لحظة بلحظة.</description>
     <language>ar</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
@@ -93,6 +93,6 @@ ${items}
     return new Response(xml, { headers });
   } catch (e) {
     console.error("rss error", e);
-    return new Response(`<?xml version="1.0"?><rss version="2.0"><channel><title>صوت البلد</title></channel></rss>`, { headers });
+    return new Response(`<?xml version="1.0"?><rss version="2.0"><channel><title>مصدري</title></channel></rss>`, { headers });
   }
 });

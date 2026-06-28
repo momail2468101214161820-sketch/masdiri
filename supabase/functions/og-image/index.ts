@@ -210,7 +210,7 @@ Deno.serve(async (req) => {
                       fontWeight: 900,
                       display: "flex",
                     },
-                    children: "صوت البلد",
+                    children: "مصدري",
                   },
                 },
                 {

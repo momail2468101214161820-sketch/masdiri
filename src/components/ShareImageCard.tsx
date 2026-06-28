@@ -174,7 +174,7 @@ const makeShareCard = async ({ title, summary, image, logo, url }: { title: stri
   ctx.textAlign = "right";
   ctx.fillStyle = "#f7d36b";
   ctx.font = "900 26px Cairo, Arial, sans-serif";
-  ctx.fillText("صوت البلد", W - 108, 32);
+  ctx.fillText("مصدري", W - 108, 32);
   ctx.fillStyle = "rgba(255,255,255,0.84)";
   ctx.font = "700 16px Cairo, Arial, sans-serif";
   ctx.fillText("مصدري للأخبار المصرية والعالمية", W - 108, 63);
@@ -224,7 +224,7 @@ const makeShareCard = async ({ title, summary, image, logo, url }: { title: stri
 
   ctx.fillStyle = "rgba(255,255,255,0.7)";
   ctx.font = "700 18px Cairo, Arial, sans-serif";
-  ctx.fillText("صوت البلد", W - 42, H - 66);
+  ctx.fillText("مصدري", W - 42, H - 66);
   ctx.fillStyle = "#f7d36b";
   ctx.font = "900 24px Cairo, Arial, sans-serif";
   ctx.fillText("خالد عاطف عبدالحكيم", W - 42, H - 39);
@@ -390,7 +390,7 @@ const ShareImageCard = ({ open, onClose, title, summary, image_url, url }: Props
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <img src={logoData || "/images/logo.png"} alt="" style={{ width: 36, height: 36, borderRadius: "50%", border: "2px solid hsl(45 90% 60%)" }} />
                 <div>
-                  <p style={{ fontWeight: 900, color: "hsl(45 92% 68%)", fontSize: 15, margin: 0, lineHeight: 1 }}>صوت البلد</p>
+                  <p style={{ fontWeight: 900, color: "hsl(45 92% 68%)", fontSize: 15, margin: 0, lineHeight: 1 }}>مصدري</p>
                   <p style={{ fontSize: 9, opacity: 0.85, margin: 0, marginTop: 2 }}>مصدري للأخبار المصرية والعالمية</p>
                 </div>
               </div>
@@ -440,7 +440,7 @@ const ShareImageCard = ({ open, onClose, title, summary, image_url, url }: Props
 
               <div style={{ marginTop: "auto", paddingTop: 12, borderTop: "1px solid rgba(255,255,255,.12)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <p style={{ fontSize: 10, margin: 0, opacity: 0.7 }}>صوت البلد</p>
+                  <p style={{ fontSize: 10, margin: 0, opacity: 0.7 }}>مصدري</p>
                   <p style={{ fontSize: 12, margin: 0, fontWeight: 900, color: "hsl(45 92% 68%)" }}>خالد عاطف عبدالحكيم</p>
                 </div>
                 <div style={{ textAlign: "left", maxWidth: "62%", overflow: "hidden" }}>

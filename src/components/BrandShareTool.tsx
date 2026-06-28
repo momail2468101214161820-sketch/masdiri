@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Copy, MessageCircle, Facebook, Send, Link2, Sparkles, Wand2 } from "lucide-react";
 
-// أداة مشاركة بعلامة "صوت البلد" + اختصار رابط مجاني (TinyURL)
+// أداة مشاركة بعلامة "مصدري" + اختصار رابط مجاني (TinyURL)
 // بنولّد رابط قصير شغّال فعلاً يحوّل للرابط الأصلي على lovable.app
 
 const REAL_BASE = "https://soutalbalad.lovable.app";
@@ -66,7 +66,7 @@ const BrandShareTool = () => {
 
   const enc = encodeURIComponent;
   const wa = `https://api.whatsapp.com/send?text=${enc(shareText)}`;
-  const tg = `https://t.me/share/url?url=${enc(displayUrl)}&text=${enc(`📰 ${title}\n— صوت البلد`)}`;
+  const tg = `https://t.me/share/url?url=${enc(displayUrl)}&text=${enc(`📰 ${title}\n— مصدري`)}`;
   const fb = `https://www.facebook.com/sharer/sharer.php?u=${enc(displayUrl)}&quote=${enc(`📰 ${title}`)}`;
 
   return (

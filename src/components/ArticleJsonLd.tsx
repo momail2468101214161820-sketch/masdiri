@@ -55,7 +55,7 @@ const ArticleJsonLd = ({ title, summary, image_url, created_at, category, catego
     setNameMeta("robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
     setNameMeta("googlebot", "index, follow, max-image-preview:large, max-snippet:-1");
 
-    document.title = `${title} | صوت البلد`;
+    document.title = `${title} | مصدري`;
 
     // Open Graph
     setMeta("og:type", "article");
@@ -67,7 +67,7 @@ const ArticleJsonLd = ({ title, summary, image_url, created_at, category, catego
     setMeta("og:image:height", "630");
     setMeta("og:image:alt", title);
     setMeta("og:url", url);
-    setMeta("og:site_name", "صوت البلد");
+    setMeta("og:site_name", "مصدري");
     setMeta("og:locale", "ar_EG");
     setMeta("og:updated_time", new Date(created_at).toISOString());
     setMeta("article:published_time", new Date(created_at).toISOString());
@@ -90,7 +90,7 @@ const ArticleJsonLd = ({ title, summary, image_url, created_at, category, catego
       .forEach(w => { const t = w.trim(); if (t.length > 3 && !stop.has(t)) freq[t] = (freq[t] || 0) + 1; });
     const kws = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 12).map(([w]) => w);
     if (category) kws.unshift(category);
-    kws.push("صوت البلد", "أخبار مصر");
+    kws.push("مصدري", "أخبار مصر");
     setNameMeta("keywords", Array.from(new Set(kws)).join(", "));
 
     // JSON-LD — NewsArticle + BreadcrumbList for rich results
@@ -106,7 +106,7 @@ const ArticleJsonLd = ({ title, summary, image_url, created_at, category, catego
       author: { "@type": "Person", name: "تطوير وتصميم التقني/ خالد عاطف عبدالحكيم عويس" },
       publisher: {
         "@type": "Organization",
-        name: "صوت البلد",
+        name: "مصدري",
         logo: { "@type": "ImageObject", url: `${SITE}/images/logo.png`, width: 512, height: 512 },
       },
       mainEntityOfPage: { "@type": "WebPage", "@id": url },

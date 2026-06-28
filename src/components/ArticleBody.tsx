@@ -28,7 +28,7 @@ const SENTENCE_SPLIT = /(?<=[\.\!\?؟\u06D4])\s+(?=[\u0600-\u06FFA-Za-z])/g;
 function cleanRaw(raw: string): string {
   return raw
     .replace(/\r\n/g, "\n")
-    .replace(/\n*-{2,}\n*[\s\S]*?(whatsapp\.com\/channel|wa\.me|للتواصل|قناة صوت البلد)[\s\S]*$/i, "")
+    .replace(/\n*-{2,}\n*[\s\S]*?(whatsapp\.com\/channel|wa\.me|للتواصل|قناة مصدري)[\s\S]*$/i, "")
     .replace(/(📲|📱|☎|📞)[^\n]*?(whatsapp\.com\/channel|wa\.me|\+?20[\s\d]+|01[\s\d]+)[^\n]*/gi, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
