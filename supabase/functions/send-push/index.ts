@@ -9,11 +9,22 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
+function normalizePin(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  if (/^\d{4}$/.test(trimmed)) return trimmed;
+  try {
+    const parsed = JSON.parse(trimmed);
+    if (typeof parsed === "string" && /^\d{4}$/.test(parsed)) return parsed;
+  } catch {}
+  return null;
+}
+
 async function verifyAdmin(req: Request, supa: any): Promise<boolean> {
   const provided = req.headers.get("x-admin-pin") || req.headers.get("X-Admin-Pin");
   if (!provided) return false;
   const { data } = await supa.from("admin_settings").select("value").eq("key", "admin_code").maybeSingle();
-  const current = (data?.value && typeof data.value === "string") ? data.value : (Deno.env.get("ADMIN_PIN") ?? "7777");
+  const current = normalizePin(data?.value) ?? (Deno.env.get("ADMIN_PIN") ?? "7777");
   return provided === current;
 }
 
