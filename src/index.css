@@ -7,48 +7,48 @@
 @layer base {
   :root {
     /* مصدري Palette — Light & Clean (White + Black + Crimson) */
-    --background: 0 0% 100%;         /* pure white */
-    --foreground: 0 0% 7%;           /* near-black ink */
+    --background: 220 20% 99%;        /* airy off-white with a hint of cool */
+    --foreground: 220 15% 25%;        /* soft slate ink, not pure black */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    --card-foreground: 220 15% 25%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
-    --primary: 0 0% 7%;              /* pure black text */
+    --popover-foreground: 220 15% 25%;
+    --primary: 220 15% 30%;           /* soft slate */
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 97%;
-    --secondary-foreground: 0 0% 7%;
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 35%;
-    --accent: 0 0% 7%;               /* black accent (no red) */
+    --secondary: 220 25% 97%;
+    --secondary-foreground: 220 15% 30%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 220 15% 30%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 0% 7%;
+    --destructive: 0 60% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%;
-    --input: 0 0% 94%;
-    --ring: 0 0% 7%;
-    --gold: 0 0% 7%;
-    --gold-light: 0 0% 30%;
-    --gold-dark: 0 0% 0%;
-    --royal-blue: 0 0% 7%;
-    --royal-blue-light: 0 0% 25%;
-    --royal-blue-dark: 0 0% 0%;
+    --border: 220 18% 92%;
+    --input: 220 18% 95%;
+    --ring: 220 15% 60%;
+    --gold: 220 15% 55%;
+    --gold-light: 220 15% 75%;
+    --gold-dark: 220 15% 35%;
+    --royal-blue: 220 15% 30%;
+    --royal-blue-light: 220 15% 55%;
+    --royal-blue-dark: 220 15% 20%;
     --radius: 0.75rem;
-    --sidebar-background: 0 0% 7%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 7%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 92%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-background: 220 20% 98%;
+    --sidebar-foreground: 220 15% 30%;
+    --sidebar-primary: 220 15% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 94%;
+    --sidebar-accent-foreground: 220 15% 25%;
+    --sidebar-border: 220 18% 90%;
+    --sidebar-ring: 220 15% 60%;
 
-    /* === Monochrome Gradients & Shadows — White / Black === */
-    --gradient-royal: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 12%) 50%, hsl(0 0% 22%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(0 0% 18%) 0%, hsl(0 0% 7%) 50%, hsl(0 0% 0%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(0 0% 10% / 0.96) 0%, hsl(0 0% 0%) 70%);
-    --shadow-royal: 0 24px 60px -18px hsl(0 0% 0% / 0.35), 0 10px 24px -10px hsl(0 0% 0% / 0.20);
-    --shadow-gold-glow: 0 0 24px hsl(0 0% 0% / 0.18), 0 0 50px hsl(0 0% 0% / 0.10);
-    --shadow-elegant: 0 12px 32px -10px hsl(0 0% 0% / 0.18);
+    /* === Soft Light Gradients & Shadows === */
+    --gradient-royal: linear-gradient(135deg, hsl(220 18% 96%) 0%, hsl(220 22% 98%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(220 15% 55%) 0%, hsl(220 15% 40%) 50%, hsl(220 15% 30%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(220 25% 98%) 0%, hsl(220 20% 95%) 70%);
+    --shadow-royal: 0 18px 50px -20px hsl(220 30% 30% / 0.18), 0 6px 18px -8px hsl(220 30% 30% / 0.10);
+    --shadow-gold-glow: 0 0 24px hsl(220 30% 60% / 0.18), 0 0 50px hsl(220 30% 60% / 0.08);
+    --shadow-elegant: 0 10px 28px -12px hsl(220 30% 30% / 0.12);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
   }
