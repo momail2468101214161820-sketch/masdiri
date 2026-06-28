@@ -19,36 +19,36 @@
     --secondary-foreground: 0 0% 7%;
     --muted: 0 0% 95%;
     --muted-foreground: 0 0% 35%;
-    --accent: 357 74% 48%;           /* Crimson (logo red) */
+    --accent: 0 0% 7%;               /* black accent (no red) */
     --accent-foreground: 0 0% 100%;
-    --destructive: 357 78% 45%;
+    --destructive: 0 0% 7%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 90%;
     --input: 0 0% 94%;
-    --ring: 357 74% 48%;
-    --gold: 357 74% 48%;             /* alias → crimson */
-    --gold-light: 355 82% 62%;
-    --gold-dark: 357 82% 38%;
-    --royal-blue: 230 25% 10%;
-    --royal-blue-light: 230 18% 22%;
-    --royal-blue-dark: 230 30% 6%;
+    --ring: 0 0% 7%;
+    --gold: 0 0% 7%;
+    --gold-light: 0 0% 30%;
+    --gold-dark: 0 0% 0%;
+    --royal-blue: 0 0% 7%;
+    --royal-blue-light: 0 0% 25%;
+    --royal-blue-dark: 0 0% 0%;
     --radius: 0.75rem;
-    --sidebar-background: 230 25% 10%;
+    --sidebar-background: 0 0% 7%;
     --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 357 74% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 230 18% 18%;
-    --sidebar-accent-foreground: 355 82% 70%;
-    --sidebar-border: 230 18% 20%;
-    --sidebar-ring: 357 74% 48%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 0% 100%;
 
-    /* === Logo-Matched Gradients & Shadows — Charcoal / White / Crimson === */
-    --gradient-royal: linear-gradient(135deg, hsl(230 30% 8%) 0%, hsl(230 25% 14%) 50%, hsl(230 20% 22%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(355 82% 58%) 0%, hsl(357 74% 48%) 50%, hsl(357 82% 38%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(230 25% 12% / 0.96) 0%, hsl(230 30% 6%) 70%);
-    --shadow-royal: 0 24px 60px -18px hsl(230 30% 4% / 0.45), 0 10px 24px -10px hsl(357 74% 48% / 0.30);
-    --shadow-gold-glow: 0 0 24px hsl(357 82% 52% / 0.50), 0 0 50px hsl(357 82% 52% / 0.20);
-    --shadow-elegant: 0 12px 32px -10px hsl(230 30% 4% / 0.22);
+    /* === Monochrome Gradients & Shadows — White / Black === */
+    --gradient-royal: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 12%) 50%, hsl(0 0% 22%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(0 0% 18%) 0%, hsl(0 0% 7%) 50%, hsl(0 0% 0%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(0 0% 10% / 0.96) 0%, hsl(0 0% 0%) 70%);
+    --shadow-royal: 0 24px 60px -18px hsl(0 0% 0% / 0.35), 0 10px 24px -10px hsl(0 0% 0% / 0.20);
+    --shadow-gold-glow: 0 0 24px hsl(0 0% 0% / 0.18), 0 0 50px hsl(0 0% 0% / 0.10);
+    --shadow-elegant: 0 12px 32px -10px hsl(0 0% 0% / 0.18);
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
   }
