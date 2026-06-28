@@ -362,7 +362,7 @@
 
   /* Gold shimmering text */
   .text-gold-shine {
-    background: linear-gradient(100deg, hsl(0 78% 38%) 0%, hsl(0 90% 65%) 30%, hsl(0 70% 32%) 50%, hsl(0 90% 65%) 70%, hsl(0 78% 38%) 100%);
+    background: linear-gradient(100deg, hsl(224 76% 38%) 0%, hsl(217 91% 70%) 30%, hsl(224 76% 32%) 50%, hsl(217 91% 70%) 70%, hsl(224 76% 38%) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
