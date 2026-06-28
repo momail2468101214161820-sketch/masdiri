@@ -343,12 +343,6 @@ const Index = () => {
                         نتائج الإعدادية
                       </a>
                     </li>
-                    <li>
-                      <a href="/admin" className="hover:text-[hsl(var(--gold))] flex items-center gap-2 transition-colors group">
-                        <span className="w-1.5 h-1.5 bg-[hsl(var(--gold))] rounded-full group-hover:scale-150 transition-transform" />
-                        لوحة التحرير
-                      </a>
-                    </li>
                   </ul>
                 </div>
 
