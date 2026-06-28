@@ -104,8 +104,11 @@ const Index = () => {
   }, []);
 
   const featured = articles.find((a) => a.is_pinned) || articles[0];
-  const sidebarLatest = articles.filter((a) => a.id !== featured?.id).slice(0, 4);
-  const gridArticles = articles.filter((a) => a.id !== featured?.id).slice(4);
+  const rest = articles.filter((a) => a.id !== featured?.id);
+  const heroSecondary = rest[0];
+  const heroTertiary = rest[1];
+  const sidebarLatest = rest.slice(2, 6);
+  const gridArticles = rest.slice(6);
 
   const formatTime = (iso: string) =>
     new Date(iso).toLocaleString("ar-EG-u-nu-arab", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short" });
