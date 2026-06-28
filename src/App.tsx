@@ -27,7 +27,6 @@ const HtmlSitemapPage = lazy(() => import("./pages/HtmlSitemapPage"));
 
 
 // Lazy-load non-critical UI shells
-const FloatingWhatsApp = lazy(() => import("./components/FloatingWhatsApp"));
 const StickyAdTowers = lazy(() => import("./components/StickyAdTowers"));
 const MobileBottomNav = lazy(() => import("./components/MobileBottomNav"));
 const MandatoryOnboarding = lazy(() => import("./components/MandatoryOnboarding"));
@@ -97,7 +96,7 @@ const App = () => {
           </Routes>
         </Suspense>
         <Suspense fallback={null}>
-          <FloatingWhatsApp />
+          
           <MobileBottomNav />
           <DesktopSideRail />
           <MandatoryOnboarding />

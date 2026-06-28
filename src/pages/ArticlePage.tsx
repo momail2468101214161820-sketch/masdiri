@@ -515,7 +515,7 @@ const ArticlePage = () => {
               <div className="mt-10 pt-6 border-t border-border/60 text-[11px] text-muted-foreground/80 text-center font-bold tracking-wide" style={{ fontFamily: "'Cairo',sans-serif" }}>
                 مصدري — برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم
                 <span className="mx-2 opacity-50">|</span>
-                <span dir="ltr">+20 100 618 8795</span>
+                
               </div>
             </article>
 
