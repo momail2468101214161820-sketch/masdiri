@@ -103,6 +103,7 @@ const App = () => {
           <DesktopSideRail />
           <MandatoryOnboarding />
           <FounderSignature />
+          <AutoNightMode />
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
