@@ -22,6 +22,7 @@ const RelatedArticles = lazy(() => import("@/components/RelatedArticles"));
 const ArticleComments = lazy(() => import("@/components/ArticleComments"));
 const FloatingShareBar = lazy(() => import("@/components/FloatingShareBar"));
 const ShareImageCard = lazy(() => import("@/components/ShareImageCard"));
+const ReadingProgress = lazy(() => import("@/components/ReadingProgress"));
 
 
 type ArticleImage = string | { url: string; position: "start" | "middle" | "end" };
@@ -583,6 +584,7 @@ const ArticlePage = () => {
       </main>
       
       <Suspense fallback={null}>
+        <ReadingProgress />
         <FloatingShareBar title={article.title} url={`${window.location.origin}${article.short_id ? `/${article.short_id}` : `/article/${article.id}`}`} onShareImage={handleGenerateCard} />
         {cardOpen && (
           <ShareImageCard
