@@ -22,6 +22,7 @@ const RelatedArticles = lazy(() => import("@/components/RelatedArticles"));
 const ArticleComments = lazy(() => import("@/components/ArticleComments"));
 const FloatingShareBar = lazy(() => import("@/components/FloatingShareBar"));
 const ShareImageCard = lazy(() => import("@/components/ShareImageCard"));
+const ReadingProgress = lazy(() => import("@/components/ReadingProgress"));
 
 
 type ArticleImage = string | { url: string; position: "start" | "middle" | "end" };
