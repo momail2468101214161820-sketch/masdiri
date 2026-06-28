@@ -11,6 +11,7 @@ import NotificationPrompt from "@/components/NotificationPrompt";
 import WatermarkedImage from "@/components/WatermarkedImage";
 import SoutAlBaladBot from "@/components/SoutAlBaladBot";
 import MostReadWidget from "@/components/MostReadWidget";
+import HeroBento from "@/components/HeroBento";
 import BackToTop from "@/components/BackToTop";
 import CommandPalette from "@/components/CommandPalette";
 import NewsletterInline from "@/components/NewsletterInline";
