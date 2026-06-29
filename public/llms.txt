@@ -13,4 +13,4 @@
 - سياسة الخصوصية: https://soutalbalad.lovable.app/privacy
 - شروط الاستخدام: https://soutalbalad.lovable.app/terms
 - نتائج الإعدادية: https://soutalbalad.lovable.app/results/prep
-- خريطة الموقع: https://soutalbalad.lovable.app/sitemap.xml
+- خريطة مصدري: https://soutalbalad.lovable.app/sitemap.xml
