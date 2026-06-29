@@ -78,7 +78,7 @@ const SOURCES: NewsSource[] = [
 ];
 
 const RSS_SCAN_LIMIT = 100;
-const MAX_INSERT_PER_SOURCE = 5;
+const MAX_INSERT_PER_SOURCE = 10;
 const MIN_SOURCE_LENGTH = 60; // حد قبول المصدر قبل الذكاء الاصطناعي حتى لا يتوقف الصائد بسبب ملخصات RSS القصيرة
 const MIN_ARTICLE_LENGTH = 450; // حد المقال النهائي بعد الصياغة فقط
 const AI_REWRITE_LIMIT_PER_RUN = 8; // كل خبر يُقبل لا بد أن يمر على AI
