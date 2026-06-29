@@ -193,6 +193,9 @@ const Index = () => {
             <HeroBento featured={featured as any} secondary={heroSecondary as any} tertiary={heroTertiary as any} />
           )}
 
+          {/* Official brand trust strip */}
+          <BrandTrustStrip />
+
           {/* Latest rail + Currency */}
           {!loading && sidebarLatest.length > 0 && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
