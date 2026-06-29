@@ -3,7 +3,7 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
 import { createClient } from 'npm:@supabase/supabase-js@2';
 
-const HOST = 'soutalbalad.lovable.app';
+const HOST = 'masdiri.lovable.app';
 const SITE = `https://${HOST}`;
 const KEY = '8983aa8d243606bc9d23766a10bc007d';
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;

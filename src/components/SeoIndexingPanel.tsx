@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { getAdminPin } from "@/lib/adminApi";
 
-const SITE_URL = "https://soutalbalad.lovable.app";
+const SITE_URL = "https://masdiri.lovable.app";
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 const SeoIndexingPanel = () => {
@@ -201,7 +201,7 @@ const SeoIndexingPanel = () => {
           <input
             value={inspectUrl}
             onChange={(e) => setInspectUrl(e.target.value)}
-            placeholder="https://soutalbalad.lovable.app/article/..."
+            placeholder="https://masdiri.lovable.app/article/..."
             className="flex-1 bg-background border border-border rounded-md px-3 py-2 text-sm"
             dir="ltr"
           />

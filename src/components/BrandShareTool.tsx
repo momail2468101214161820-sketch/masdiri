@@ -6,7 +6,7 @@ import { Copy, MessageCircle, Facebook, Send, Link2, Sparkles, Wand2 } from "luc
 // أداة مشاركة بعلامة "مصدري" + اختصار رابط مجاني (TinyURL)
 // بنولّد رابط قصير شغّال فعلاً يحوّل للرابط الأصلي على lovable.app
 
-const REAL_BASE = "https://soutalbalad.lovable.app";
+const REAL_BASE = "https://masdiri.lovable.app";
 
 async function shortenUrl(url: string): Promise<string | null> {
   try {

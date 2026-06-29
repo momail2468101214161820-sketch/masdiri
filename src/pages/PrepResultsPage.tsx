@@ -130,12 +130,12 @@ const PrepResultsPage = () => {
       <Helmet>
         <title>نتائج الشهادة الإعدادية 2026 | مصدري</title>
         <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على مصدري للأخبار المصرية والعالمية." />
-        <link rel="canonical" href="https://soutalbalad.lovable.app/prep-results" />
+        <link rel="canonical" href="https://masdiri.lovable.app/prep-results" />
         <meta property="og:title" content="نتائج الشهادة الإعدادية 2026 | مصدري" />
         <meta property="og:description" content="استعلم عن نتيجتك فوراً برقم الجلوس." />
-        <meta property="og:url" content="https://soutalbalad.lovable.app/prep-results" />
+        <meta property="og:url" content="https://masdiri.lovable.app/prep-results" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://soutalbalad.lovable.app/images/logo.png" />
+        <meta property="og:image" content="https://masdiri.lovable.app/images/logo.png" />
       </Helmet>
       <SiteHeader />
 

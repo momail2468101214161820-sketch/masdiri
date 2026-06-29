@@ -7,7 +7,7 @@ export interface Crumb {
   href?: string;
 }
 
-const SITE_URL = "https://soutalbalad.lovable.app";
+const SITE_URL = "https://masdiri.lovable.app";
 
 const Breadcrumbs = ({ items }: { items: Crumb[] }) => {
   const all: Crumb[] = [{ label: "الرئيسية", href: "/" }, ...items];
