@@ -329,7 +329,7 @@ Deno.serve(async (req) => {
                 fontWeight: 900,
                 display: "flex",
               },
-              children: "masdiri.lovable.app",
+              children: (Deno.env.get("SITE_URL") ?? "https://masdiri.lovable.app").replace(/^https?:\/\//, "").replace(/\/+$/, ""),
             },
           },
         ].filter(Boolean),
