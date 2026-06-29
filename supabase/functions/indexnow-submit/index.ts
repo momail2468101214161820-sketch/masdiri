@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
         Deno.env.get('SUPABASE_URL')!,
         Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
       );
-      let q = sb.from('articles').select('id').order('created_at', { ascending: false });
+      let q = sb.from('articles').select('id, short_id').eq('is_published', true).order('created_at', { ascending: false });
       if (mode === 'recent') {
         const since = new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString();
         q = q.gte('created_at', since);
@@ -62,10 +62,10 @@ Deno.serve(async (req) => {
       const rows = data || [];
       urls = [
         `${SITE}/`,
-        `${SITE}/news`,
-        `${SITE}/rates`,
-        `${SITE}/results`,
-        ...rows.map((r: any) => `${SITE}/article/${r.id}`),
+        `${SITE}/latest`,
+        `${SITE}/breaking`,
+        `${SITE}/most-read`,
+        ...rows.map((r: any) => `${SITE}/${r.short_id || `article/${r.id}`}`),
       ];
     }
 
