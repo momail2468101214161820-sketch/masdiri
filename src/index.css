@@ -455,6 +455,31 @@
   }
 }
 
+/* === Global rule: white text on blue/navy backgrounds === */
+/* Any element whose background uses the primary/royal navy palette forces white text
+   on descendants, while preserving gold accents and explicit color utilities like
+   .text-gold-shine and inline gold colors. */
+[class*="bg-primary"],
+[class*="bg-royal"],
+[class*="bg-[hsl(var(--primary)"],
+[class*="bg-[hsl(var(--royal-blue"],
+.utility-bar,
+.bg-royal-gradient {
+  color: #ffffff;
+}
+[class*="bg-primary"] *:not([class*="text-gold"]):not([class*="text-[hsl(var(--gold"]):not([style*="--gold"]):not(svg):not(path),
+[class*="bg-royal"] *:not([class*="text-gold"]):not([class*="text-[hsl(var(--gold"]):not([style*="--gold"]):not(svg):not(path),
+.utility-bar *:not([class*="text-gold"]):not([class*="text-[hsl(var(--gold"]):not([style*="--gold"]),
+.bg-royal-gradient *:not([class*="text-gold"]):not([class*="text-[hsl(var(--gold"]):not([style*="--gold"]) {
+  color: #ffffff;
+}
+[class*="bg-primary"] a:not([class*="text-gold"]):hover,
+[class*="bg-royal"] a:not([class*="text-gold"]):hover,
+.utility-bar a:not([class*="text-gold"]):hover {
+  color: hsl(var(--gold-light));
+}
+
+
 /* Global polish */
 html { scroll-behavior: smooth; }
 ::selection { background: hsl(var(--gold) / 0.4); color: hsl(var(--primary)); }
