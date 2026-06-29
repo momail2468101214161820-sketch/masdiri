@@ -151,7 +151,7 @@ const AdminChat = ({ embedded = false }: { embedded?: boolean } = {}) => {
           <title>المساعد الذكي — مصدري</title>
           <meta name="description" content="غرفة الأخبار الذكية لمصدري — صياغة ونشر فوري للأخبار بأسلوب رسمي." />
           <meta name="robots" content="noindex, nofollow" />
-          <link rel="canonical" href="https://masdiri.lovable.app/admin/chat" />
+          <link rel="canonical" href={`${SITE_URL}/admin/chat`} />
         </Helmet>
       )}
     <div className={`${embedded ? "min-h-[70vh] rounded-2xl border-2 border-border overflow-hidden" : "min-h-screen"} bg-background flex flex-col`}>

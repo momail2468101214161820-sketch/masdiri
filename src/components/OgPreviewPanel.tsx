@@ -147,7 +147,7 @@ const OgPreviewPanel = () => {
                 <img src={data.ogImage} alt={data.title} className="w-full h-full object-cover" />
               </div>
               <div className="p-3">
-                <div className="text-[11px] text-muted-foreground uppercase tracking-wide">masdiri.lovable.app</div>
+                <div className="text-[11px] text-muted-foreground uppercase tracking-wide">{SITE_HOST}</div>
                 <div className="font-black text-base leading-snug mt-1 line-clamp-2">{data.title}</div>
                 <div className="text-xs text-muted-foreground mt-1 line-clamp-2">{data.description}</div>
               </div>
@@ -165,7 +165,7 @@ const OgPreviewPanel = () => {
                 <div className="p-2.5">
                   <div className="font-bold text-sm line-clamp-2">{data.title}</div>
                   <div className="text-xs text-muted-foreground line-clamp-2 mt-0.5">{data.description}</div>
-                  <div className="text-[11px] text-muted-foreground mt-1">masdiri.lovable.app</div>
+                  <div className="text-[11px] text-muted-foreground mt-1">{SITE_HOST}</div>
                 </div>
               </div>
               <div className="text-xs mt-1 px-1">{data.url}</div>
@@ -183,7 +183,7 @@ const OgPreviewPanel = () => {
                 </div>
               </div>
               <div className="p-3">
-                <div className="text-[11px] text-muted-foreground">masdiri.lovable.app</div>
+                <div className="text-[11px] text-muted-foreground">{SITE_HOST}</div>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ interface ShareButtonsProps {
 
 const ShareButtons = ({ title, url, compact }: ShareButtonsProps) => {
   // يقرأ رابط الصفحة الحالية تلقائياً من المتصفح مهما تغير الدومين
-  const currentUrl = url ?? (typeof window !== "undefined" ? `https://masdiri.lovable.app${window.location.pathname}` : "");
+  const currentUrl = url ?? (typeof window !== "undefined" ? `${SITE_URL}${window.location.pathname}` : "");
 
   // نص ورابط الواتساب الديناميكي
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(

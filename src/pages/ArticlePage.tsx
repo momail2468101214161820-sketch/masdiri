@@ -89,7 +89,7 @@ const ArticlePage = () => {
 
         // Canonical URL — prefer the short permanent URL `/{short_id}` when available
         const canonicalPath = articleData.short_id ? `/${articleData.short_id}` : `/article/${articleData.id}`;
-        const canonicalUrl = `https://masdiri.lovable.app${canonicalPath}`;
+        const canonicalUrl = `${SITE_URL}${canonicalPath}`;
         let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
         if (!canonical) {
           canonical = document.createElement("link");

@@ -23,10 +23,10 @@ const NotFound = () => {
         <title>الصفحة غير موجودة (404) — مصدري</title>
         <meta name="description" content="عذراً، الصفحة التي تبحث عنها غير موجودة على مصدري. عُد للرئيسية لتصفح آخر الأخبار." />
         <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href={`https://masdiri.lovable.app${location.pathname}`} />
+        <link rel="canonical" href={`${SITE_URL}${location.pathname}`} />
         <meta property="og:title" content="الصفحة غير موجودة — مصدري" />
         <meta property="og:description" content="الصفحة المطلوبة غير متاحة." />
-        <meta property="og:url" content={`https://masdiri.lovable.app${location.pathname}`} />
+        <meta property="og:url" content={`${SITE_URL}${location.pathname}`} />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-background via-background to-[hsl(var(--primary)/0.08)]">
         <div className="max-w-lg w-full text-center">

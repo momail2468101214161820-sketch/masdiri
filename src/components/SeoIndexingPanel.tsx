@@ -201,7 +201,7 @@ const SeoIndexingPanel = () => {
           <input
             value={inspectUrl}
             onChange={(e) => setInspectUrl(e.target.value)}
-            placeholder="https://masdiri.lovable.app/article/..."
+            placeholder={`${SITE_URL}/article/...`}
             className="flex-1 bg-background border border-border rounded-md px-3 py-2 text-sm"
             dir="ltr"
           />

@@ -482,7 +482,7 @@ const AdminPanel = () => {
         <title>لوحة التحكم الإدارية — مصدري</title>
         <meta name="description" content="لوحة الإدارة الرسمية لمصدري لإدارة المحتوى والإعلانات والتصنيفات." />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://masdiri.lovable.app/admin" />
+        <link rel="canonical" href={`${SITE_URL}/admin`} />
       </Helmet>
     <div dir="rtl" className="min-h-screen p-4 md:p-8 font-cairo relative overflow-hidden"
       style={{ fontFamily: "'Cairo','Tajawal','Amiri',sans-serif", background: "radial-gradient(1200px 600px at 80% -10%, hsl(var(--gold) / 0.12), transparent 60%), radial-gradient(900px 500px at 0% 110%, hsl(var(--primary) / 0.18), transparent 60%), hsl(var(--background))" }}>
