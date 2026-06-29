@@ -42,7 +42,7 @@ const BrandTrustStrip = () => {
           <h2 className="text-3xl md:text-4xl font-black leading-tight" style={{ fontFamily: "'Amiri', serif" }}>
             <span className="text-white">مصدري</span>
             <span className="text-[hsl(var(--gold))] mx-2">—</span>
-            <span className="text-white/95">صوت البلد بثقة وموضوعية</span>
+            <span className="text-white/95">نبض القلب المصري والعالمي</span>
           </h2>
           <p className="mt-3 text-white/85 text-sm md:text-[15px] leading-relaxed max-w-xl" style={{ fontFamily: "'Cairo', sans-serif" }}>
             مصدري تنقل الحدث المصري والعالمي لحظة بلحظة، بأسلوب صحفي مهني وإعداد دقيق.
