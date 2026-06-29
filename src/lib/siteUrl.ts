@@ -10,12 +10,12 @@
 
 export const SITE_URL: string =
   ((import.meta as any).env?.VITE_SITE_URL as string | undefined)?.replace(/\/+$/, "") ||
-  "https://masdiri.lovable.app";
+  "https://masdiri.vercel.app";
 
 export const SITE_HOST: string = (() => {
   try {
     return new URL(SITE_URL).host;
   } catch {
-    return "masdiri.lovable.app";
+    return "masdiri.vercel.app";
   }
 })();
