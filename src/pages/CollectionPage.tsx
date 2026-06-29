@@ -9,7 +9,7 @@ import Breadcrumbs, { Crumb } from "@/components/Breadcrumbs";
 import { getArticlePrimaryImage } from "@/lib/articleImages";
 import { governorateName } from "@/lib/governorates";
 
-const SITE_URL = "https://soutalbalad.lovable.app";
+const SITE_URL = "https://masdiri.lovable.app";
 
 type Mode =
   | "latest"

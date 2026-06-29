@@ -329,7 +329,7 @@ Deno.serve(async (req) => {
                 fontWeight: 900,
                 display: "flex",
               },
-              children: "soutalbalad.lovable.app",
+              children: "masdiri.lovable.app",
             },
           },
         ].filter(Boolean),

@@ -33,7 +33,7 @@ const ArticleJsonLd = ({ title, summary, image_url, created_at, category, catego
       el.setAttribute("content", content);
     };
 
-    const SITE = "https://soutalbalad.lovable.app";
+    const SITE = "https://masdiri.lovable.app";
     const url = `${SITE}/article/${articleId}`;
     const desc = summary || title;
     // Cache-bust OG image whenever the article changes so Facebook/WhatsApp/Twitter

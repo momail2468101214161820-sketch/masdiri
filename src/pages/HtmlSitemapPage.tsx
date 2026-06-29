@@ -7,7 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { GOVERNORATES } from "@/lib/governorates";
 
-const SITE_URL = "https://soutalbalad.lovable.app";
+const SITE_URL = "https://masdiri.lovable.app";
 
 interface MiniArticle { id: string; short_id: number | null; title: string; created_at: string; categories: { name: string; slug: string } | null; }
 interface Cat { slug: string; name: string; }

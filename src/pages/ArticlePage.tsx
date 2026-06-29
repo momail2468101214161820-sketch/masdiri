@@ -89,7 +89,7 @@ const ArticlePage = () => {
 
         // Canonical URL — prefer the short permanent URL `/{short_id}` when available
         const canonicalPath = articleData.short_id ? `/${articleData.short_id}` : `/article/${articleData.id}`;
-        const canonicalUrl = `https://soutalbalad.lovable.app${canonicalPath}`;
+        const canonicalUrl = `https://masdiri.lovable.app${canonicalPath}`;
         let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
         if (!canonical) {
           canonical = document.createElement("link");
@@ -102,7 +102,7 @@ const ArticlePage = () => {
         const ogShareId = articleData.short_id ?? articleData.id;
         const cacheBuster = encodeURIComponent(articleData.created_at || "1");
         const ogImage =
-          `https://texdxiafabzbampcswsn.supabase.co/functions/v1/og-image` +
+          `https://tgvxtsdlojaxyominpsf.supabase.co/functions/v1/og-image` +
           `?id=${ogShareId}&v=${cacheBuster}`;
 
         // 🧠 Inject Open Graph & Twitter Cards meta for JS-aware crawlers.

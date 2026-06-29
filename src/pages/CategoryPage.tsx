@@ -9,7 +9,7 @@ import AdSlot from "@/components/AdSlot";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getArticlePrimaryImage } from "@/lib/articleImages";
 
-const SITE_URL = "https://soutalbalad.lovable.app";
+const SITE_URL = "https://masdiri.lovable.app";
 
 const categoryNames: Record<string, string> = {
   politics: "سياسة",
