@@ -131,6 +131,9 @@ export function ArticleBody({
       ? Math.max(1, Math.min(blocks.length - 1, splitAt))
       : -1;
 
+  // Index of the first paragraph block (for lead / drop-cap styling)
+  const firstParaIdx = blocks.findIndex((b) => b.kind === "p");
+
   const renderBlock = (b: Block, i: number) => {
     switch (b.kind) {
       case "h2":
