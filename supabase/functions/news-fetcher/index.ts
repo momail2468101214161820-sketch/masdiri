@@ -185,7 +185,7 @@ function decodeHtml(value: string): string {
 
 function normalizeTitleForHash(title: string): string {
   return title
-    .replace(/\s*[-–—|]\s*(اليوم السابع|المصري اليوم|الوطن|الأهرام|بوابة الأهرام|أخبار مصر)\s*$/u, "")
+    .replace(/\s*[-–—|]\s*(اليوم السابع|المصري اليوم|الوطن|الأهرام|بوابة الأهرام|أخبار مصر|نيوزروم|Newsroom)\s*$/u, "")
     .replace(/["'“”‘’]/g, "")
     .replace(/[\u064B-\u065F\u0670]/g, "")
     .replace(/[إأآ]/g, "ا")
