@@ -140,10 +140,11 @@ export function ArticleBody({
         return (
           <h2
             key={i}
-            className="font-amiri font-black text-foreground mt-10 mb-4 leading-tight border-r-4 pr-4 py-1"
+            className="text-[hsl(var(--primary))] mt-12 mb-5 leading-tight font-bold"
             style={{
-              borderColor: "hsl(var(--gold))",
-              fontSize: `clamp(1.35rem, 2.2vw, 1.7rem)`,
+              fontFamily: "'Amiri', 'Tajawal', serif",
+              fontSize: `clamp(1.5rem, 2.4vw, 1.9rem)`,
+              letterSpacing: "-0.005em",
             }}
           >
             {b.text}
@@ -151,28 +152,35 @@ export function ArticleBody({
         );
       case "quote":
         return (
-          <blockquote
-            key={i}
-            className="my-7 mx-0 p-5 rounded-2xl bg-gradient-to-l from-[hsl(var(--gold)/0.08)] to-transparent border-r-4 font-amiri text-foreground/90"
-            style={{
-              borderColor: "hsl(var(--gold))",
-              fontSize: `clamp(1.1rem, 1.7vw, 1.4rem)`,
-              lineHeight: 1.9,
-            }}
-          >
-            <span className="text-[hsl(var(--gold))] text-3xl leading-none ml-1 align-top">«</span>
-            {b.text}
-            <span className="text-[hsl(var(--gold))] text-3xl leading-none mr-1 align-top">»</span>
+          <blockquote key={i} className="my-12 px-8 py-2 relative">
+            <span
+              aria-hidden
+              className="absolute right-0 top-0 bottom-0 w-1"
+              style={{ background: "hsl(var(--gold))" }}
+            />
+            <p
+              className="italic text-[hsl(var(--primary))] leading-[1.8] m-0"
+              style={{
+                fontFamily: "'Amiri', serif",
+                fontSize: `clamp(1.25rem, 1.9vw, 1.55rem)`,
+              }}
+            >
+              “{b.text}”
+            </p>
           </blockquote>
         );
       case "ul":
         return (
-          <ul key={i} className="my-5 space-y-2 pr-6 list-none">
+          <ul
+            key={i}
+            className="my-6 list-disc list-outside pr-6 space-y-3 marker:text-[hsl(var(--gold))]"
+            style={{ fontFamily: "'Amiri', serif" }}
+          >
             {b.items.map((it, j) => (
               <li
                 key={j}
-                className="relative pr-5 text-foreground/90 font-cairo before:content-['◆'] before:absolute before:right-0 before:top-1.5 before:text-[hsl(var(--gold))] before:text-sm"
-                style={{ fontSize: `${fontSize - 1}px`, lineHeight: 1.9 }}
+                className="text-[#1a1a1a]"
+                style={{ fontSize: `${fontSize}px`, lineHeight: 2 }}
               >
                 {it}
               </li>
@@ -181,12 +189,16 @@ export function ArticleBody({
         );
       case "ol":
         return (
-          <ol key={i} className="my-5 space-y-2 pr-8 list-decimal marker:text-[hsl(var(--gold))] marker:font-black">
+          <ol
+            key={i}
+            className="my-6 list-decimal list-outside pr-8 space-y-3 marker:text-[hsl(var(--gold))] marker:font-bold"
+            style={{ fontFamily: "'Amiri', serif" }}
+          >
             {b.items.map((it, j) => (
               <li
                 key={j}
-                className="text-foreground/90 font-cairo pr-2"
-                style={{ fontSize: `${fontSize - 1}px`, lineHeight: 1.9 }}
+                className="text-[#1a1a1a] pr-2"
+                style={{ fontSize: `${fontSize}px`, lineHeight: 2 }}
               >
                 {it}
               </li>
@@ -196,21 +208,32 @@ export function ArticleBody({
       case "p":
       default: {
         const isLead = i === firstParaIdx;
+        if (isLead) {
+          return (
+            <p
+              key={i}
+              className="font-medium text-neutral-700 pr-6 mb-10 border-r-4"
+              style={{
+                fontFamily: "'IBM Plex Sans Arabic', 'Tajawal', sans-serif",
+                fontSize: `clamp(1.15rem, 1.7vw, 1.4rem)`,
+                lineHeight: 1.9,
+                borderColor: "hsl(var(--gold))",
+              }}
+            >
+              {b.text}
+            </p>
+          );
+        }
         return (
           <p
             key={i}
-            className={
-              "font-cairo text-foreground/90 mb-5 text-right sm:text-justify " +
-              (isLead
-                ? "drop-cap font-semibold text-foreground first-letter:text-[hsl(var(--gold-dark))] "
-                : "")
-            }
+            className="text-[#1a1a1a] mb-7 text-right sm:text-justify"
             style={{
-              fontSize: isLead ? `${fontSize + 2}px` : `${fontSize}px`,
-              lineHeight: isLead ? 2 : 1.95,
-              letterSpacing: "0.005em",
-              wordSpacing: "0.03em",
-              hyphens: "auto",
+              fontFamily: "'Amiri', 'Tajawal', serif",
+              fontSize: `${fontSize + 1}px`,
+              lineHeight: 2,
+              letterSpacing: "0.002em",
+              wordSpacing: "0.02em",
               textJustify: "inter-word",
             }}
           >
@@ -220,6 +243,7 @@ export function ArticleBody({
       }
     }
   };
+
 
   if (splitIndex < 0) {
     return (
