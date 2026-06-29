@@ -23,6 +23,7 @@ import { QuoteOfDay, CoffeeBreakNudge, GeoChip } from "@/components/ProFeatures3
 import { NewsRefreshToaster, IdleNudge, SmoothAnchors, ExternalLinkHardener, ImageErrorFallback, QuickFeedback, HourlyPulse, SuggestStoryCTA } from "@/components/ProFeatures4";
 import { AmbientMoodBar } from "@/components/ProFeatures5";
 import UtilityBar from "@/components/UtilityBar";
+import BrandTrustStrip from "@/components/BrandTrustStrip";
 import { motion } from "framer-motion";
 import { getArticlePrimaryImage } from "@/lib/articleImages";
 
@@ -191,6 +192,9 @@ const Index = () => {
           {!loading && featured && (
             <HeroBento featured={featured as any} secondary={heroSecondary as any} tertiary={heroTertiary as any} />
           )}
+
+          {/* Official brand trust strip */}
+          <BrandTrustStrip />
 
           {/* Latest rail + Currency */}
           {!loading && sidebarLatest.length > 0 && (
