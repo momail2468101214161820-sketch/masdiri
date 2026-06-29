@@ -7,10 +7,10 @@
 - تطوير التقنيات والمسؤول عن الأنظمة: البشمبرمج والمطور التقني خالد عاطف عبدالحكيم عويس
 
 ## روابط رئيسية
-- الرئيسية: https://masdiri.lovable.app/
-- من نحن: https://masdiri.lovable.app/about
-- اتصل بنا: https://masdiri.lovable.app/contact
-- سياسة الخصوصية: https://masdiri.lovable.app/privacy
-- شروط الاستخدام: https://masdiri.lovable.app/terms
-- نتائج الإعدادية: https://masdiri.lovable.app/results/prep
-- خريطة مصدري: https://masdiri.lovable.app/sitemap.xml
+- الرئيسية: https://masdiri.vercel.app/
+- من نحن: https://masdiri.vercel.app/about
+- اتصل بنا: https://masdiri.vercel.app/contact
+- سياسة الخصوصية: https://masdiri.vercel.app/privacy
+- شروط الاستخدام: https://masdiri.vercel.app/terms
+- نتائج الإعدادية: https://masdiri.vercel.app/results/prep
+- خريطة مصدري: https://masdiri.vercel.app/sitemap.xml

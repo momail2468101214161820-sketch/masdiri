@@ -46,9 +46,9 @@ Disallow: /admin
 Disallow: /admin/
 Disallow: /search
 
-Sitemap: https://masdiri.lovable.app/sitemap.xml
-Sitemap: https://masdiri.lovable.app/sitemap-index.xml
-Sitemap: https://masdiri.lovable.app/news-sitemap.xml
-Sitemap: https://masdiri.lovable.app/image-sitemap.xml
-Sitemap: https://masdiri.lovable.app/sitemap-news.xml
+Sitemap: https://masdiri.vercel.app/sitemap.xml
+Sitemap: https://masdiri.vercel.app/sitemap-index.xml
+Sitemap: https://masdiri.vercel.app/news-sitemap.xml
+Sitemap: https://masdiri.vercel.app/image-sitemap.xml
+Sitemap: https://masdiri.vercel.app/sitemap-news.xml
 
