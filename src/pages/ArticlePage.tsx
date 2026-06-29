@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { useEffect, useState, useMemo, lazy, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -89,7 +90,7 @@ const ArticlePage = () => {
 
         // Canonical URL — prefer the short permanent URL `/{short_id}` when available
         const canonicalPath = articleData.short_id ? `/${articleData.short_id}` : `/article/${articleData.id}`;
-        const canonicalUrl = `https://masdiri.lovable.app${canonicalPath}`;
+        const canonicalUrl = `${SITE_URL}${canonicalPath}`;
         let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
         if (!canonical) {
           canonical = document.createElement("link");

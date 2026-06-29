@@ -7,7 +7,7 @@ const supabase = createClient(
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 );
 
-const BASE_URL = "https://masdiri.lovable.app";
+const BASE_URL = Deno.env.get("SITE_URL") ?? "https://masdiri.lovable.app";
 
 const xmlEscape = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");

@@ -20,7 +20,7 @@ import { resolve, dirname } from "node:path";
 const SUPABASE_URL = "https://tgvxtsdlojaxyominpsf.supabase.co";
 const ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRleGR4aWFmYWJ6YmFtcGNzd3NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxODkwODUsImV4cCI6MjA4OTc2NTA4NX0.3FeZQivXN99E-ariQ-nj7IPeCj3Mb_GmJxHS3LJczb4";
-const BASE_URL = "https://masdiri.lovable.app";
+const BASE_URL = process.env.VITE_SITE_URL ?? "https://masdiri.lovable.app";
 const DIST = resolve("dist");
 const TEMPLATE_PATH = resolve("dist/index.html");
 

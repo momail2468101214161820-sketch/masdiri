@@ -82,7 +82,7 @@ const MAX_INSERT_PER_SOURCE = 5;
 const MIN_SOURCE_LENGTH = 60; // حد قبول المصدر قبل الذكاء الاصطناعي حتى لا يتوقف الصائد بسبب ملخصات RSS القصيرة
 const MIN_ARTICLE_LENGTH = 450; // حد المقال النهائي بعد الصياغة فقط
 const AI_REWRITE_LIMIT_PER_RUN = 8; // كل خبر يُقبل لا بد أن يمر على AI
-const DEFAULT_NEWS_IMAGE = "https://masdiri.lovable.app/images/logo.png";
+const DEFAULT_NEWS_IMAGE = (Deno.env.get("SITE_URL") ?? "https://masdiri.lovable.app").replace(/\/+$/, "") + "/images/logo.png";
 
 
 function pickSourcesForRun(fullRun: boolean): NewsSource[] {

@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Search, GraduationCap, Loader2, AlertTriangle, CheckCircle2, XCircle, Download, MapPin, Sparkles } from "lucide-react";
@@ -130,12 +131,12 @@ const PrepResultsPage = () => {
       <Helmet>
         <title>نتائج الشهادة الإعدادية 2026 | مصدري</title>
         <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على مصدري للأخبار المصرية والعالمية." />
-        <link rel="canonical" href="https://masdiri.lovable.app/prep-results" />
+        <link rel="canonical" href={`${SITE_URL}/prep-results`} />
         <meta property="og:title" content="نتائج الشهادة الإعدادية 2026 | مصدري" />
         <meta property="og:description" content="استعلم عن نتيجتك فوراً برقم الجلوس." />
-        <meta property="og:url" content="https://masdiri.lovable.app/prep-results" />
+        <meta property="og:url" content={`${SITE_URL}/prep-results`} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://masdiri.lovable.app/images/logo.png" />
+        <meta property="og:image" content={`${SITE_URL}/images/logo.png`} />
       </Helmet>
       <SiteHeader />
 
