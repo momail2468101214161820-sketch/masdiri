@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { useEffect } from "react";
 
 interface ArticleJsonLdProps {

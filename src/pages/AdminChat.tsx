@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { toast } from "sonner";

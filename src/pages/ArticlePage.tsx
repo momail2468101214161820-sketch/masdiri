@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { useEffect, useState, useMemo, lazy, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";

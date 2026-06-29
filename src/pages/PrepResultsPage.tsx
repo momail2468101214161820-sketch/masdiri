@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Search, GraduationCap, Loader2, AlertTriangle, CheckCircle2, XCircle, Download, MapPin, Sparkles } from "lucide-react";

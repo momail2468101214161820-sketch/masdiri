@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/siteUrl";
 import { Share2, Link2, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
 
