@@ -78,7 +78,7 @@ const SOURCES: NewsSource[] = [
 ];
 
 const RSS_SCAN_LIMIT = 100;
-const MAX_INSERT_PER_SOURCE = 5;
+const MAX_INSERT_PER_SOURCE = 10;
 const MIN_SOURCE_LENGTH = 60; // حد قبول المصدر قبل الذكاء الاصطناعي حتى لا يتوقف الصائد بسبب ملخصات RSS القصيرة
 const MIN_ARTICLE_LENGTH = 450; // حد المقال النهائي بعد الصياغة فقط
 const AI_REWRITE_LIMIT_PER_RUN = 8; // كل خبر يُقبل لا بد أن يمر على AI
@@ -87,8 +87,12 @@ const DEFAULT_NEWS_IMAGE = (Deno.env.get("SITE_URL") ?? "https://masdiri.lovable
 
 function pickSourcesForRun(fullRun: boolean): NewsSource[] {
   if (fullRun) return SOURCES;
+  // كل دقيقة: مصدران مختلفان حتى نصل إلى ~10 أخبار/دقيقة مع الالتزام بقواعد إعادة الصياغة.
   const minute = new Date().getUTCMinutes();
-  return [SOURCES[minute % SOURCES.length]];
+  const n = SOURCES.length;
+  const a = SOURCES[(minute * 2) % n];
+  const b = SOURCES[(minute * 2 + 1) % n];
+  return a === b ? [a] : [a, b];
 }
 
 // Parse Arabic-formatted pubDate like: "الجمعة، 26 يونيو 2026 01:00 ص"
