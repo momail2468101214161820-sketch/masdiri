@@ -32,29 +32,45 @@ const SiteHeader = () => {
   });
 
   return (
-    <header className="sticky top-0 z-50 shadow-xl" style={{ borderTop: "4px solid hsl(var(--gold))" }}>
+    <header className="sticky top-0 z-50 shadow-2xl" style={{ borderTop: "4px solid hsl(var(--gold))" }}>
       {/* === Editorial utility bar === */}
-      <div className="utility-bar hidden md:block" style={{ background: "hsl(var(--royal-blue-dark))", color: "hsl(var(--gold-light))" }}>
+      <div
+        className="utility-bar hidden md:block"
+        style={{
+          background: "linear-gradient(180deg, hsl(var(--royal-blue-dark)) 0%, hsl(222 50% 6%) 100%)",
+          color: "#ffffff",
+          borderBottom: "1px solid hsl(var(--gold)/0.35)",
+        }}
+      >
         <div className="container flex items-center justify-between h-8 text-[11px]">
-          <div className="flex items-center gap-3 opacity-90">
-            <span className="tabular">{today}</span>
-            <span className="opacity-40">|</span>
-            <span>القاهرة 32°</span>
-            <span className="opacity-40">|</span>
-            <span className="tracking-[0.18em] uppercase text-[10px]" style={{ color: "hsl(var(--gold))" }}>آخر تحديث الآن</span>
+          <div className="flex items-center gap-3 text-white/95">
+            <span className="tabular text-white">{today}</span>
+            <span className="text-white/30">|</span>
+            <span className="text-white">القاهرة 32°</span>
+            <span className="text-white/30">|</span>
+            <span className="tracking-[0.18em] uppercase text-[10px] font-bold" style={{ color: "hsl(var(--gold))" }}>
+              ● آخر تحديث الآن
+            </span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/results/prep" className="hover:text-[hsl(var(--gold))] transition-colors">نتيجة الإعدادية</Link>
-            <span className="opacity-40">|</span>
-            <Link to="/about" className="hover:text-[hsl(var(--gold))] transition-colors">عن المنصة</Link>
-            <span className="opacity-40">|</span>
-            <Link to="/contact" className="hover:text-[hsl(var(--gold))] transition-colors">تواصل معنا</Link>
+            <Link to="/results/prep" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">نتيجة الإعدادية</Link>
+            <span className="text-white/30">|</span>
+            <Link to="/about" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">عن المنصة</Link>
+            <span className="text-white/30">|</span>
+            <Link to="/contact" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">تواصل معنا</Link>
           </div>
         </div>
       </div>
 
       {/* === Main editorial masthead === */}
-      <div style={{ background: "hsl(var(--royal-blue-dark))", color: "white" }}>
+      <div
+        style={{
+          background:
+            "radial-gradient(ellipse at top right, hsl(222 50% 18%) 0%, hsl(var(--royal-blue-dark)) 55%, hsl(222 55% 5%) 100%)",
+          color: "#ffffff",
+          borderBottom: "2px solid hsl(var(--gold)/0.5)",
+        }}
+      >
         <div className="container py-4 md:py-5">
           <div className="flex items-center justify-between gap-3 md:gap-6">
             {/* Mobile drawer trigger */}
@@ -62,7 +78,7 @@ const SiteHeader = () => {
               <SheetTrigger asChild>
                 <button
                   className="md:hidden p-2 rounded-lg border text-white"
-                  style={{ borderColor: "hsl(var(--gold)/0.55)", background: "hsl(var(--gold)/0.08)" }}
+                  style={{ borderColor: "hsl(var(--gold)/0.6)", background: "hsl(var(--gold)/0.12)" }}
                   aria-label="فتح القائمة"
                 >
                   <Menu size={22} />
@@ -70,11 +86,11 @@ const SiteHeader = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[85vw] sm:w-[360px] bg-background border-l-2 border-[hsl(var(--gold)/0.5)] p-0">
                 <SheetHeader className="bg-royal-gradient p-5 text-primary-foreground">
-                  <SheetTitle className="flex items-center gap-3 text-primary-foreground">
+                  <SheetTitle className="flex items-center gap-3 text-white">
                     <img src="/images/logo.png" alt="" className="w-12 h-12 rounded-full border-2 border-[hsl(var(--gold))]" />
                     <div className="text-right">
-                      <div className="text-lg font-black text-gold-shine" style={{ fontFamily: "'Amiri', serif" }}>مصدري</div>
-                      <div className="text-[10px] opacity-80">مصدري للأخبار المصرية والعالمية</div>
+                      <div className="text-lg font-black text-white" style={{ fontFamily: "'Amiri', serif" }}>مصدري</div>
+                      <div className="text-[10px] text-white/85">مصدري للأخبار المصرية والعالمية</div>
                     </div>
                   </SheetTitle>
                 </SheetHeader>
@@ -103,7 +119,7 @@ const SiteHeader = () => {
                   <Link
                     to="/results/prep"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-black bg-royal-gradient text-primary-foreground"
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-black bg-royal-gradient text-white"
                   >
                     <GraduationCap size={16} /> نتيجة الإعدادية
                   </Link>
@@ -115,7 +131,7 @@ const SiteHeader = () => {
             </Sheet>
 
             {/* Wordmark */}
-            <Link to="/" className="flex items-center gap-3 md:gap-4 min-w-0">
+            <Link to="/" className="flex items-center gap-3 md:gap-4 min-w-0 group">
               <img
                 src="/images/logo.png"
                 alt="مصدري"
@@ -124,13 +140,15 @@ const SiteHeader = () => {
               />
               <div className="min-w-0">
                 <div
-                  className="font-bold leading-none tracking-tight text-3xl md:text-5xl"
-                  style={{ fontFamily: "'Amiri', serif", color: "hsl(var(--gold))" }}
+                  className="font-bold leading-none tracking-tight text-3xl md:text-5xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                  style={{ fontFamily: "'Amiri', serif" }}
                 >
                   مصدري
                 </div>
-                <p className="hidden md:block text-[11px] mt-1.5 font-bold tracking-wide opacity-90" style={{ color: "hsl(var(--gold-light))" }}>
+                <p className="hidden md:block text-[11px] mt-1.5 font-bold tracking-wide text-white/90">
                   للأخبار المصرية والعالمية
+                  <span className="mx-1.5" style={{ color: "hsl(var(--gold))" }}>◆</span>
+                  <span style={{ color: "hsl(var(--gold-light))" }}>مصدر الخبر اليقين</span>
                 </p>
               </div>
             </Link>
@@ -143,12 +161,18 @@ const SiteHeader = () => {
                   <Link
                     key={cat.slug}
                     to={cat.slug}
-                    className="relative px-3 py-2 text-sm font-bold tracking-wide transition-colors"
-                    style={{ color: active ? "hsl(var(--gold))" : "rgba(255,255,255,0.92)", fontFamily: "'Cairo', sans-serif" }}
+                    className="relative px-3 py-2 text-sm font-bold tracking-wide transition-colors hover:text-[hsl(var(--gold))]"
+                    style={{
+                      fontFamily: "'Cairo', sans-serif",
+                      color: active ? "hsl(var(--gold))" : "#ffffff",
+                    }}
                   >
-                    <span className="hover:text-[hsl(var(--gold))] transition-colors">{cat.name}</span>
+                    <span>{cat.name}</span>
                     {active && (
-                      <span className="absolute -bottom-0.5 right-1/2 translate-x-1/2 h-[2px] w-2/3 rounded-full" style={{ background: "hsl(var(--gold))" }} />
+                      <span
+                        className="absolute -bottom-0.5 right-1/2 translate-x-1/2 h-[2px] w-2/3 rounded-full"
+                        style={{ background: "hsl(var(--gold))", boxShadow: "0 0 10px hsl(var(--gold)/0.8)" }}
+                      />
                     )}
                   </Link>
                 );
@@ -162,8 +186,13 @@ const SiteHeader = () => {
               <div className="hidden md:block"><InstallAppButton /></div>
               <Link
                 to="/results/prep"
-                className="hidden md:inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider border-2 transition-all hover:bg-[hsl(var(--gold))] hover:text-[hsl(var(--royal-blue-dark))]"
-                style={{ borderColor: "hsl(var(--gold))", color: "hsl(var(--gold))", fontFamily: "'Cairo', sans-serif" }}
+                className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider border-2 rounded-sm transition-all text-white hover:bg-[hsl(var(--gold))] hover:text-[hsl(var(--royal-blue-dark))]"
+                style={{
+                  borderColor: "hsl(var(--gold))",
+                  background: "hsl(var(--gold)/0.12)",
+                  fontFamily: "'Cairo', sans-serif",
+                  boxShadow: "0 0 0 1px hsl(var(--gold)/0.25) inset, 0 4px 14px -4px hsl(var(--gold)/0.4)",
+                }}
               >
                 <Radio size={13} /> اشترك الآن
               </Link>
@@ -176,6 +205,7 @@ const SiteHeader = () => {
           </div>
         </div>
       </div>
+
 
 
       {/* Professional icon strip (desktop) */}
