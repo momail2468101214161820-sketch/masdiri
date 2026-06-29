@@ -213,7 +213,7 @@ const AdminPanel = () => {
     s.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^\w\u0600-\u06FF-]/g, "").slice(0, 60) || `cat-${Date.now()}`;
 
   const OFFICIAL_CATEGORIES = [
-    "الرئيسية","أهم الأخبار","رياضة","عربي ودولي","تقارير ومتابعات","اقتصاد","حوادث","فن","ثقافة","المحافظات","مقالات","منوعات","صحافة","صحافة المواطن","تكنولوجيا وإنترنت","سياسة","استشارات","صحة ومرأة","سوشيال المشاهير","توك شو","رئيس التحرير","صحافة محلية","صحافة عالمية","صحافة إسرائيلية","العدد الورقي","طاقة","أفريقيات","سيارات","عقارات","سياحة وآثار","من نحن","اعلن معنا"
+    "الرئيسية","أهم الأخبار","رياضة","عربي ودولي","تقارير ومتابعات","اقتصاد","حوادث","فن","ثقافة","المحافظات","مقالات","منوعات","صحافة","صحافة المواطن","تكنولوجيا وإنترنت","سياسة","استشارات","صحة ومرأة","سوشيال المشاهير","توك شو","رئيس مصدري","صحافة محلية","صحافة عالمية","صحافة إسرائيلية","العدد الورقي","طاقة","أفريقيات","سيارات","عقارات","سياحة وآثار","من نحن","اعلن معنا"
   ];
 
   const [newCatName, setNewCatName] = useState("");
@@ -607,7 +607,7 @@ const AdminPanel = () => {
             <div className="border-2 border-foreground bg-gradient-to-l from-primary/10 via-card to-card p-5 rounded-2xl flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>
                 <h2 className="font-black text-xl flex items-center gap-2">
-                  <Bot className="text-primary" /> مساعد جيمناي التحريري الذكي
+                  <Bot className="text-primary" /> مساعد مصدري الذكي
                 </h2>
                 <p className="text-xs text-muted-foreground mt-1 font-bold">
                   ينشر، يعدّل، يحذف، يفعّل الإعلانات، يولّد الصور، ويبحث على الإنترنت — أوامر مباشرة بالعربي.
@@ -879,7 +879,7 @@ const AdminPanel = () => {
           <div className="space-y-6 animate-in fade-in duration-300">
             <div className="border-2 border-foreground p-6 bg-card">
               <div className="flex items-center justify-between flex-wrap gap-3 mb-4 border-b pb-2">
-                <h2 className="font-bold text-lg flex items-center gap-2"><Globe size={18}/> أقسام الموقع الرسمية</h2>
+                <h2 className="font-bold text-lg flex items-center gap-2"><Globe size={18}/> أقسام مصدري الرسمية</h2>
                 <button onClick={handleSeedCategories} className="bg-primary text-primary-foreground px-4 py-2 font-bold text-xs hover:opacity-90 shadow flex items-center gap-2">
                   <RefreshCw size={14}/> تثبيت كل الأقسام الـ 32
                 </button>
@@ -910,12 +910,12 @@ const AdminPanel = () => {
           <div className="space-y-6 animate-in fade-in duration-300">
             <div className="border-2 border-foreground p-6 bg-card">
               <h2 className="font-bold text-lg mb-4 border-b pb-2 flex items-center gap-2">
-                <Image size={18} /> {editingAd ? "تعديل بيانات الحملة الإعلانية" : "حجز مساحة إعلانية للمنصة"}
+                <Image size={18} /> {editingAd ? "تعديل بيانات الحملة الإعلانية" : "حجز مساحة إعلانية للمصدري"}
               </h2>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs font-bold mb-1 block">تحديد الموضع بالموقع (Slot)</label>
+                    <label className="text-xs font-bold mb-1 block">تحديد الموضع بمصدري (Slot)</label>
                     <select value={adSlot} onChange={(e) => setAdSlot(e.target.value)}
                       className="w-full border-2 border-border px-4 py-2.5 bg-background font-bold text-sm focus:outline-none focus:border-primary">
                       <option value="header">إعلان الهيدر العلوي الرئيسي</option>
@@ -980,7 +980,7 @@ const AdminPanel = () => {
             </div>
 
             <div className="space-y-2">
-              <p className="text-xs font-bold text-muted-foreground">مساحات العرض الإعلانية المجدولة بالموقع حالياً:</p>
+              <p className="text-xs font-bold text-muted-foreground">مساحات العرض الإعلانية المجدولة بمصدري حالياً:</p>
               {ads.map((ad) => (
                 <div key={ad.id} className={`border-2 border-border p-3 bg-card flex flex-col md:flex-row md:items-center justify-between gap-4 ${!ad.is_active ? "opacity-40" : ""}`}>
                   <div className="flex-1 min-w-0">
@@ -1173,7 +1173,7 @@ const AdminPanel = () => {
                 <h4 className="font-black text-sm text-amber-700 dark:text-amber-400 mb-2">⚠️ نصائح أمنية</h4>
                 <ul className="text-xs space-y-1 list-disc list-inside font-bold text-foreground/80">
                   <li>غيّر رمز الدخول كل 30 يوماً على الأقل.</li>
-                  <li>لا تشارك رمز الدخول مع أي شخص خارج فريق التحرير.</li>
+                  <li>لا تشارك رمز الدخول مع أي شخص خارج فريق مصدري.</li>
                   <li>أنهِ الجلسة قبل مغادرة الجهاز.</li>
                   <li>كل التعديلات تمر عبر Edge Function آمن مع تحقق من الـ PIN.</li>
                 </ul>

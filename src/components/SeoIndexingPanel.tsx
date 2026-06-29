@@ -151,7 +151,7 @@ const SeoIndexingPanel = () => {
           className="bg-[hsl(var(--gold))] text-[hsl(var(--primary))] py-2.5 px-4 rounded-md font-bold text-sm flex items-center justify-center gap-2 hover:opacity-90 disabled:opacity-50"
         >
           <Zap size={16} />
-          {busy === "submit_sitemap" ? "جارٍ..." : "إرسال خريطة الموقع لجوجل"}
+          {busy === "submit_sitemap" ? "جارٍ..." : "إرسال خريطة مصدري لجوجل"}
         </button>
         <button
           onClick={pingBing}
@@ -231,7 +231,7 @@ const SeoIndexingPanel = () => {
       </div>
 
       <div className="text-[11px] text-muted-foreground bg-muted/40 p-3 rounded-md" style={{ fontFamily: "'Cairo', sans-serif" }}>
-        💡 شرط: لازم الموقع <span className="font-bold">{SITE_URL}</span> يكون متحقّق منه في Search Console بنفس الحساب اللي ربطته بـ Lovable.
+        💡 شرط: لازم مصدري <span className="font-bold">{SITE_URL}</span> يكون متحقّق منه في Search Console بنفس الحساب اللي ربطته بـ Lovable.
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const SeoKeywordsPanel = () => {
       if (!data?.ok) throw new Error(data?.message || "فشل جلب الكلمات");
       setRows(data.rows || []);
       setRange(data.range || null);
-      if (!(data.rows || []).length) toast.info("لا توجد بيانات بعد — جوجل يحتاج وقت ليفهرس الموقع");
+      if (!(data.rows || []).length) toast.info("لا توجد بيانات بعد — جوجل يحتاج وقت ليفهرس مصدري");
       else toast.success(`تم جلب ${data.rows.length} كلمة من جوجل ✓`);
     } catch (e: any) {
       toast.error(e?.message || "تعذّر الاتصال بجوجل");
@@ -66,7 +66,7 @@ const SeoKeywordsPanel = () => {
             أفضل كلمات البحث في جوجل <Sparkles size={14} className="text-[hsl(var(--gold))]" />
           </h3>
           <p className="text-xs text-muted-foreground font-bold mt-1" style={{ fontFamily: "'Cairo', sans-serif" }}>
-            الكلمات التي يبحث بها الناس ويظهر فيها موقعك — مباشر من Google Search Console (آخر 28 يوم، حتى 500 كلمة)
+            الكلمات التي يبحث بها الناس ويظهر فيها مصدري — مباشر من Google Search Console (آخر 28 يوم، حتى 500 كلمة)
           </p>
         </div>
       </div>
@@ -139,7 +139,7 @@ const SeoKeywordsPanel = () => {
               <option value="impressions">ترتيب: الأكثر ظهورًا</option>
               <option value="clicks">ترتيب: الأكثر نقرًا</option>
               <option value="ctr">ترتيب: أعلى CTR</option>
-              <option value="position">ترتيب: أفضل موقع في جوجل</option>
+              <option value="position">ترتيب: أفضل ترتيب في جوجل</option>
             </select>
           </div>
 

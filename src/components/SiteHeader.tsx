@@ -55,7 +55,7 @@ const SiteHeader = () => {
           <div className="flex items-center gap-4">
             <Link to="/results/prep" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">نتيجة الإعدادية</Link>
             <span className="text-white/30">|</span>
-            <Link to="/about" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">عن المنصة</Link>
+            <Link to="/about" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">عن المصدري</Link>
             <span className="text-white/30">|</span>
             <Link to="/contact" className="text-white hover:text-[hsl(var(--gold))] transition-colors font-semibold">تواصل معنا</Link>
           </div>

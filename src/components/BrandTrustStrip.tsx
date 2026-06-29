@@ -11,7 +11,7 @@ const BrandTrustStrip = () => {
     { icon: <Users size={18} />, value: "+250K", label: "متابع شهرياً" },
     { icon: <Radio size={18} />, value: "24/7", label: "تغطية مباشرة" },
     { icon: <ShieldCheck size={18} />, value: "100%", label: "مصادر موثقة" },
-    { icon: <Sparkles size={18} />, value: "AI", label: "ذكاء تحريري" },
+    { icon: <Sparkles size={18} />, value: "AI", label: "ذكاء رسمي" },
   ];
 
   return (
@@ -22,7 +22,7 @@ const BrandTrustStrip = () => {
         background:
           "linear-gradient(135deg, hsl(var(--royal-blue-dark)) 0%, hsl(var(--royal-blue)) 55%, hsl(var(--royal-blue-dark)) 100%)",
       }}
-      aria-label="منصة مصدري الرسمية"
+      aria-label="مصدري الرسمي"
     >
       {/* Gold halo */}
       <div className="pointer-events-none absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[hsl(var(--gold)/0.18)] blur-3xl" />
@@ -42,10 +42,10 @@ const BrandTrustStrip = () => {
           <h2 className="text-3xl md:text-4xl font-black leading-tight" style={{ fontFamily: "'Amiri', serif" }}>
             <span className="text-white">مصدري</span>
             <span className="text-[hsl(var(--gold))] mx-2">—</span>
-            <span className="text-white/95">صوت البلد بثقة وموضوعية</span>
+            <span className="text-white/95">نبض القلب المصري والعالمي</span>
           </h2>
           <p className="mt-3 text-white/85 text-sm md:text-[15px] leading-relaxed max-w-xl" style={{ fontFamily: "'Cairo', sans-serif" }}>
-            منصة إخبارية رسمية تنقل الحدث المصري والعالمي لحظة بلحظة، بأسلوب صحفي مهني وتحرير دقيق.
+            مصدري تنقل الحدث المصري والعالمي لحظة بلحظة، بأسلوب صحفي مهني وإعداد دقيق.
             تابعنا على قنواتنا الرسمية لتصلك آخر المستجدات قبل الجميع.
           </p>
 
@@ -82,7 +82,7 @@ const BrandTrustStrip = () => {
             </div>
             <OfficialContactButtons variant="full" />
             <p className="mt-4 text-[11px] text-muted-foreground text-center font-bold" style={{ fontFamily: "'Cairo', sans-serif" }}>
-              للإعلان أو الإبلاغ عن خبر · تواصل مباشر مع غرفة التحرير
+              للإعلان أو الإبلاغ عن خبر · تواصل مباشر مع غرفة الأخبار
             </p>
           </div>
         </div>

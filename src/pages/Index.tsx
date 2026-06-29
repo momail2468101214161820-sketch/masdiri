@@ -262,7 +262,7 @@ const Index = () => {
                 ) : gridArticles.length === 0 ? (
                   <div className="border border-border border-dashed p-12 text-center rounded-2xl bg-muted/30">
                     <h3 className="font-bold text-lg mb-2 text-foreground" style={{ fontFamily: "'Amiri', serif" }}>
-                      جارٍ تحديث غرفة التحرير
+                      جارٍ تحديث غرفة الأخبار
                     </h3>
                     <p className="text-muted-foreground text-sm">سيتم نشر الأخبار فور توفرها.</p>
                   </div>

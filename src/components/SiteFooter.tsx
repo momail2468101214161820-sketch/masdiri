@@ -124,7 +124,7 @@ const SiteFooter = () => {
             <span className="opacity-30">·</span>
             <a href="/contact" className="hover:text-[hsl(var(--gold))] opacity-90">اتصل بنا</a>
             <span className="opacity-30">·</span>
-            <a href="/editorial-policy" className="hover:text-[hsl(var(--gold))] opacity-90 font-bold">السياسة التحريرية</a>
+            <a href="/editorial-policy" className="hover:text-[hsl(var(--gold))] opacity-90 font-bold">سياسة مصدري</a>
             <span className="opacity-30">·</span>
             <a href="/corrections" className="hover:text-[hsl(var(--gold))] opacity-90 font-bold">سياسة التصحيحات</a>
             <span className="opacity-30">·</span>
@@ -136,7 +136,7 @@ const SiteFooter = () => {
             <span className="opacity-30">·</span>
             <a href="/cookies" className="hover:text-[hsl(var(--gold))] opacity-90">سياسة ملفات تعريف الارتباط</a>
             <span className="opacity-30">·</span>
-            <a href="/sitemap" className="hover:text-[hsl(var(--gold))] opacity-90">خريطة الموقع</a>
+            <a href="/sitemap" className="hover:text-[hsl(var(--gold))] opacity-90">خريطة مصدري</a>
           </nav>
 
           <div className="mt-5 pt-3 text-center space-y-2">
