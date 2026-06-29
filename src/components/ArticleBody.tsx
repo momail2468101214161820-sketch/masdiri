@@ -37,22 +37,8 @@ function cleanRaw(raw: string): string {
 function splitLongParagraph(text: string): string[] {
   const sentences = text.split(SENTENCE_SPLIT).map((s) => s.trim()).filter(Boolean);
   if (sentences.length <= 1) return [text];
-  // Professional newspaper rhythm: pair short sentences, keep long ones alone.
-  const out: string[] = [];
-  let buf: string[] = [];
-  let len = 0;
-  for (const s of sentences) {
-    buf.push(s);
-    len += s.length;
-    // Flush after every sentence if it's already substantial, otherwise pair with the next.
-    if (len >= 140 || buf.length >= 2) {
-      out.push(buf.join(" "));
-      buf = [];
-      len = 0;
-    }
-  }
-  if (buf.length) out.push(buf.join(" "));
-  return out;
+  // Each sentence becomes its own paragraph for a clean newspaper rhythm.
+  return sentences;
 }
 
 function classifyLine(line: string): "h2" | "quote" | "bullet" | "number" | "p" {
