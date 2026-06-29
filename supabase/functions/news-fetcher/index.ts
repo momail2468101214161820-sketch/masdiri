@@ -906,9 +906,21 @@ async function processSource(src: NewsSource, runState: { aiCalls: number; aiLim
           source_name: "مصدري للأخبار المصرية والعالمية",
           content_hash: titleHash,
         };
-        const { data: inserted, error } = await supabase.from("articles").insert(payload).select("id").single();
+        const { data: inserted, error } = await supabase.from("articles").insert(payload).select("id, short_id").single();
         if (error) throw error;
         log.items_inserted++;
+        const articleUrl = inserted?.short_id
+          ? `${(Deno.env.get("SITE_URL") ?? "https://masdiri.vercel.app").replace(/\/+$/, "")}/${inserted.short_id}`
+          : `${(Deno.env.get("SITE_URL") ?? "https://masdiri.vercel.app").replace(/\/+$/, "")}/article/${inserted?.id}`;
+        // Auto-broadcast to IndexNow (Bing, Yandex, Naver, Seznam, Yep + 10k+ crawlers)
+        // — so every new article is discovered by search engines & AI bots within seconds.
+        try {
+          fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/indexnow-submit`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}` },
+            body: JSON.stringify({ mode: "urls", urls: [articleUrl] }),
+          }).catch(() => {});
+        } catch { /* ignore */ }
         // Fire web push (best-effort, non-blocking)
         try {
           const fnUrl = `${Deno.env.get("SUPABASE_URL")}/functions/v1/send-push`;
@@ -925,6 +937,7 @@ async function processSource(src: NewsSource, runState: { aiCalls: number; aiLim
             }),
           }).catch(() => {});
         } catch { /* ignore */ }
+
       } catch (e) {
         console.error("Item failed:", e);
         log.items_failed++;
