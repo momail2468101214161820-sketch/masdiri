@@ -26,7 +26,7 @@
     <meta name="msapplication-TileImage" content="/images/logo.png" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <link rel="alternate" type="application/rss+xml" title="مصدري — RSS" href="https://tgvxtsdlojaxyominpsf.supabase.co/functions/v1/dynamic-rss" />
-    <link rel="alternate" type="application/rss+xml" title="مصدري — Google News" href="https://masdiri.lovable.app/news.xml" />
+    <link rel="alternate" type="application/rss+xml" title="مصدري — Google News" href="https://masdiri.vercel.app/news.xml" />
     <!-- canonical is set per-route via react-helmet-async -->
 
 
@@ -37,11 +37,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="مصدري للأخبار المصرية والعالمية" />
     <meta property="og:locale" content="ar_EG" />
-    <meta property="og:url" content="https://masdiri.lovable.app/" />
+    <meta property="og:url" content="https://masdiri.vercel.app/" />
     
     
     <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/SpDL8YHhSOTxNzn5RcAMza0yFEF3/social-images/social-1782685963256-WhatsApp_Image_2026-06-29_at_1.09.28_AM.webp">
-    <meta property="og:image:secure_url" content="https://masdiri.lovable.app/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://masdiri.vercel.app/og-image.jpg" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -61,14 +61,14 @@
       "@type": "NewsMediaOrganization",
       "name": "مصدري للأخبار المصرية والعالمية",
       "alternateName": "Sout Al Balad",
-      "url": "https://masdiri.lovable.app/",
+      "url": "https://masdiri.vercel.app/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://masdiri.lovable.app/favicon-512.png",
+        "url": "https://masdiri.vercel.app/favicon-512.png",
         "width": 512,
         "height": 512
       },
-      "image": "https://masdiri.lovable.app/favicon-512.png",
+      "image": "https://masdiri.vercel.app/favicon-512.png",
       "description": "مصدري للأخبار المصرية والعالمية. أخبار مصر العاجلة والتقارير المتعمقة. برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم.",
       "inLanguage": "ar-EG",
       "foundingLocation": "مصر"
@@ -81,10 +81,10 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "مصدري",
-      "url": "https://masdiri.lovable.app/",
+      "url": "https://masdiri.vercel.app/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://masdiri.lovable.app/?q={search_term_string}",
+        "target": "https://masdiri.vercel.app/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -99,6 +99,16 @@
   <meta name="twitter:description" content="مصدري للأخبار المصرية والعالمية. أخبار مصر العاجلة والتقارير المتعمقة في السياسة والرياضة والاقتصاد والتكنولوجيا. برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم |المطور التقني خالد عاطف عبدالحكيم">
 </head>
   <body>
+    <script>
+      // Permanent redirect from old domain to new domain (preserves path + query + hash)
+      (function(){
+        try {
+          if (location.hostname === 'masdiri.lovable.app') {
+            location.replace('https://masdiri.vercel.app' + location.pathname + location.search + location.hash);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
