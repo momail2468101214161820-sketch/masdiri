@@ -70,7 +70,7 @@ const CollectionPage = ({ mode }: Props) => {
     (async () => {
       let qb = supabase
         .from("articles")
-        .select("id, short_id, title, summary, image_url, content, images, is_breaking, created_at, categories(name)")
+        .select("id, short_id, title, summary, image_url, images, is_breaking, created_at, categories(name)")
         .eq("is_published", true);
 
       switch (mode) {
