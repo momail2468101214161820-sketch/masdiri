@@ -141,7 +141,10 @@ const SiteFooter = () => {
 
           <div className="mt-5 pt-3 text-center space-y-2">
             <p className="text-sm font-bold text-[hsl(var(--gold))]">
-              للتواصل والاستفسارات: <span className="opacity-90 font-normal">متاح قريبًا</span>
+              للتواصل والاستفسارات:{" "}
+              <a href="tel:+201205025742" className="opacity-90 font-normal hover:underline" dir="ltr">01205025742</a>
+              <span className="opacity-50 mx-1">·</span>
+              <a href="tel:+201503504548" className="opacity-90 font-normal hover:underline" dir="ltr">01503504548</a>
             </p>
             <p className="text-xs opacity-60">
               © {new Date().getFullYear()} مصدري للأخبار المصرية والعالمية — جميع الحقوق محفوظة
