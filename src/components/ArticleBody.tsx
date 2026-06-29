@@ -131,6 +131,9 @@ export function ArticleBody({
       ? Math.max(1, Math.min(blocks.length - 1, splitAt))
       : -1;
 
+  // Index of the first paragraph block (for lead / drop-cap styling)
+  const firstParaIdx = blocks.findIndex((b) => b.kind === "p");
+
   const renderBlock = (b: Block, i: number) => {
     switch (b.kind) {
       case "h2":
@@ -191,22 +194,30 @@ export function ArticleBody({
           </ol>
         );
       case "p":
-      default:
+      default: {
+        const isLead = i === firstParaIdx;
         return (
           <p
             key={i}
-            className="font-cairo text-foreground/90 mb-5 text-right sm:text-justify"
+            className={
+              "font-cairo text-foreground/90 mb-5 text-right sm:text-justify " +
+              (isLead
+                ? "drop-cap font-semibold text-foreground first-letter:text-[hsl(var(--gold-dark))] "
+                : "")
+            }
             style={{
-              fontSize: `${fontSize}px`,
-              lineHeight: 1.95,
+              fontSize: isLead ? `${fontSize + 2}px` : `${fontSize}px`,
+              lineHeight: isLead ? 2 : 1.95,
               letterSpacing: "0.005em",
               wordSpacing: "0.03em",
               hyphens: "auto",
+              textJustify: "inter-word",
             }}
           >
             {b.text}
           </p>
         );
+      }
     }
   };
 
