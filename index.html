@@ -99,6 +99,16 @@
   <meta name="twitter:description" content="مصدري للأخبار المصرية والعالمية. أخبار مصر العاجلة والتقارير المتعمقة في السياسة والرياضة والاقتصاد والتكنولوجيا. برئاسة وتطوير: البشمبرمج/ خالد عاطف عبدالحكيم |المطور التقني خالد عاطف عبدالحكيم">
 </head>
   <body>
+    <script>
+      // Permanent redirect from old domain to new domain (preserves path + query + hash)
+      (function(){
+        try {
+          if (location.hostname === 'masdiri.lovable.app') {
+            location.replace('https://masdiri.vercel.app' + location.pathname + location.search + location.hash);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
