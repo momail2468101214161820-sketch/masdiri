@@ -26,12 +26,12 @@
     --border: 220 13% 88%;
     --input: 220 13% 90%;
     --ring: 222 47% 14%;
-    --gold: 42 78% 50%;                    /* Real warm gold accent */
-    --gold-light: 45 90% 68%;
-    --gold-dark: 38 75% 38%;
-    --royal-blue: 222 47% 14%;
-    --royal-blue-light: 222 40% 28%;
-    --royal-blue-dark: 222 50% 8%;
+    --gold: 40 50% 56%;                    /* Regal antique gold (#C5A059) */
+    --gold-light: 43 75% 72%;
+    --gold-dark: 36 55% 42%;
+    --royal-blue: 214 100% 12%;            /* Deep editorial navy (#001B3D) */
+    --royal-blue-light: 215 60% 22%;
+    --royal-blue-dark: 215 100% 7%;        /* Sovereign midnight (#001026) */
     --radius: 0.75rem;
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 222 47% 14%;
