@@ -27,7 +27,7 @@ import BrandTrustStrip from "@/components/BrandTrustStrip";
 import { motion } from "framer-motion";
 import { getArticlePrimaryImage } from "@/lib/articleImages";
 
-const SITE_URL = "https://masdiri.lovable.app";
+import { SITE_URL } from "@/lib/siteUrl";
 
 interface Article {
   id: string;

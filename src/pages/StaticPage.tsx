@@ -6,7 +6,7 @@ import { ChevronLeft, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 
-const SITE = "https://masdiri.lovable.app";
+import { SITE_URL as SITE } from "@/lib/siteUrl";
 
 interface StaticPageProps {
   slug: string;

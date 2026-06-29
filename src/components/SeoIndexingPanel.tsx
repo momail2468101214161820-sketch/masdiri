@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { getAdminPin } from "@/lib/adminApi";
 
-const SITE_URL = "https://masdiri.lovable.app";
+import { SITE_URL } from "@/lib/siteUrl";
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 const SeoIndexingPanel = () => {

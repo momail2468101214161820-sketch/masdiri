@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { CheckCircle2, XCircle, Loader2, Search, Share2, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 
-const SITE_URL = "https://masdiri.lovable.app";
+import { SITE_URL } from "@/lib/siteUrl";
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
 
 interface OgData {
