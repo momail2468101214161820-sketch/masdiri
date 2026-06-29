@@ -297,7 +297,7 @@ export const CookieConsent = () => {
       <Sparkles size={18} style={{ color: "hsl(var(--gold))" }} className="shrink-0 mt-0.5" />
       <div className="flex-1">
         <p className="font-semibold mb-1">نستخدم ملفات تعريف الارتباط</p>
-        <p className="text-xs text-muted-foreground">لتحسين تجربتك على مصدري. باستخدامك للموقع فأنت توافق على ذلك.</p>
+        <p className="text-xs text-muted-foreground">لتحسين تجربتك على مصدري. باستخدامك للمصدري فأنت توافق على ذلك.</p>
       </div>
       <button onClick={() => { localStorage.setItem("sb-cookies-ok", "1"); setShow(false); }}
         className="shrink-0 px-3 py-1.5 rounded-full text-xs font-bold"

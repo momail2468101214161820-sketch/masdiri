@@ -12,10 +12,10 @@ type Msg = { role: "user" | "assistant"; content: string };
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat`;
 
 const TOOLTIPS = [
-  "جاهز لتحرير الأخبار",
+  "جاهز للنشر",
   "اكتب أمرك بدقة",
   "نشر فوري بضغطة زر",
-  "مساعدك التحريري الرسمي",
+  "مساعدك الرسمي",
 ];
 
 const AdminChat = ({ embedded = false }: { embedded?: boolean } = {}) => {
@@ -148,7 +148,7 @@ const AdminChat = ({ embedded = false }: { embedded?: boolean } = {}) => {
     <>
       {!embedded && (
         <Helmet>
-          <title>المساعد التحريري الذكي — مصدري</title>
+          <title>المساعد الذكي — مصدري</title>
           <meta name="description" content="غرفة الأخبار الذكية لمصدري — صياغة ونشر فوري للأخبار بأسلوب رسمي." />
           <meta name="robots" content="noindex, nofollow" />
           <link rel="canonical" href="https://soutalbalad.lovable.app/admin/chat" />
@@ -181,7 +181,7 @@ const AdminChat = ({ embedded = false }: { embedded?: boolean } = {}) => {
         {messages.length === 0 && (
           <div className="text-center py-16 text-muted-foreground">
             <Bot size={48} className="mx-auto mb-4 opacity-30" />
-            <h2 className="font-bold text-xl mb-2">المساعد التحريري الرسمي</h2>
+            <h2 className="font-bold text-xl mb-2">المساعد الرسمي</h2>
             <p className="text-sm max-w-md mx-auto mb-6">
               أصدر تعليماتك بالعربية الفصحى لإدارة الأخبار والإعلانات والأقسام والبحث على الويب عبر جوجل.
             </p>
@@ -190,7 +190,7 @@ const AdminChat = ({ embedded = false }: { embedded?: boolean } = {}) => {
                 "ابحث على الويب عن آخر تطورات الاقتصاد المصري واذكر المصادر",
                 "اعرض آخر خمسة أخبار منشورة",
                 "أنشئ خبراً رسمياً عن ارتفاع أسعار الذهب اليوم",
-                "ولّد صورة تحريرية عن حالة الطقس",
+                "ولّد صورة رسمية عن حالة الطقس",
                 "أضف فيديواً جديداً إلى المكتبة المرئية",
                 "حلّل الصورة المرفقة واستخرج النصوص منها",
               ].map((s) => (

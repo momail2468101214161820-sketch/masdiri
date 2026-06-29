@@ -21,7 +21,7 @@ const NotFound = () => {
     <>
       <Helmet>
         <title>الصفحة غير موجودة (404) — مصدري</title>
-        <meta name="description" content="عذراً، الصفحة التي تبحث عنها غير موجودة على موقع مصدري. عُد للرئيسية لتصفح آخر الأخبار." />
+        <meta name="description" content="عذراً، الصفحة التي تبحث عنها غير موجودة على مصدري. عُد للرئيسية لتصفح آخر الأخبار." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={`https://soutalbalad.lovable.app${location.pathname}`} />
         <meta property="og:title" content="الصفحة غير موجودة — مصدري" />

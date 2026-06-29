@@ -383,7 +383,7 @@ const ArticlePage = () => {
                   </div>
                   <div className="flex flex-col min-w-0">
                     <span className="text-sm font-bold truncate" style={{ color: "hsl(var(--primary))", fontFamily: "'Cairo',sans-serif" }}>
-                      هيئة تحرير مصدري
+                      فريق مصدري
                     </span>
                     <span className="text-[11px] text-muted-foreground flex items-center gap-2 flex-wrap" style={{ fontFamily: "'Cairo',sans-serif" }}>
                       <Clock size={11} /> {formattedDate}

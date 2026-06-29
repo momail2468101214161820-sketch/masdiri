@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 /**
- * FounderSignature — شارة موقعة ثابتة في كل صفحة
+ * FounderSignature — شارة مصدرية ثابتة في كل صفحة
  * تبرز "البشمبرمج / خالد عاطف عبدالحكيم" بتصميم ملكي فاخر
  */
 const FounderSignature = () => {
