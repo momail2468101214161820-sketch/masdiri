@@ -23,7 +23,7 @@ type Block =
   | { kind: "ul"; items: string[] }
   | { kind: "ol"; items: string[] };
 
-const SENTENCE_SPLIT = /(?<=[\.\!\?؟\u06D4])\s+(?=[\u0600-\u06FFA-Za-z])/g;
+const SENTENCE_SPLIT = /(?<=[\.\!\?؟\u06D4])\s*(?=[\u0600-\u06FFA-Za-z«"])/g;
 
 function cleanRaw(raw: string): string {
   return raw
@@ -35,16 +35,17 @@ function cleanRaw(raw: string): string {
 }
 
 function splitLongParagraph(text: string): string[] {
-  if (text.length < 320) return [text];
-  const sentences = text.split(SENTENCE_SPLIT).filter(Boolean);
-  if (sentences.length < 3) return [text];
+  const sentences = text.split(SENTENCE_SPLIT).map((s) => s.trim()).filter(Boolean);
+  if (sentences.length <= 1) return [text];
+  // Professional newspaper rhythm: pair short sentences, keep long ones alone.
   const out: string[] = [];
   let buf: string[] = [];
   let len = 0;
   for (const s of sentences) {
     buf.push(s);
     len += s.length;
-    if (len > 260 || buf.length >= 3) {
+    // Flush after every sentence if it's already substantial, otherwise pair with the next.
+    if (len >= 140 || buf.length >= 2) {
       out.push(buf.join(" "));
       buf = [];
       len = 0;
