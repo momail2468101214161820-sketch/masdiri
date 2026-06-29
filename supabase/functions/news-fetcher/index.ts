@@ -64,6 +64,17 @@ const SOURCES: NewsSource[] = [
     ],
     base: "ahram",
   },
+  {
+    name: "نيوزروم",
+    urls: [
+      "https://www.newsroom.info/rss",
+      "https://www.newsroom.info/feed",
+      "https://www.newsroom.info/rss.xml",
+      "https://news.google.com/rss/search?q=site%3Anewsroom.info&hl=ar&gl=EG&ceid=EG:ar",
+      "https://news.google.com/rss/search?q=site%3Anewsroom.info%20when%3A1d&hl=ar&gl=EG&ceid=EG:ar",
+    ],
+    base: "newsroom",
+  },
 ];
 
 const RSS_SCAN_LIMIT = 100;
