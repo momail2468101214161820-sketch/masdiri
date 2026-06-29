@@ -23,7 +23,7 @@ type Block =
   | { kind: "ul"; items: string[] }
   | { kind: "ol"; items: string[] };
 
-const SENTENCE_SPLIT = /(?<=[\.\!\?؟\u06D4])\s+(?=[\u0600-\u06FFA-Za-z])/g;
+const SENTENCE_SPLIT = /(?<=[\.\!\?؟\u06D4])\s*(?=[\u0600-\u06FFA-Za-z«"])/g;
 
 function cleanRaw(raw: string): string {
   return raw
