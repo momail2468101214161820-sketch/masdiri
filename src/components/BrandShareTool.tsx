@@ -3,8 +3,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Copy, MessageCircle, Facebook, Send, Link2, Sparkles, Wand2 } from "lucide-react";
 
-// أداة مشاركة بعلامة "مصدري" + اختصار رابط مجاني (TinyURL)
-// بنولّد رابط قصير شغّال فعلاً يحوّل للرابط الأصلي على lovable.app
+// أداة مشاركة بعلامة "منصة مصدري الإخباري" + اختصار رابط مجاني (TinyURL)
+// تُولّد رابطًا قصيرًا يحوّل للرابط الرسمي على masdiri.vercel.app
+
 
 import { SITE_URL as REAL_BASE } from "@/lib/siteUrl";
 
