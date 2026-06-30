@@ -35,9 +35,13 @@ const SiteFooter = () => {
         <div className="container py-10 text-[hsl(var(--primary-foreground))]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div>
-              <h3 className="newspaper-heading text-2xl mb-3" style={{ color: "hsl(var(--gold))" }}>
+              <h3 className="newspaper-heading text-2xl mb-1" style={{ color: "hsl(var(--gold))" }}>
                 منصة مصدري الإخباري
               </h3>
+              <p className="text-xs mb-3 opacity-90" style={{ color: "hsl(var(--gold-light))" }}>
+                مصدري... الخبر من مصدره
+              </p>
+
               <div>
                 <p className="text-xs font-bold mb-2 opacity-90" style={{ color: "hsl(var(--gold-light))" }}>
                   القنوات الرسمية والتواصل
