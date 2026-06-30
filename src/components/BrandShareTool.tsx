@@ -77,14 +77,15 @@ const BrandShareTool = () => {
     >
       <div className="flex items-center gap-2">
         <Sparkles className="text-yellow-500" size={20} />
-        <h3 className="text-xl font-bold">مشاركة بعلامة masdiri.com</h3>
+        <h3 className="text-xl font-bold">مشاركة بعلامة منصة مصدري الإخباري</h3>
       </div>
 
       <p className="text-sm text-muted-foreground leading-7">
-        طالما مفيش دومين متشترى، الرابط الفعلي بيفضل <code className="px-1 rounded bg-muted">lovable.app</code>.
-        الأداة دي بتجهزلك نص مشاركة رسمي يبان فيه <b>masdiri.com</b> بجانب الرابط
-        الحقيقي اللي شغّال — مثالي لواتساب وفيسبوك وتليجرام.
+        الرابط الرسمي للمنصة: <code className="px-1 rounded bg-muted">masdiri.vercel.app</code>.
+        تجهّز الأداة نص مشاركة رسمي بعلامة <b>منصة مصدري الإخباري</b> بجانب الرابط الحقيقي —
+        مثالي لواتساب وفيسبوك وتليجرام.
       </p>
+
 
       <div className="grid md:grid-cols-2 gap-3">
         <div>
