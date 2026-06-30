@@ -40,7 +40,7 @@ const BrandShareTool = () => {
   const selected = articles.find((a) => a.id === selectedId);
   const realUrl = customUrl.trim() ||
     (selected ? `${REAL_BASE}/article/${selected.id}` : REAL_BASE);
-  const title = customTitle.trim() || selected?.title || "مصدري للأخبار المصرية والعالمية";
+  const title = customTitle.trim() || selected?.title || "منصة مصدري الإخباري";
   const displayUrl = shortUrl || realUrl;
 
   // إعادة تصفير الرابط القصير لما الرابط الأصلي يتغير
@@ -57,7 +57,7 @@ const BrandShareTool = () => {
   const shareText =
     `📰 ${title}\n` +
     `\n👉 ${displayUrl}\n` +
-    `\n— مصدري للأخبار المصرية والعالمية`;
+    `\n— منصة مصدري الإخباري`;
 
   const copy = async (text: string, label = "تم النسخ") => {
     await navigator.clipboard.writeText(text);
@@ -76,12 +76,12 @@ const BrandShareTool = () => {
     >
       <div className="flex items-center gap-2">
         <Sparkles className="text-yellow-500" size={20} />
-        <h3 className="text-xl font-bold">مشاركة بعلامة soutalbalad.com</h3>
+        <h3 className="text-xl font-bold">مشاركة بعلامة masdiri.com</h3>
       </div>
 
       <p className="text-sm text-muted-foreground leading-7">
         طالما مفيش دومين متشترى، الرابط الفعلي بيفضل <code className="px-1 rounded bg-muted">lovable.app</code>.
-        الأداة دي بتجهزلك نص مشاركة رسمي يبان فيه <b>soutalbalad.com</b> بجانب الرابط
+        الأداة دي بتجهزلك نص مشاركة رسمي يبان فيه <b>masdiri.com</b> بجانب الرابط
         الحقيقي اللي شغّال — مثالي لواتساب وفيسبوك وتليجرام.
       </p>
 

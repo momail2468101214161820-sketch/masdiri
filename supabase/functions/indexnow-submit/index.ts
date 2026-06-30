@@ -3,7 +3,7 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
 import { createClient } from 'npm:@supabase/supabase-js@2';
 
-const SITE = (Deno.env.get('SITE_URL') ?? 'https://masdiri.lovable.app').replace(/\/+$/, '');
+const SITE = (Deno.env.get('SITE_URL') ?? 'https://masdiri.vercel.app').replace(/\/+$/, '');
 const HOST = new URL(SITE).host;
 
 const KEY = '8983aa8d243606bc9d23766a10bc007d';

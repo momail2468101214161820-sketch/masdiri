@@ -130,7 +130,7 @@ const PrepResultsPage = () => {
     <div className="min-h-screen bg-background text-right" dir="rtl">
       <Helmet>
         <title>نتائج الشهادة الإعدادية 2026 | مصدري</title>
-        <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على مصدري للأخبار المصرية والعالمية." />
+        <meta name="description" content="استعلم عن نتيجة الشهادة الإعدادية 2026 برقم الجلوس فوراً على منصة مصدري الإخباري." />
         <link rel="canonical" href={`${SITE_URL}/prep-results`} />
         <meta property="og:title" content="نتائج الشهادة الإعدادية 2026 | مصدري" />
         <meta property="og:description" content="استعلم عن نتيجتك فوراً برقم الجلوس." />

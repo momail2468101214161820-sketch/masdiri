@@ -7,7 +7,7 @@ const corsHeaders = {
 };
 
 const GATEWAY = 'https://connector-gateway.lovable.dev/google_search_console';
-const SITE_URL = (Deno.env.get('SITE_URL') ?? 'https://masdiri.lovable.app').replace(/\/+$/, '') + '/';
+const SITE_URL = (Deno.env.get('SITE_URL') ?? 'https://masdiri.vercel.app').replace(/\/+$/, '') + '/';
 
 const supaAdmin = createClient(
   Deno.env.get('SUPABASE_URL')!,

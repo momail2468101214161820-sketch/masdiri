@@ -20,7 +20,7 @@ import { resolve, dirname } from "node:path";
 const SUPABASE_URL = "https://tgvxtsdlojaxyominpsf.supabase.co";
 const ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRleGR4aWFmYWJ6YmFtcGNzd3NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxODkwODUsImV4cCI6MjA4OTc2NTA4NX0.3FeZQivXN99E-ariQ-nj7IPeCj3Mb_GmJxHS3LJczb4";
-const BASE_URL = process.env.VITE_SITE_URL ?? "https://masdiri.lovable.app";
+const BASE_URL = process.env.VITE_SITE_URL ?? "https://masdiri.vercel.app";
 const DIST = resolve("dist");
 const TEMPLATE_PATH = resolve("dist/index.html");
 
@@ -77,7 +77,7 @@ function injectBody(template: string, bodyHtml: string): string {
 function articleHtml(template: string, a: any, related: any[] = [], latest: any[] = []): string {
   const slug = a.short_id || `article/${a.id}`;
   const canonical = `${BASE_URL}/${slug}`;
-  const title = a.title || "مصدري للأخبار المصرية والعالمية";
+  const title = a.title || "منصة مصدري الإخباري";
   const desc = (a.summary || a.content || a.title || "").toString().slice(0, 280);
   const ogImage = `${SUPABASE_URL}/functions/v1/og-image?id=${encodeURIComponent(
     a.short_id || a.id
@@ -99,7 +99,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
     inLanguage: "ar",
     publisher: {
       "@type": "NewsMediaOrganization",
-      name: "مصدري للأخبار المصرية والعالمية",
+      name: "منصة مصدري الإخباري",
       logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon-192.png`, width: 192, height: 192 },
     },
     author: { "@type": "Organization", name: "مصدري", url: BASE_URL },
@@ -113,7 +113,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
     name: title,
     description: desc,
     inLanguage: "ar",
-    isPartOf: { "@type": "WebSite", name: "مصدري للأخبار المصرية والعالمية", url: `${BASE_URL}/` },
+    isPartOf: { "@type": "WebSite", name: "منصة مصدري الإخباري", url: `${BASE_URL}/` },
     primaryImageOfPage: a.image_url ? { "@type": "ImageObject", url: a.image_url } : undefined,
     datePublished: a.created_at,
     dateModified: a.updated_at || a.created_at,
@@ -140,7 +140,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="${esc(canonical)}" />
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="مصدري للأخبار المصرية والعالمية" />
+    <meta property="og:site_name" content="منصة مصدري الإخباري" />
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(desc)}" />
@@ -180,7 +180,7 @@ function articleHtml(template: string, a: any, related: any[] = [], latest: any[
         <h1 itemprop="headline">${esc(title)}</h1>
         <p itemprop="description">${esc(desc)}</p>
         <time itemprop="datePublished" datetime="${esc(a.created_at)}">${esc(a.created_at)}</time>
-        <address itemprop="publisher">مصدري للأخبار المصرية والعالمية</address>
+        <address itemprop="publisher">منصة مصدري الإخباري</address>
       </header>
       ${a.image_url ? `<figure><img src="${esc(a.image_url)}" alt="${esc(title)}" itemprop="image" loading="eager" /><figcaption>${esc(title)}</figcaption></figure>` : ""}
       <section itemprop="articleBody">${esc(a.content || a.summary || "")
@@ -208,7 +208,7 @@ function listingHtml(
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="${esc(canonical)}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="مصدري للأخبار المصرية والعالمية" />
+    <meta property="og:site_name" content="منصة مصدري الإخباري" />
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(desc)}" />
@@ -291,10 +291,10 @@ async function main() {
     writeFileSync(
       resolve(DIST, "index.html"),
       listingHtml(template, {
-        title: "مصدري للأخبار المصرية والعالمية — أحدث الأخبار المصرية والعربية",
+        title: "منصة مصدري الإخباري — أحدث الأخبار المصرية والعربية",
         desc: "تابع آخر الأخبار العاجلة من مصر والعالم العربي على بوابة مصدري. سياسة، اقتصاد، رياضة، فن، وأسعار العملات لحظة بلحظة.",
         canonical: `${BASE_URL}/`,
-        h1: "مصدري للأخبار المصرية والعالمية",
+        h1: "منصة مصدري الإخباري",
         articles,
       })
     );
@@ -314,7 +314,7 @@ async function main() {
         out,
         listingHtml(template, {
           title: `${c.name} | مصدري`,
-          desc: `أحدث أخبار قسم ${c.name} على بوابة مصدري للأخبار المصرية والعالمية.`,
+          desc: `أحدث أخبار قسم ${c.name} على بوابة منصة مصدري الإخباري.`,
           canonical: `${BASE_URL}/category/${c.slug}`,
           h1: c.name,
           articles: list,
@@ -403,7 +403,7 @@ async function main() {
       <guid isPermaLink="true">${xe(link)}</guid>
       <pubDate>${pub}</pubDate>
       <dc:creator>مصدري</dc:creator>
-      <author>news@masdiri.lovable.app (مصدري)</author>
+      <author>news@masdiri.vercel.app (مصدري)</author>
       ${a.categories?.name ? `<category>${xe(a.categories.name)}</category>` : ""}
       <description>${xe(excerpt)}</description>
       <content:encoded><![CDATA[${a.content || a.summary || a.title || ""}]]></content:encoded>
@@ -414,7 +414,7 @@ async function main() {
     const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>مصدري للأخبار المصرية والعالمية — Google News Feed</title>
+    <title>منصة مصدري الإخباري — Google News Feed</title>
     <link>${BASE_URL}/</link>
     <atom:link href="${BASE_URL}/news.xml" rel="self" type="application/rss+xml" />
     <description>أحدث الأخبار المصرية والعربية — تحديث فوري لجوجل نيوز.</description>

@@ -67,7 +67,7 @@ const HeroBento = ({ featured, secondary, tertiary }: Props) => {
               style={{ fontFamily: "'Cairo', sans-serif" }}
               className="text-[hsl(var(--gold-light))] font-black uppercase tracking-[0.25em] text-xs"
             >
-              {featured.categories?.name || "صوت البلد"}
+              {featured.categories?.name || "منصة مصدري الإخباري"}
             </span>
           </div>
           <h1

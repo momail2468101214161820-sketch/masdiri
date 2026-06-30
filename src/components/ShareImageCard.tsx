@@ -177,7 +177,7 @@ const makeShareCard = async ({ title, summary, image, logo, url }: { title: stri
   ctx.fillText("مصدري", W - 108, 32);
   ctx.fillStyle = "rgba(255,255,255,0.84)";
   ctx.font = "700 16px Cairo, Arial, sans-serif";
-  ctx.fillText("مصدري للأخبار المصرية والعالمية", W - 108, 63);
+  ctx.fillText("منصة مصدري الإخباري", W - 108, 63);
 
   ctx.fillStyle = "#f5c84b";
   ctx.beginPath();
@@ -231,7 +231,7 @@ const makeShareCard = async ({ title, summary, image, logo, url }: { title: stri
   ctx.textAlign = "left";
   ctx.fillStyle = "#f7d36b";
   ctx.font = "900 22px Cairo, Arial, sans-serif";
-  ctx.fillText("soutalbalad.com", 42, H - 78);
+  ctx.fillText("masdiri.com", 42, H - 78);
   // Real article URL (truncated to fit)
   if (url) {
     ctx.fillStyle = "rgba(255,255,255,0.85)";
@@ -391,7 +391,7 @@ const ShareImageCard = ({ open, onClose, title, summary, image_url, url }: Props
                 <img src={logoData || "/images/logo.png"} alt="" style={{ width: 36, height: 36, borderRadius: "50%", border: "2px solid hsl(45 90% 60%)" }} />
                 <div>
                   <p style={{ fontWeight: 900, color: "hsl(45 92% 68%)", fontSize: 15, margin: 0, lineHeight: 1 }}>مصدري</p>
-                  <p style={{ fontSize: 9, opacity: 0.85, margin: 0, marginTop: 2 }}>مصدري للأخبار المصرية والعالمية</p>
+                  <p style={{ fontSize: 9, opacity: 0.85, margin: 0, marginTop: 2 }}>منصة مصدري الإخباري</p>
                 </div>
               </div>
               <span style={{ background: "hsl(45 92% 60%)", color: "hsl(220 75% 10%)", fontWeight: 900, fontSize: 9, padding: "4px 8px", borderRadius: 4, letterSpacing: 0.3 }}>
@@ -444,7 +444,7 @@ const ShareImageCard = ({ open, onClose, title, summary, image_url, url }: Props
                   <p style={{ fontSize: 12, margin: 0, fontWeight: 900, color: "hsl(45 92% 68%)" }}>خالد عاطف عبدالحكيم</p>
                 </div>
                 <div style={{ textAlign: "left", maxWidth: "62%", overflow: "hidden" }}>
-                  <p style={{ fontSize: 12, margin: 0, fontWeight: 900, color: "hsl(45 92% 68%)" }}>soutalbalad.com</p>
+                  <p style={{ fontSize: 12, margin: 0, fontWeight: 900, color: "hsl(45 92% 68%)" }}>masdiri.com</p>
                   {url && (
                     <p style={{ fontSize: 10, margin: "2px 0 0", fontWeight: 700, color: "rgba(255,255,255,.88)", direction: "ltr", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontFamily: "monospace, Cairo" }}>
                       {url.replace(/^https?:\/\//, "")}

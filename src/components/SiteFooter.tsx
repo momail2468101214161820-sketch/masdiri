@@ -36,7 +36,7 @@ const SiteFooter = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div>
               <h3 className="newspaper-heading text-2xl mb-3" style={{ color: "hsl(var(--gold))" }}>
-                مصدري للأخبار المصرية والعالمية
+                منصة مصدري الإخباري
               </h3>
               <div>
                 <p className="text-xs font-bold mb-2 opacity-90" style={{ color: "hsl(var(--gold-light))" }}>
@@ -147,7 +147,7 @@ const SiteFooter = () => {
               <a href="tel:+201503504548" className="opacity-90 font-normal hover:underline" dir="ltr">01503504548</a>
             </p>
             <p className="text-xs opacity-60">
-              © {new Date().getFullYear()} مصدري للأخبار المصرية والعالمية — جميع الحقوق محفوظة
+              © {new Date().getFullYear()} منصة مصدري الإخباري — جميع الحقوق محفوظة
             </p>
           </div>
 

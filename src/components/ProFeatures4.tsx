@@ -130,7 +130,7 @@ export const QuickFeedback = () => {
   const send = (k: string) => {
     try { localStorage.setItem("sb-fb-" + Date.now(), k); } catch {}
     setDone(true);
-    toast.success("شكراً لرأيك، مصدري للأخبار المصرية والعالمية");
+    toast.success("شكراً لرأيك، منصة مصدري الإخباري");
   };
   return (
     <div className="rounded-2xl p-4 border text-sm flex items-center gap-3"
