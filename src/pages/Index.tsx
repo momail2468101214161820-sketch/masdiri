@@ -40,6 +40,9 @@ interface Article {
   is_pinned: boolean;
   created_at: string;
   categories: { name: string } | null;
+  is_automated?: boolean;
+  source?: string;
+  author?: string;
 }
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.05 } } };
@@ -52,53 +55,81 @@ const Index = () => {
 
   useEffect(() => {
     document.title = "منصة مصدري الإخباري | أخبار مصر العاجلة";
-  }, []);
+  </td>, []);
 
   const refetchTimer = useRef<number | null>(null);
   useEffect(() => {
     const fetchArticles = async () => {
       const { data } = await supabase
         .from("articles")
-        .select("id, short_id, title, summary, image_url, content, images, is_breaking, is_pinned, created_at, categories(name)")
+        .select("id, short_id, title, summary, image_url, content, images, is_breaking, is_pinned, created_at, categories(name), is_automated, source, author")
         .eq("is_published", true)
         .order("is_pinned", { ascending: false })
         .order("created_at", { ascending: false })
-        .limit(30);
+        .limit(40);
+      
       if (data) {
-        const normalized = (data as any[]).map((a) => ({
-          ...a,
-          image_url: getArticlePrimaryImage(a),
-        }));
-        setArticles(normalized as unknown as Article[]);
+        // فحص وتصفية الأخبار يدويًا لمنع ظهور الأخبار المجلوبة عبر البوت أو التلقائية
+        const filteredAndNormalized = (data as any[])
+          .filter((a) => {
+            const isAuto = 
+              a.is_automated === true || 
+              a.source === "bot" || 
+              a.author === "AI Journalist" || 
+              (a.title && a.title.includes("تلقائي"));
+            return !isAuto; // الاحتفاظ فقط بالأخبار المعتمدة يدويًا
+          })
+          .map((a) => ({
+            ...a,
+            image_url: getArticlePrimaryImage(a),
+          }));
+
+        setArticles(filteredAndNormalized as unknown as Article[]);
       }
       setLoading(false);
     };
+
     const fetchCategories = async () => {
       const { data } = await supabase.from("categories").select("id, name, slug").limit(20);
       if (data) setCategories(data);
     };
+
     fetchArticles();
     fetchCategories();
+
     // Debounced realtime refresh to avoid render storms
     const scheduleRefetch = () => {
       if (refetchTimer.current) window.clearTimeout(refetchTimer.current);
       refetchTimer.current = window.setTimeout(fetchArticles, 1500);
     };
+
     const channel = supabase.channel("public-realtime")
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "articles" }, (payload: any) => {
         const row = payload?.new;
         if (row && row.is_published) {
-          window.dispatchEvent(new CustomEvent("sb-news-refreshed", { detail: row }));
-          if ("Notification" in window && Notification.permission === "granted") {
-            try { new Notification("خبر جديد على مصدري", { body: row.title?.slice(0, 120) || "اضغط للقراءة", icon: "/images/logo.png" }); } catch {}
+          // جدار حماية إضافي داخل الـ Realtime: لو كان الخبر تلقائي لا تظهر إشعار ولا تحدث الصفحة
+          const isBotNews = 
+            row.is_automated === true || 
+            row.source === "bot" || 
+            row.author === "AI Journalist" || 
+            (row.title && row.title.includes("تلقائي"));
+
+          if (!isBotNews) {
+            window.dispatchEvent(new CustomEvent("sb-news-refreshed", { detail: row }));
+            if ("Notification" in window && Notification.permission === "granted") {
+              try { new Notification("خبر جديد على مصدري", { body: row.title?.slice(0, 120) || "اضغط للقراءة", icon: "/images/logo.png" }); } catch {}
+            }
+            scheduleRefetch();
           }
+        } else {
+          scheduleRefetch();
         }
-        scheduleRefetch();
       })
       .on("postgres_changes", { event: "UPDATE", schema: "public", table: "articles" }, scheduleRefetch)
       .on("postgres_changes", { event: "DELETE", schema: "public", table: "articles" }, scheduleRefetch)
       .on("postgres_changes", { event: "*", schema: "public", table: "categories" }, fetchCategories)
       .subscribe();
+
     return () => {
       if (refetchTimer.current) window.clearTimeout(refetchTimer.current);
       supabase.removeChannel(channel);
@@ -166,15 +197,9 @@ const Index = () => {
       <UtilityBar />
       <NotificationPrompt />
 
-
-
-
-
       <main className="max-w-7xl mx-auto bg-card shadow-2xl border-t-4 border-[hsl(var(--gold))] relative">
-        {/* Decorative top gradient halo */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[hsl(var(--gold)/0.08)] to-transparent" />
 
-        {/* Quick category nav */}
         {categories.length > 0 && (
           <nav className="relative flex gap-1 overflow-x-auto px-6 py-3 border-b border-border/60 bg-muted/30 backdrop-blur-sm" aria-label="الأقسام">
             {categories.map((c) => (
@@ -188,15 +213,12 @@ const Index = () => {
         )}
 
         <div className="p-6 md:p-10 lg:p-12">
-          {/* Hero Bento - Royal Presidential */}
           {!loading && featured && (
             <HeroBento featured={featured as any} secondary={heroSecondary as any} tertiary={heroTertiary as any} />
           )}
 
-          {/* Official brand trust strip */}
           <BrandTrustStrip />
 
-          {/* Latest rail + Currency */}
           {!loading && sidebarLatest.length > 0 && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
               <div className="lg:col-span-8">
@@ -234,12 +256,10 @@ const Index = () => {
             </div>
           )}
 
-          {/* Top ad */}
           <div className="mb-10">
             <AdSlot slot="header" className="w-full" />
           </div>
 
-          {/* News Grid */}
           <section>
             <div className="section-heading">
               <h2>آخر التغطيات الإخبارية</h2>
@@ -250,7 +270,6 @@ const Index = () => {
             </div>
             <div className="rule-gold mb-8" />
 
-
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
               <div className="lg:col-span-3">
                 {loading ? (
@@ -259,7 +278,7 @@ const Index = () => {
                       <div key={i} className="bg-muted h-72 animate-pulse rounded-2xl" />
                     ))}
                   </div>
-                ) : gridArticles.length === 0 ? (
+                ) : articles.length === 0 ? (
                   <div className="border border-border border-dashed p-12 text-center rounded-2xl bg-muted/30">
                     <h3 className="font-bold text-lg mb-2 text-foreground" style={{ fontFamily: "'Amiri', serif" }}>
                       جارٍ تحديث غرفة الأخبار
@@ -281,25 +300,20 @@ const Index = () => {
                           created_at={article.created_at}
                           is_breaking={article.is_breaking}
                         />
-
                       </motion.div>
                     ))}
                   </motion.div>
                 )}
               </div>
 
-              {/* Side ad column */}
               <aside className="lg:col-span-1 lg:sticky lg:top-24 space-y-6">
                 <MostReadWidget />
                 <PrayerTimesWidget />
                 <NewsletterInline />
                 <RecentlyViewedRail />
                 <QuoteOfDay />
-
                 <TrendingTags />
                 <QuickFeedback />
-
-
 
                 <div className="bg-gradient-to-br from-[hsl(var(--gold)/0.06)] to-card border border-[hsl(var(--gold)/0.3)] p-6 rounded-2xl shadow-md">
                   <h5 className="text-[hsl(var(--primary))] dark:text-[hsl(var(--gold))] font-bold mb-4 border-b-2 border-[hsl(var(--gold))] pb-2 inline-block"
@@ -347,14 +361,8 @@ const Index = () => {
       <HourlyPulse />
       <SuggestStoryCTA />
       <GeoChip />
-
       <AmbientMoodBar />
-
     </div>
-
-
-
-
   );
 };
 
