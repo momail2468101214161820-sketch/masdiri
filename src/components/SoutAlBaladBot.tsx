@@ -24,7 +24,7 @@ const SoutAlBaladBot = () => {
     {
       role: "assistant",
       content:
-        "السلام عليكم، أنا **بوت مصدري** — مساعدكم الرسمي. كيف يمكنني خدمتكم اليوم؟",
+        "السلام عليكم، أنا **بوت مصدري** — المساعد الذكي لمنصة مصدري الإخباري. نود إحاطتكم بأن البوت في وضع صيانة مؤقتة حالياً لتحديث الخدمات الرقمية.",
     },
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -36,34 +36,23 @@ const SoutAlBaladBot = () => {
   const send = async (text: string) => {
     const content = text.trim();
     if (!content || loading) return;
+    
     const next: Msg[] = [...messages, { role: "user", content }];
     setMessages(next);
     setInput("");
     setLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("public-chat", {
-        body: { messages: next },
-      });
-      const payload: any = data ?? {};
-      const reply: string =
-        payload.reply ||
-        payload.error ||
-        (error?.message
-          ? "نعتذر، الخدمة الذكية مشغولة حالياً. يرجى المحاولة بعد لحظات."
-          : "تعذّر توليد الرد في الوقت الحالي.");
-      setMessages((m) => [...m, { role: "assistant", content: reply }]);
-    } catch {
+
+    // حيلة حظر استدعاء السيرفر لمنع استهلاك الرصيد وجلب الأخبار العشوائية
+    setTimeout(() => {
       setMessages((m) => [
         ...m,
         {
           role: "assistant",
-          content:
-            "نعتذر عن التأخير المؤقت في خدمة المساعد الذكي. يمكنكم تصفح أقسام مصدري مباشرة.",
+          content: "نعتذر منكم، خدمات المساعد الآلي متوقفة حالياً لإجراء بعض التحديثات البرمجية على منصة مصدري. يمكنك تصفح الأخبار والمستجدات الموثقة عبر أقسام الموقع يدوياً.",
         },
       ]);
-    } finally {
       setLoading(false);
-    }
+    }, 800);
   };
 
   return (
@@ -150,9 +139,9 @@ const SoutAlBaladBot = () => {
           <span
             className="absolute top-0 right-0 w-3 h-3 rounded-full border-2"
             style={{
-              background: "#22c55e",
+              background: "#eab308", 
               borderColor: "hsl(var(--royal-blue-dark))",
-              boxShadow: "0 0 8px #22c55e",
+              boxShadow: "0 0 8px #eab308",
             }}
           />
         </div>
@@ -167,11 +156,10 @@ const SoutAlBaladBot = () => {
               boxShadow: "0 6px 20px hsl(var(--gold) / 0.3)",
             }}
           >
-            مساعد مصدري · اضغط للدردشة
+            مساعد مصدري · صيانة مؤقتة
           </div>
         )}
       </motion.button>
-
 
       <AnimatePresence>
         {open && (
@@ -207,15 +195,15 @@ const SoutAlBaladBot = () => {
                   boxShadow: "0 4px 12px hsl(var(--gold)/0.5)",
                 }}
               >
-                ص
+                م
               </div>
               <div className="flex-1">
                 <div className="font-black text-base" style={{ color: "hsl(var(--gold-light))" }}>
                   بوت مصدري
                 </div>
                 <div className="text-[10px] flex items-center gap-1.5 text-white/80">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  متصل · مدعوم بالذكاء الاصطناعي
+                  <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+                  وضع الصيانة · منصة مصدري
                 </div>
               </div>
             </div>
@@ -254,7 +242,7 @@ const SoutAlBaladBot = () => {
                 <div className="flex justify-end">
                   <div className="rounded-2xl px-3 py-2 bg-muted flex items-center gap-2 text-xs">
                     <Loader2 className="w-3 h-3 animate-spin" />
-                    يكتب الرد...
+                    يرجى الانتظار...
                   </div>
                 </div>
               )}
@@ -292,7 +280,7 @@ const SoutAlBaladBot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 disabled={loading}
-                placeholder="اكتب سؤالك بالعربية الفصحى..."
+                placeholder="البوت متوقف مؤقتاً للتحديث..."
                 className="flex-1 px-3 py-2 text-sm rounded-lg bg-background border focus:outline-none focus:ring-2 font-cairo"
                 style={{
                   borderColor: "hsl(var(--gold)/0.4)",
