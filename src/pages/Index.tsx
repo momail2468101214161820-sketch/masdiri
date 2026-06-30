@@ -55,7 +55,7 @@ const Index = () => {
 
   useEffect(() => {
     document.title = "منصة مصدري الإخباري | أخبار مصر العاجلة";
-  </td>, []);
+  }, []);
 
   const refetchTimer = useRef<number | null>(null);
   useEffect(() => {
