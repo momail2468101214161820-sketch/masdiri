@@ -89,8 +89,9 @@ const SiteHeader = () => {
                   <SheetTitle className="flex items-center gap-3 text-white">
                     <img src="/images/logo.png" alt="" className="w-12 h-12 rounded-full border-2 border-[hsl(var(--gold))]" />
                     <div className="text-right">
-                      <div className="text-lg font-black text-white" style={{ fontFamily: "'Amiri', serif" }}>مصدري</div>
-                      <div className="text-[10px] text-white/85">منصة مصدري الإخباري</div>
+                      <div className="text-lg font-black text-white" style={{ fontFamily: "'Amiri', serif" }}>منصة مصدري الإخباري</div>
+                      <div className="text-[10px] text-white/85">مصدري... الخبر من مصدره</div>
+
                     </div>
                   </SheetTitle>
                 </SheetHeader>
