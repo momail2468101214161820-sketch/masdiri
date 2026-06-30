@@ -3,8 +3,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Copy, MessageCircle, Facebook, Send, Link2, Sparkles, Wand2 } from "lucide-react";
 
-// أداة مشاركة بعلامة "مصدري" + اختصار رابط مجاني (TinyURL)
-// بنولّد رابط قصير شغّال فعلاً يحوّل للرابط الأصلي على lovable.app
+// أداة مشاركة بعلامة "منصة مصدري الإخباري" + اختصار رابط مجاني (TinyURL)
+// تُولّد رابطًا قصيرًا يحوّل للرابط الرسمي على masdiri.vercel.app
+
 
 import { SITE_URL as REAL_BASE } from "@/lib/siteUrl";
 
@@ -40,7 +41,7 @@ const BrandShareTool = () => {
   const selected = articles.find((a) => a.id === selectedId);
   const realUrl = customUrl.trim() ||
     (selected ? `${REAL_BASE}/article/${selected.id}` : REAL_BASE);
-  const title = customTitle.trim() || selected?.title || "مصدري للأخبار المصرية والعالمية";
+  const title = customTitle.trim() || selected?.title || "منصة مصدري الإخباري";
   const displayUrl = shortUrl || realUrl;
 
   // إعادة تصفير الرابط القصير لما الرابط الأصلي يتغير
@@ -57,7 +58,7 @@ const BrandShareTool = () => {
   const shareText =
     `📰 ${title}\n` +
     `\n👉 ${displayUrl}\n` +
-    `\n— مصدري للأخبار المصرية والعالمية`;
+    `\n— منصة مصدري الإخباري`;
 
   const copy = async (text: string, label = "تم النسخ") => {
     await navigator.clipboard.writeText(text);
@@ -76,14 +77,15 @@ const BrandShareTool = () => {
     >
       <div className="flex items-center gap-2">
         <Sparkles className="text-yellow-500" size={20} />
-        <h3 className="text-xl font-bold">مشاركة بعلامة soutalbalad.com</h3>
+        <h3 className="text-xl font-bold">مشاركة بعلامة منصة مصدري الإخباري</h3>
       </div>
 
       <p className="text-sm text-muted-foreground leading-7">
-        طالما مفيش دومين متشترى، الرابط الفعلي بيفضل <code className="px-1 rounded bg-muted">lovable.app</code>.
-        الأداة دي بتجهزلك نص مشاركة رسمي يبان فيه <b>soutalbalad.com</b> بجانب الرابط
-        الحقيقي اللي شغّال — مثالي لواتساب وفيسبوك وتليجرام.
+        الرابط الرسمي للمنصة: <code className="px-1 rounded bg-muted">masdiri.vercel.app</code>.
+        تجهّز الأداة نص مشاركة رسمي بعلامة <b>منصة مصدري الإخباري</b> بجانب الرابط الحقيقي —
+        مثالي لواتساب وفيسبوك وتليجرام.
       </p>
+
 
       <div className="grid md:grid-cols-2 gap-3">
         <div>

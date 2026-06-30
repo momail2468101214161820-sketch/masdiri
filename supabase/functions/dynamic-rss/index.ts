@@ -7,7 +7,7 @@ const supabase = createClient(
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 );
 
-const BASE_URL = Deno.env.get("SITE_URL") ?? "https://masdiri.lovable.app";
+const BASE_URL = Deno.env.get("SITE_URL") ?? "https://masdiri.vercel.app";
 
 const xmlEscape = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
@@ -56,7 +56,7 @@ serve(async (req) => {
 
     const channelTitle = categorySlug
       ? `مصدري | ${categoryName}`
-      : "مصدري للأخبار المصرية والعالمية";
+      : "منصة مصدري الإخباري";
     const channelLink = categorySlug ? `${BASE_URL}/category/${categorySlug}` : `${BASE_URL}/`;
     const selfLink = categorySlug
       ? `${Deno.env.get("SUPABASE_URL")}/functions/v1/dynamic-rss?category=${categorySlug}`

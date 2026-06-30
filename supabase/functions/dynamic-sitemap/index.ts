@@ -14,7 +14,7 @@ const supabase = createClient(
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 );
 
-const BASE_URL = Deno.env.get("SITE_URL") ?? "https://masdiri.lovable.app";
+const BASE_URL = Deno.env.get("SITE_URL") ?? "https://masdiri.vercel.app";
 const FN_BASE = `${Deno.env.get("SUPABASE_URL")}/functions/v1/dynamic-sitemap`;
 
 const baseHeaders = {
@@ -43,7 +43,7 @@ function urlEntry(opts: {
   }
   if (opts.news) {
     parts.push(`    <news:news>`);
-    parts.push(`      <news:publication><news:name>مصدري للأخبار المصرية والعالمية</news:name><news:language>ar</news:language></news:publication>`);
+    parts.push(`      <news:publication><news:name>منصة مصدري الإخباري</news:name><news:language>ar</news:language></news:publication>`);
     parts.push(`      <news:publication_date>${opts.news.published}</news:publication_date>`);
     parts.push(`      <news:title>${xmlEscape(opts.news.title)}</news:title>`);
     parts.push(`    </news:news>`);

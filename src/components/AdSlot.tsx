@@ -115,7 +115,7 @@ const AdSlot = ({ slot, className = "" }: AdSlotProps) => {
           loading="lazy"
           onError={(e) => {
             console.error("خطأ في تحميل صورة الإعلان:", ad.image_url);
-            (e.target as any).src = "https://placehold.co/1200x400/0a1733/d4af37?text=صوت+البلد";
+            (e.target as any).src = "https://placehold.co/1200x400/0a1733/d4af37?text=منصة+مصدري+الإخباري";
           }}
         />
         <span className="absolute top-2 left-2 z-10 text-[9px] font-black px-2 py-0.5 rounded-full tracking-widest"

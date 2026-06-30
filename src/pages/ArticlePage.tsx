@@ -83,7 +83,7 @@ const ArticlePage = () => {
         const seoDesc = (
           (articleData as any).seo_description ||
           articleData.summary ||
-          "تغطية شاملة وموثقة من مصدري للأخبار المصرية والعالمية"
+          "تغطية شاملة وموثقة من منصة مصدري الإخباري"
         ).trim();
 
         document.title = `${seoTitle} | مصدري`;
@@ -118,7 +118,7 @@ const ArticlePage = () => {
           { property: "og:image:alt", content: articleData.title },
           { property: "og:url", content: canonicalUrl },
           { property: "og:type", content: "article" },
-          { property: "og:site_name", content: "مصدري للأخبار المصرية والعالمية" },
+          { property: "og:site_name", content: "منصة مصدري الإخباري" },
           { property: "og:locale", content: "ar_EG" },
           { property: "article:published_time", content: articleData.created_at },
           { property: "twitter:card", content: "summary_large_image" },
