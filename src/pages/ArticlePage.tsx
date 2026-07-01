@@ -20,11 +20,10 @@ import { ArticleBody } from "@/components/ArticleBody";
 
 // 🚀 Lazy-load heavy below-the-fold widgets for instant first paint
 const RelatedArticles = lazy(() => import("@/components/RelatedArticles"));
-const ArticleComments = lazy(() => import("@/components/ArticleComments"));
 const FloatingShareBar = lazy(() => import("@/components/FloatingShareBar"));
 const ShareImageCard = lazy(() => import("@/components/ShareImageCard"));
 const ReadingProgress = lazy(() => import("@/components/ReadingProgress"));
-const ArticleReactions = lazy(() => import("@/components/ArticleReactions"));
+
 
 
 type ArticleImage = string | { url: string; position: "start" | "middle" | "end" };
