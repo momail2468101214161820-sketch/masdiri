@@ -17,9 +17,9 @@ type Mode =
   | "most-read"
   | "tag"
   | "governorate"
-  | "entity"
   | "archive"
   | "search";
+
 
 interface Props {
   mode: Mode;
@@ -45,7 +45,7 @@ const titleFor = (mode: Mode, params: Record<string, string | undefined>, q?: st
     case "most-read": return { name: "الأكثر قراءة", path: "/most-read" };
     case "tag": return { name: `وسم: ${decodeURIComponent(params.slug || "")}`, path: `/tag/${params.slug}` };
     case "governorate": return { name: `محافظة ${governorateName(params.slug || "")}`, path: `/governorate/${params.slug}` };
-    case "entity": return { name: `شخصية/جهة: ${decodeURIComponent(params.slug || "")}`, path: `/entity/${params.slug}` };
+    
     case "archive": {
       const { yyyy, mm, dd } = params;
       const parts = [yyyy, mm, dd].filter(Boolean).join("/");
@@ -86,14 +86,8 @@ const CollectionPage = ({ mode }: Props) => {
         }
         case "governorate":
           qb = qb.eq("governorate", params.slug || "").order("created_at", { ascending: false }).limit(60); break;
-        case "entity": {
-          const slug = decodeURIComponent(params.slug || "");
-          const { data: ents } = await supabase
-            .from("article_entities").select("article_id").eq("entity_slug", slug).limit(200);
-          const ids = (ents || []).map((e: any) => e.article_id);
-          if (!ids.length) { if (!cancelled) { setRows([]); setLoading(false); } return; }
-          qb = qb.in("id", ids).order("created_at", { ascending: false }); break;
-        }
+
+
         case "archive": {
           const { yyyy, mm, dd } = params;
           if (yyyy) {

@@ -1,367 +1,234 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { MapPin, Award, Sparkles, Users, Newspaper, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import BreakingTicker from "@/components/BreakingTicker";
-import AdSlot from "@/components/AdSlot";
 import ArticleCard from "@/components/ArticleCard";
-import CurrencyWidget from "@/components/CurrencyWidget";
-import NotificationPrompt from "@/components/NotificationPrompt";
-import WatermarkedImage from "@/components/WatermarkedImage";
-import SoutAlBaladBot from "@/components/SoutAlBaladBot";
-import MostReadWidget from "@/components/MostReadWidget";
-import HeroBento from "@/components/HeroBento";
-import BackToTop from "@/components/BackToTop";
-import CommandPalette from "@/components/CommandPalette";
-import NewsletterInline from "@/components/NewsletterInline";
-import TrendingTags from "@/components/TrendingTags";
-import LiveDateBar from "@/components/LiveDateBar";
-import { ScrollProgress, ConnectivityBanner, PWAInstallHint, CookieConsent, SelectionShare, KeyboardNav } from "@/components/ProFeatures";
-import { PrayerTimesWidget, RecentlyViewedRail, ImageLightbox } from "@/components/ProFeatures2";
-import { QuoteOfDay, CoffeeBreakNudge, GeoChip } from "@/components/ProFeatures3";
-import { NewsRefreshToaster, IdleNudge, SmoothAnchors, ExternalLinkHardener, ImageErrorFallback, QuickFeedback, HourlyPulse, SuggestStoryCTA } from "@/components/ProFeatures4";
-import { AmbientMoodBar } from "@/components/ProFeatures5";
-import UtilityBar from "@/components/UtilityBar";
-import BrandTrustStrip from "@/components/BrandTrustStrip";
-import { motion } from "framer-motion";
 import { getArticlePrimaryImage } from "@/lib/articleImages";
-
-import { SITE_URL } from "@/lib/siteUrl";
+import { SITE_URL, SITE_NAME, SITE_NAME_AR, SITE_SLOGAN } from "@/lib/siteUrl";
 
 interface Article {
   id: string;
+  short_id?: number | null;
   title: string;
   summary: string | null;
   image_url: string | null;
   content?: string | null;
-  images?: (string | { url: string; position?: string })[] | null;
+  images?: any;
   is_breaking: boolean;
   is_pinned: boolean;
   created_at: string;
-  categories: { name: string } | null;
-  is_automated?: boolean;
-  source?: string;
-  author?: string;
+  view_count?: number | null;
+  categories: { name: string; slug: string } | null;
 }
 
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.05 } } };
-const fadeUp = { hidden: { opacity: 0, y: 15 }, show: { opacity: 1, y: 0, transition: { duration: 0.35 } } };
+const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
+const fadeUp = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.35 } } };
+
+const SECTIONS: Array<{ slug: string; title: string; icon: any; accent: string }> = [
+  { slug: "beni-suef",             title: "أخبار بني سويف",     icon: MapPin,    accent: "text-primary" },
+  { slug: "success-stories",       title: "قصص نجاح",           icon: Award,     accent: "text-secondary" },
+  { slug: "inspiring-people",      title: "شخصيات ملهمة",       icon: Sparkles,  accent: "text-primary" },
+  { slug: "community-initiatives", title: "مبادرات مجتمعية",    icon: Users,     accent: "text-secondary" },
+];
 
 const Index = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [categories, setCategories] = useState<{ id: string; name: string; slug: string }[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "منصة مصدري الإخباري | أخبار مصر العاجلة";
-  }, []);
-
-  const refetchTimer = useRef<number | null>(null);
-  useEffect(() => {
-    const fetchArticles = async () => {
+    (async () => {
       const { data } = await supabase
         .from("articles")
-        .select("id, short_id, title, summary, image_url, content, images, is_breaking, is_pinned, created_at, categories(name), is_automated, source, author")
+        .select("id, short_id, title, summary, image_url, content, images, is_breaking, is_pinned, created_at, view_count, categories(name, slug)")
         .eq("is_published", true)
         .order("is_pinned", { ascending: false })
         .order("created_at", { ascending: false })
-        .limit(40);
-      
+        .limit(60);
       if (data) {
-        // فحص وتصفية الأخبار يدويًا لمنع ظهور الأخبار المجلوبة عبر البوت أو التلقائية
-        const filteredAndNormalized = (data as any[])
-          .filter((a) => {
-            const isAuto = 
-              a.is_automated === true || 
-              a.source === "bot" || 
-              a.author === "AI Journalist" || 
-              (a.title && a.title.includes("تلقائي"));
-            return !isAuto; // الاحتفاظ فقط بالأخبار المعتمدة يدويًا
-          })
-          .map((a) => ({
-            ...a,
-            image_url: getArticlePrimaryImage(a),
-          }));
-
-        setArticles(filteredAndNormalized as unknown as Article[]);
+        const normalized = (data as any[]).map((a) => ({ ...a, image_url: getArticlePrimaryImage(a) }));
+        setArticles(normalized as any);
       }
       setLoading(false);
-    };
-
-    const fetchCategories = async () => {
-      const { data } = await supabase.from("categories").select("id, name, slug").limit(20);
-      if (data) setCategories(data);
-    };
-
-    fetchArticles();
-    fetchCategories();
-
-    // Debounced realtime refresh to avoid render storms
-    const scheduleRefetch = () => {
-      if (refetchTimer.current) window.clearTimeout(refetchTimer.current);
-      refetchTimer.current = window.setTimeout(fetchArticles, 1500);
-    };
-
-    const channel = supabase.channel("public-realtime")
-      .on("postgres_changes", { event: "INSERT", schema: "public", table: "articles" }, (payload: any) => {
-        const row = payload?.new;
-        if (row && row.is_published) {
-          // جدار حماية إضافي داخل الـ Realtime: لو كان الخبر تلقائي لا تظهر إشعار ولا تحدث الصفحة
-          const isBotNews = 
-            row.is_automated === true || 
-            row.source === "bot" || 
-            row.author === "AI Journalist" || 
-            (row.title && row.title.includes("تلقائي"));
-
-          if (!isBotNews) {
-            window.dispatchEvent(new CustomEvent("sb-news-refreshed", { detail: row }));
-            if ("Notification" in window && Notification.permission === "granted") {
-              try { new Notification("خبر جديد على مصدري", { body: row.title?.slice(0, 120) || "اضغط للقراءة", icon: "/images/logo.png" }); } catch {}
-            }
-            scheduleRefetch();
-          }
-        } else {
-          scheduleRefetch();
-        }
-      })
-      .on("postgres_changes", { event: "UPDATE", schema: "public", table: "articles" }, scheduleRefetch)
-      .on("postgres_changes", { event: "DELETE", schema: "public", table: "articles" }, scheduleRefetch)
-      .on("postgres_changes", { event: "*", schema: "public", table: "categories" }, fetchCategories)
-      .subscribe();
-
-    return () => {
-      if (refetchTimer.current) window.clearTimeout(refetchTimer.current);
-      supabase.removeChannel(channel);
-    };
+    })();
   }, []);
 
   const featured = articles.find((a) => a.is_pinned) || articles[0];
-  const rest = articles.filter((a) => a.id !== featured?.id);
-  const heroSecondary = rest[0];
-  const heroTertiary = rest[1];
-  const sidebarLatest = rest.slice(2, 6);
-  const gridArticles = rest.slice(6);
+  const latest = articles.filter((a) => a.id !== featured?.id).slice(0, 6);
+  const mostRead = [...articles].sort((a, b) => (b.view_count || 0) - (a.view_count || 0)).slice(0, 4);
+  const bySlug = (slug: string) => articles.filter((a) => a.categories?.slug === slug).slice(0, 3);
 
-  const formatTime = (iso: string) =>
-    new Date(iso).toLocaleString("ar-EG-u-nu-arab", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short" });
-
-  const homeDesc = "منصة مصدري الإخباري. أخبار مصر العاجلة، تقارير سياسية ورياضية واقتصادية، نتائج الإعدادية وأسعار العملات والذهب لحظة بلحظة.";
+  const homeDesc = `${SITE_NAME_AR} — منصة إخبارية محلية موثوقة تركز على أخبار بني سويف، قصص النجاح، الشخصيات الملهمة، والمبادرات المجتمعية على مدار 24 ساعة.`;
 
   return (
-    <div className="min-h-screen bg-background text-right antialiased relative" dir="rtl">
+    <div className="min-h-screen bg-background text-right" dir="rtl">
       <Helmet>
-        <title>منصة مصدري الإخباري | أخبار مصر العاجلة</title>
+        <title>{`${SITE_NAME} | ${SITE_SLOGAN}`}</title>
         <meta name="description" content={homeDesc} />
         <link rel="canonical" href={`${SITE_URL}/`} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="منصة مصدري الإخباري | أخبار مصر العاجلة" />
+        <meta property="og:title" content={`${SITE_NAME} | ${SITE_NAME_AR}`} />
         <meta property="og:description" content={homeDesc} />
         <meta property="og:url" content={`${SITE_URL}/`} />
-        <meta property="og:site_name" content="مصدري" />
+        <meta property="og:site_name" content={SITE_NAME} />
         <meta property="og:image" content={`${SITE_URL}/images/logo.png`} />
-        <meta property="og:image:secure_url" content={`${SITE_URL}/images/logo.png`} />
-        <meta property="og:image:width" content="1024" />
-        <meta property="og:image:height" content="1024" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="شعار مصدري الأصلي" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="منصة مصدري الإخباري" />
-        <meta name="twitter:description" content={homeDesc} />
-        <meta name="twitter:image" content={`${SITE_URL}/images/logo.png`} />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "مصدري",
-          alternateName: "Masdiri",
-          url: `${SITE_URL}/`,
-          inLanguage: "ar-EG",
-          potentialAction: {
-            "@type": "SearchAction",
-            target: `${SITE_URL}/?q={search_term_string}`,
-            "query-input": "required name=search_term_string",
-          },
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "NewsMediaOrganization",
-          name: "مصدري",
-          url: `${SITE_URL}/`,
-          logo: `${SITE_URL}/images/logo.png`,
-          description: homeDesc,
-          inLanguage: "ar-EG",
-        })}</script>
       </Helmet>
+
       <SiteHeader />
-      <BreakingTicker />
-      <UtilityBar />
-      <NotificationPrompt />
 
-      <main className="max-w-7xl mx-auto bg-card shadow-2xl border-t-4 border-[hsl(var(--gold))] relative">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[hsl(var(--gold)/0.08)] to-transparent" />
-
-        {categories.length > 0 && (
-          <nav className="relative flex gap-1 overflow-x-auto px-6 py-3 border-b border-border/60 bg-muted/30 backdrop-blur-sm" aria-label="الأقسام">
-            {categories.map((c) => (
-              <a key={c.id} href={`/category/${c.slug}`}
-                className="shrink-0 px-4 py-1.5 text-xs font-bold text-[hsl(var(--primary))] dark:text-[hsl(var(--gold))] hover:text-[hsl(var(--gold))] hover:bg-card rounded-md transition-colors"
-                style={{ fontFamily: "'Cairo', sans-serif" }}>
-                {c.name}
-              </a>
-            ))}
-          </nav>
-        )}
-
-        <div className="p-6 md:p-10 lg:p-12">
-          {!loading && featured && (
-            <HeroBento featured={featured as any} secondary={heroSecondary as any} tertiary={heroTertiary as any} />
-          )}
-
-          <BrandTrustStrip />
-
-          {!loading && sidebarLatest.length > 0 && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-              <div className="lg:col-span-8">
-                <div className="section-heading mb-4">
-                  <h2>أحدث المستجدات</h2>
-                </div>
-                <div className="rule-gold mb-6" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {sidebarLatest.map((a) => (
-                    <a key={a.id} href={`/article/${a.id}`}
-                      className="group flex gap-4 p-4 rounded-2xl bg-card border border-border hover:border-[hsl(var(--gold))] hover:shadow-[0_10px_30px_-12px_hsl(var(--gold)/0.35)] transition-all">
-                      <div className="w-24 h-24 shrink-0 rounded-xl overflow-hidden bg-[hsl(var(--primary))] ring-1 ring-[hsl(var(--gold)/0.25)]">
-                        <img src={a.image_url || "/images/logo.png"} alt={a.title}
-                          className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${a.image_url ? "object-cover" : "object-contain p-2 opacity-70"}`}
-                          loading="lazy" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-[10px] font-black tracking-widest text-[hsl(var(--gold-dark))] dark:text-[hsl(var(--gold))]"
-                          style={{ fontFamily: "'Cairo', sans-serif" }}>
-                          {a.categories?.name || "أخبار"}
-                        </span>
-                        <h4 className="text-base font-bold text-foreground group-hover:text-[hsl(var(--gold))] transition-colors leading-snug mt-1 line-clamp-3"
-                          style={{ fontFamily: "'Cairo', sans-serif" }}>
-                          {a.title}
-                        </h4>
-                        <div className="mt-2 text-[10px] tabular text-muted-foreground">{formatTime(a.created_at)}</div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <aside className="lg:col-span-4">
-                <CurrencyWidget />
-              </aside>
+      {/* Hero */}
+      <section className="relative overflow-hidden" style={{ background: "var(--gradient-soft)" }}>
+        <div className="container mx-auto px-4 py-10 md:py-14">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="chip mb-3">📰 {SITE_SLOGAN}</span>
+            <h1 className="text-3xl md:text-5xl font-black mb-3">
+              <span className="gradient-text">{SITE_NAME_AR}</span>
+            </h1>
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              منصة إخبارية محلية موثوقة — بني سويف • قصص نجاح • مبادرات مجتمعية • تغطية على مدار 24 ساعة.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2 justify-center text-xs">
+              <span className="chip-teal chip">⚡ سرعة</span>
+              <span className="chip-teal chip">✅ دقة</span>
+              <span className="chip-teal chip">🛡️ مصداقية</span>
             </div>
-          )}
-
-          <div className="mb-10">
-            <AdSlot slot="header" className="w-full" />
           </div>
 
-          <section>
-            <div className="section-heading">
-              <h2>آخر التغطيات الإخبارية</h2>
-              <span className="more flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                تحديث مباشر
-              </span>
-            </div>
-            <div className="rule-gold mb-8" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
-              <div className="lg:col-span-3">
-                {loading ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div key={i} className="bg-muted h-72 animate-pulse rounded-2xl" />
-                    ))}
-                  </div>
-                ) : articles.length === 0 ? (
-                  <div className="border border-border border-dashed p-12 text-center rounded-2xl bg-muted/30">
-                    <h3 className="font-bold text-lg mb-2 text-foreground" style={{ fontFamily: "'Amiri', serif" }}>
-                      جارٍ تحديث غرفة الأخبار
-                    </h3>
-                    <p className="text-muted-foreground text-sm">سيتم نشر الأخبار فور توفرها.</p>
-                  </div>
-                ) : (
-                  <motion.div variants={stagger} initial="hidden" animate="show"
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {gridArticles.map((article) => (
-                      <motion.div key={article.id} variants={fadeUp}>
-                        <ArticleCard
-                          id={article.id}
-                          short_id={(article as any).short_id}
-                          title={article.title}
-                          summary={article.summary}
-                          image_url={article.image_url}
-                          category_name={article.categories?.name}
-                          created_at={article.created_at}
-                          is_breaking={article.is_breaking}
-                        />
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
+          {featured && (
+            <Link
+              to={featured.short_id ? `/${featured.short_id}` : `/article/${featured.id}`}
+              className="block card-clean overflow-hidden group max-w-5xl mx-auto"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-5">
+                <div className="md:col-span-3 aspect-video md:aspect-auto bg-muted overflow-hidden">
+                  <img
+                    src={featured.image_url || "/images/logo.png"}
+                    alt={featured.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center">
+                  {featured.is_breaking && <span className="chip-danger chip mb-3 w-fit">🔴 عاجل</span>}
+                  {featured.categories?.name && <span className="chip mb-3 w-fit">{featured.categories.name}</span>}
+                  <h2 className="text-xl md:text-2xl font-black leading-tight mb-2 group-hover:text-primary transition-colors">
+                    {featured.title}
+                  </h2>
+                  {featured.summary && (
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{featured.summary}</p>
+                  )}
+                </div>
               </div>
+            </Link>
+          )}
+        </div>
+      </section>
 
-              <aside className="lg:col-span-1 lg:sticky lg:top-24 space-y-6">
-                <MostReadWidget />
-                <PrayerTimesWidget />
-                <NewsletterInline />
-                <RecentlyViewedRail />
-                <QuoteOfDay />
-                <TrendingTags />
-                <QuickFeedback />
+      <main className="container mx-auto px-4 py-10 space-y-14">
+        {/* Latest */}
+        <section>
+          <div className="section-heading-bar">
+            <div>
+              <h2 className="section-title flex items-center gap-2"><Newspaper size={22} className="text-primary" /> آخر الأخبار</h2>
+              <p className="section-subtitle">أحدث ما نشرته غرفة تحرير مصدري بلس.</p>
+            </div>
+            <Link to="/latest" className="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1">
+              عرض الكل <ArrowLeft size={14} />
+            </Link>
+          </div>
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1,2,3,4,5,6].map((i) => <div key={i} className="bg-muted h-72 animate-pulse rounded-2xl" />)}
+            </div>
+          ) : latest.length === 0 ? (
+            <div className="card-clean p-10 text-center text-muted-foreground">لا توجد أخبار منشورة بعد.</div>
+          ) : (
+            <motion.div variants={stagger} initial="hidden" animate="show" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {latest.map((a) => (
+                <motion.div key={a.id} variants={fadeUp}>
+                  <ArticleCard
+                    id={a.id}
+                    short_id={a.short_id}
+                    title={a.title}
+                    summary={a.summary}
+                    image_url={a.image_url}
+                    category_name={a.categories?.name}
+                    created_at={a.created_at}
+                    is_breaking={a.is_breaking}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </section>
 
-                <div className="bg-gradient-to-br from-[hsl(var(--gold)/0.06)] to-card border border-[hsl(var(--gold)/0.3)] p-6 rounded-2xl shadow-md">
-                  <h5 className="text-[hsl(var(--primary))] dark:text-[hsl(var(--gold))] font-bold mb-4 border-b-2 border-[hsl(var(--gold))] pb-2 inline-block"
-                    style={{ fontFamily: "'Cairo', sans-serif" }}>
-                    خدماتنا الرقمية
-                  </h5>
-                  <ul className="space-y-3 text-sm font-semibold text-muted-foreground" style={{ fontFamily: "'Cairo', sans-serif" }}>
-                    <li>
-                      <a href="/results/prep" className="hover:text-[hsl(var(--gold))] flex items-center gap-2 transition-colors group">
-                        <span className="w-1.5 h-1.5 bg-[hsl(var(--gold))] rounded-full group-hover:scale-150 transition-transform" />
-                        نتائج الإعدادية
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-card p-3 rounded-2xl border border-border text-center">
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-2"
-                    style={{ fontFamily: "'Cairo', sans-serif" }}>مساحة إعلانية</p>
-                  <AdSlot slot="sidebar" className="w-full" />
-                </div>
-              </aside>
+        {/* Most read */}
+        {mostRead.length > 0 && (
+          <section>
+            <div className="section-heading-bar">
+              <div>
+                <h2 className="section-title flex items-center gap-2">🔥 الأكثر قراءة</h2>
+                <p className="section-subtitle">أبرز ما يهم القراء الآن.</p>
+              </div>
+              <Link to="/most-read" className="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1">
+                عرض الكل <ArrowLeft size={14} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {mostRead.map((a, i) => (
+                <Link
+                  key={a.id}
+                  to={a.short_id ? `/${a.short_id}` : `/article/${a.id}`}
+                  className="card-clean p-4 flex gap-3 items-start group"
+                >
+                  <span className="text-3xl font-black gradient-text w-8 shrink-0">{i + 1}</span>
+                  <h4 className="text-sm font-bold leading-snug line-clamp-4 group-hover:text-primary transition-colors">
+                    {a.title}
+                  </h4>
+                </Link>
+              ))}
             </div>
           </section>
-        </div>
+        )}
+
+        {/* Category sections */}
+        {SECTIONS.map(({ slug, title, icon: Icon, accent }) => {
+          const items = bySlug(slug);
+          if (!items.length) return null;
+          return (
+            <section key={slug}>
+              <div className="section-heading-bar">
+                <div>
+                  <h2 className="section-title flex items-center gap-2"><Icon size={22} className={accent} /> {title}</h2>
+                </div>
+                <Link to={`/category/${slug}`} className="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1">
+                  عرض المزيد <ArrowLeft size={14} />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {items.map((a) => (
+                  <ArticleCard
+                    key={a.id}
+                    id={a.id}
+                    short_id={a.short_id}
+                    title={a.title}
+                    summary={a.summary}
+                    image_url={a.image_url}
+                    category_name={a.categories?.name}
+                    created_at={a.created_at}
+                    is_breaking={a.is_breaking}
+                  />
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </main>
 
       <SiteFooter />
-      <SoutAlBaladBot />
-      <BackToTop />
-      <CommandPalette />
-      <ScrollProgress />
-      <ConnectivityBanner />
-      <PWAInstallHint />
-      <CookieConsent />
-      <SelectionShare />
-      <KeyboardNav />
-      <ImageLightbox />
-      <CoffeeBreakNudge />
-      <NewsRefreshToaster />
-      <IdleNudge />
-      <SmoothAnchors />
-      <ExternalLinkHardener />
-      <ImageErrorFallback />
-      <HourlyPulse />
-      <SuggestStoryCTA />
-      <GeoChip />
-      <AmbientMoodBar />
     </div>
   );
 };

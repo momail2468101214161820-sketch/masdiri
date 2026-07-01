@@ -11,14 +11,9 @@ import {
 } from "lucide-react";
 import { DEFAULT_RATES } from "@/components/CurrencyWidget";
 import AdminChat from "@/pages/AdminChat";
-import NewsFetcherPanel from "@/components/NewsFetcherPanel";
-import Phase2Dashboard from "@/components/Phase2Dashboard";
 import BrandShareTool from "@/components/BrandShareTool";
-import SeoIndexingPanel from "@/components/SeoIndexingPanel";
-import OgPreviewPanel from "@/components/OgPreviewPanel";
 import MessagesInbox from "@/components/MessagesInbox";
-import SeoKeywordsPanel from "@/components/SeoKeywordsPanel";
-import ApkReleasesPanel from "@/components/ApkReleasesPanel";
+
 import {
   adminInsert, adminUpdate, adminDelete, adminUpsert,
   changeAdminPin, getAdminPin, adminUploadImage,
@@ -590,14 +585,9 @@ const AdminPanel = () => {
               </a>
             </div>
 
-            <NewsFetcherPanel />
-            <Phase2Dashboard />
-
             <BrandShareTool />
-            <OgPreviewPanel />
             <MessagesInbox />
-            <SeoIndexingPanel />
-            <SeoKeywordsPanel />
+
           </div>
         )}
 
@@ -1183,7 +1173,7 @@ const AdminPanel = () => {
           </div>
         )}
 
-        {tab === "apk" && <ApkReleasesPanel />}
+        
       </div>
     </div>
     </>

@@ -1,19 +1,19 @@
 {
-  "name": "منصة مصدري الإخباري",
-  "short_name": "مصدري",
-  "description": "منصة مصدري الإخباري — الخبر من مصدره. أخبار مصر والعالم بسرعة ودقة على مدار الساعة.",
+  "name": "Masdiri Plus — مصدري بلس",
+  "short_name": "Masdiri Plus",
+  "description": "منصة مصدري بلس الإخبارية — الخبر من مصدره. أخبار بني سويف، قصص النجاح، والمبادرات المجتمعية على مدار 24 ساعة.",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#14141e",
-  "theme_color": "#14141e",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0EA5E9",
   "icons": [
     { "src": "/images/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "/images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
-  "categories": ["news", "politics"]
+  "categories": ["news", "local"]
 }

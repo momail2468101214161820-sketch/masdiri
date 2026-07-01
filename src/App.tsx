@@ -7,7 +7,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import { initAnalytics } from "./lib/analytics";
 
-// Lazy-load non-critical routes to keep initial bundle small & fast
 const CategoryPage = lazy(() => import("./pages/CategoryPage"));
 const ArticlePage = lazy(() => import("./pages/ArticlePage"));
 const AdminPanel = lazy(() => import("./pages/AdminPanel"));
@@ -25,23 +24,9 @@ const OwnershipPage = lazy(() => import("./pages/StaticPage").then(m => ({ defau
 const CollectionPage = lazy(() => import("./pages/CollectionPage"));
 const HtmlSitemapPage = lazy(() => import("./pages/HtmlSitemapPage"));
 
-
-// Lazy-load non-critical UI shells
-const StickyAdTowers = lazy(() => import("./components/StickyAdTowers"));
-const MobileBottomNav = lazy(() => import("./components/MobileBottomNav"));
-const MandatoryOnboarding = lazy(() => import("./components/MandatoryOnboarding"));
-const DesktopSideRail = lazy(() => import("./components/DesktopSideRail"));
-const FounderSignature = lazy(() => import("./components/FounderSignature"));
-
-
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: {
-      staleTime: 60_000,
-      gcTime: 5 * 60_000,
-      refetchOnWindowFocus: false,
-      retry: 1,
-    },
+    queries: { staleTime: 60_000, gcTime: 5 * 60_000, refetchOnWindowFocus: false, retry: 1 },
   },
 });
 
@@ -54,60 +39,46 @@ const PageFallback = () => (
 const App = () => {
   useEffect(() => { initAnalytics(); }, []);
   return (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={null}>
-          <StickyAdTowers />
-        </Suspense>
-        <Suspense fallback={<PageFallback />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/category/:slug" element={<CategoryPage />} />
-            <Route path="/article/:id" element={<ArticlePage />} />
-            <Route path="/latest" element={<CollectionPage mode="latest" />} />
-            <Route path="/breaking" element={<CollectionPage mode="breaking" />} />
-            <Route path="/most-read" element={<CollectionPage mode="most-read" />} />
-            <Route path="/most-viewed" element={<CollectionPage mode="most-read" />} />
-            <Route path="/tag/:slug" element={<CollectionPage mode="tag" />} />
-            <Route path="/governorate/:slug" element={<CollectionPage mode="governorate" />} />
-            <Route path="/entity/:slug" element={<CollectionPage mode="entity" />} />
-            <Route path="/archive/:yyyy" element={<CollectionPage mode="archive" />} />
-            <Route path="/archive/:yyyy/:mm" element={<CollectionPage mode="archive" />} />
-            <Route path="/archive/:yyyy/:mm/:dd" element={<CollectionPage mode="archive" />} />
-            <Route path="/search" element={<CollectionPage mode="search" />} />
-            <Route path="/sitemap" element={<HtmlSitemapPage />} />
-
-            <Route path="/admin" element={<AdminPanel />} />
-            <Route path="/admin/chat" element={<AdminChat />} />
-            <Route path="/results/prep" element={<PrepResultsPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/cookies" element={<CookiesPage />} />
-            <Route path="/editorial-policy" element={<EditorialPolicyPage />} />
-            <Route path="/corrections" element={<CorrectionsPolicyPage />} />
-            <Route path="/ownership" element={<OwnershipPage />} />
-            <Route path="/:id" element={<ArticlePage />} />
-            <Route path="*" element={<NotFound />} />
-
-          </Routes>
-        </Suspense>
-        <Suspense fallback={null}>
-          
-          <MobileBottomNav />
-          <DesktopSideRail />
-          <MandatoryOnboarding />
-          <FounderSignature />
-          
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/category/:slug" element={<CategoryPage />} />
+              <Route path="/article/:id" element={<ArticlePage />} />
+              <Route path="/latest" element={<CollectionPage mode="latest" />} />
+              <Route path="/breaking" element={<CollectionPage mode="breaking" />} />
+              <Route path="/most-read" element={<CollectionPage mode="most-read" />} />
+              <Route path="/most-viewed" element={<CollectionPage mode="most-read" />} />
+              <Route path="/tag/:slug" element={<CollectionPage mode="tag" />} />
+              <Route path="/governorate/:slug" element={<CollectionPage mode="governorate" />} />
+              <Route path="/archive/:yyyy" element={<CollectionPage mode="archive" />} />
+              <Route path="/archive/:yyyy/:mm" element={<CollectionPage mode="archive" />} />
+              <Route path="/archive/:yyyy/:mm/:dd" element={<CollectionPage mode="archive" />} />
+              <Route path="/search" element={<CollectionPage mode="search" />} />
+              <Route path="/sitemap" element={<HtmlSitemapPage />} />
+              <Route path="/admin" element={<AdminPanel />} />
+              <Route path="/admin/chat" element={<AdminChat />} />
+              <Route path="/results/prep" element={<PrepResultsPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/cookies" element={<CookiesPage />} />
+              <Route path="/editorial-policy" element={<EditorialPolicyPage />} />
+              <Route path="/corrections" element={<CorrectionsPolicyPage />} />
+              <Route path="/ownership" element={<OwnershipPage />} />
+              <Route path="/:id" element={<ArticlePage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 

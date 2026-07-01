@@ -20,11 +20,10 @@ import { ArticleBody } from "@/components/ArticleBody";
 
 // 🚀 Lazy-load heavy below-the-fold widgets for instant first paint
 const RelatedArticles = lazy(() => import("@/components/RelatedArticles"));
-const ArticleComments = lazy(() => import("@/components/ArticleComments"));
 const FloatingShareBar = lazy(() => import("@/components/FloatingShareBar"));
 const ShareImageCard = lazy(() => import("@/components/ShareImageCard"));
 const ReadingProgress = lazy(() => import("@/components/ReadingProgress"));
-const ArticleReactions = lazy(() => import("@/components/ArticleReactions"));
+
 
 
 type ArticleImage = string | { url: string; position: "start" | "middle" | "end" };
@@ -181,9 +180,8 @@ const ArticlePage = () => {
         .maybeSingle();
       if (art?.id) {
         setViewCount(((art as any).view_count || 0) + 1);
-        // Log a view event — a SECURITY DEFINER trigger bumps articles.view_count.
-        await supabase.from("article_view_events").insert({ article_id: (art as any).id });
       }
+
     })();
 
     // 💾 Resume-reading: save scroll % every 1.5s, restore on next visit
@@ -524,14 +522,13 @@ const ArticlePage = () => {
 
 
             <Suspense fallback={null}>
-              <ArticleReactions articleId={article.id} />
               <RelatedArticles
                 currentId={article.id}
                 categoryId={article.category_id || null}
                 tags={article.tags || []}
               />
-              <ArticleComments articleId={article.id} />
             </Suspense>
+
           </div>
 
 
