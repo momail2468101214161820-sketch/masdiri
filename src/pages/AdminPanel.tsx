@@ -585,14 +585,9 @@ const AdminPanel = () => {
               </a>
             </div>
 
-            <NewsFetcherPanel />
-            <Phase2Dashboard />
-
             <BrandShareTool />
-            <OgPreviewPanel />
             <MessagesInbox />
-            <SeoIndexingPanel />
-            <SeoKeywordsPanel />
+
           </div>
         )}
 
@@ -1178,7 +1173,7 @@ const AdminPanel = () => {
           </div>
         )}
 
-        {tab === "apk" && <ApkReleasesPanel />}
+        
       </div>
     </div>
     </>
