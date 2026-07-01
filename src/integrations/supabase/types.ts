@@ -98,127 +98,10 @@ export type Database = {
         }
         Relationships: []
       }
-      article_comments: {
-        Row: {
-          article_id: string
-          author_country: string | null
-          author_name: string
-          body: string
-          created_at: string
-          id: string
-          ip_hash: string | null
-          is_hidden: boolean
-          likes: number
-          parent_id: string | null
-          updated_at: string
-        }
-        Insert: {
-          article_id: string
-          author_country?: string | null
-          author_name: string
-          body: string
-          created_at?: string
-          id?: string
-          ip_hash?: string | null
-          is_hidden?: boolean
-          likes?: number
-          parent_id?: string | null
-          updated_at?: string
-        }
-        Update: {
-          article_id?: string
-          author_country?: string | null
-          author_name?: string
-          body?: string
-          created_at?: string
-          id?: string
-          ip_hash?: string | null
-          is_hidden?: boolean
-          likes?: number
-          parent_id?: string | null
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "article_comments_article_id_fkey"
-            columns: ["article_id"]
-            isOneToOne: false
-            referencedRelation: "articles"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "article_comments_parent_id_fkey"
-            columns: ["parent_id"]
-            isOneToOne: false
-            referencedRelation: "article_comments"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      article_entities: {
-        Row: {
-          article_id: string
-          created_at: string
-          entity_name: string
-          entity_slug: string
-          id: string
-        }
-        Insert: {
-          article_id: string
-          created_at?: string
-          entity_name: string
-          entity_slug: string
-          id?: string
-        }
-        Update: {
-          article_id?: string
-          created_at?: string
-          entity_name?: string
-          entity_slug?: string
-          id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "article_entities_article_id_fkey"
-            columns: ["article_id"]
-            isOneToOne: false
-            referencedRelation: "articles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      article_view_events: {
-        Row: {
-          article_id: string
-          created_at: string
-          id: string
-        }
-        Insert: {
-          article_id: string
-          created_at?: string
-          id?: string
-        }
-        Update: {
-          article_id?: string
-          created_at?: string
-          id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "article_view_events_article_id_fkey"
-            columns: ["article_id"]
-            isOneToOne: false
-            referencedRelation: "articles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       articles: {
         Row: {
-          ai_rewritten: boolean
           category_id: string | null
           content: string
-          content_hash: string | null
           created_at: string
           focus_keyword: string | null
           governorate: string | null
@@ -230,17 +113,9 @@ export type Database = {
           is_breaking: boolean
           is_pinned: boolean
           is_published: boolean
-          keywords: string[] | null
-          last_merged_at: string | null
-          merged_from_count: number
-          organizations: string[] | null
-          persons: string[] | null
-          places: string[] | null
           seo_description: string | null
           seo_title: string | null
           short_id: number
-          source_name: string | null
-          source_url: string | null
           summary: string | null
           tags: string[]
           title: string
@@ -248,10 +123,8 @@ export type Database = {
           view_count: number
         }
         Insert: {
-          ai_rewritten?: boolean
           category_id?: string | null
           content: string
-          content_hash?: string | null
           created_at?: string
           focus_keyword?: string | null
           governorate?: string | null
@@ -263,17 +136,9 @@ export type Database = {
           is_breaking?: boolean
           is_pinned?: boolean
           is_published?: boolean
-          keywords?: string[] | null
-          last_merged_at?: string | null
-          merged_from_count?: number
-          organizations?: string[] | null
-          persons?: string[] | null
-          places?: string[] | null
           seo_description?: string | null
           seo_title?: string | null
           short_id?: number
-          source_name?: string | null
-          source_url?: string | null
           summary?: string | null
           tags?: string[]
           title: string
@@ -281,10 +146,8 @@ export type Database = {
           view_count?: number
         }
         Update: {
-          ai_rewritten?: boolean
           category_id?: string | null
           content?: string
-          content_hash?: string | null
           created_at?: string
           focus_keyword?: string | null
           governorate?: string | null
@@ -296,17 +159,9 @@ export type Database = {
           is_breaking?: boolean
           is_pinned?: boolean
           is_published?: boolean
-          keywords?: string[] | null
-          last_merged_at?: string | null
-          merged_from_count?: number
-          organizations?: string[] | null
-          persons?: string[] | null
-          places?: string[] | null
           seo_description?: string | null
           seo_title?: string | null
           short_id?: number
-          source_name?: string | null
-          source_url?: string | null
           summary?: string | null
           tags?: string[]
           title?: string
@@ -383,116 +238,6 @@ export type Database = {
           subject?: string | null
           updated_at?: string
           user_agent?: string | null
-        }
-        Relationships: []
-      }
-      news_fetch_log: {
-        Row: {
-          created_at: string
-          error: string | null
-          id: number
-          items_found: number | null
-          items_inserted: number | null
-          items_skipped: number | null
-          source: string
-          status: string
-        }
-        Insert: {
-          created_at?: string
-          error?: string | null
-          id?: number
-          items_found?: number | null
-          items_inserted?: number | null
-          items_skipped?: number | null
-          source: string
-          status: string
-        }
-        Update: {
-          created_at?: string
-          error?: string | null
-          id?: number
-          items_found?: number | null
-          items_inserted?: number | null
-          items_skipped?: number | null
-          source?: string
-          status?: string
-        }
-        Relationships: []
-      }
-      news_merge_log: {
-        Row: {
-          added_content_length: number | null
-          article_id: string | null
-          created_at: string
-          id: string
-          reason: string | null
-          similarity: number | null
-          source_name: string | null
-          source_url: string | null
-        }
-        Insert: {
-          added_content_length?: number | null
-          article_id?: string | null
-          created_at?: string
-          id?: string
-          reason?: string | null
-          similarity?: number | null
-          source_name?: string | null
-          source_url?: string | null
-        }
-        Update: {
-          added_content_length?: number | null
-          article_id?: string | null
-          created_at?: string
-          id?: string
-          reason?: string | null
-          similarity?: number | null
-          source_name?: string | null
-          source_url?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "news_merge_log_article_id_fkey"
-            columns: ["article_id"]
-            isOneToOne: false
-            referencedRelation: "articles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      news_sources_health: {
-        Row: {
-          consecutive_failures: number
-          id: string
-          last_error: string | null
-          last_run_at: string | null
-          source: string
-          status: string
-          total_inserted: number
-          total_runs: number
-          updated_at: string
-        }
-        Insert: {
-          consecutive_failures?: number
-          id?: string
-          last_error?: string | null
-          last_run_at?: string | null
-          source: string
-          status?: string
-          total_inserted?: number
-          total_runs?: number
-          updated_at?: string
-        }
-        Update: {
-          consecutive_failures?: number
-          id?: string
-          last_error?: string | null
-          last_run_at?: string | null
-          source?: string
-          status?: string
-          total_inserted?: number
-          total_runs?: number
-          updated_at?: string
         }
         Relationships: []
       }
@@ -601,39 +346,6 @@ export type Database = {
         }
         Relationships: []
       }
-      suggested_categories: {
-        Row: {
-          created_at: string
-          id: string
-          name: string
-          occurrences: number
-          reason: string | null
-          slug: string
-          status: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          name: string
-          occurrences?: number
-          reason?: string | null
-          slug: string
-          status?: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          name?: string
-          occurrences?: number
-          reason?: string | null
-          slug?: string
-          status?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
       videos: {
         Row: {
           category_id: string | null
@@ -680,34 +392,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      clean_all_article_sources: { Args: never; Returns: number }
-      clean_article_sources: { Args: { _txt: string }; Returns: string }
       ensure_category: {
         Args: { p_name: string; p_slug: string }
         Returns: string
       }
-      find_similar_article: {
-        Args: {
-          _content: string
-          _days?: number
-          _threshold?: number
-          _title: string
-        }
-        Returns: {
-          id: string
-          similarity: number
-          title: string
-        }[]
-      }
-      infer_article_category: {
-        Args: { _content: string; _title: string }
-        Returns: string
-      }
-      infer_governorate: { Args: { _txt: string }; Returns: string }
-      infer_tags: { Args: { _txt: string }; Returns: string[] }
-      like_comment: { Args: { _id: string }; Returns: number }
-      phase2_dashboard_stats: { Args: never; Returns: Json }
-      recategorize_all_articles: { Args: never; Returns: number }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
     }
