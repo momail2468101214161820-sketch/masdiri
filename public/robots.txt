@@ -1,6 +1,5 @@
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Googlebot-News
 Allow: /
@@ -38,17 +37,9 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-
-
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin/
-Disallow: /search
 
 Sitemap: https://masdiri.vercel.app/sitemap.xml
-Sitemap: https://masdiri.vercel.app/sitemap-index.xml
-Sitemap: https://masdiri.vercel.app/news-sitemap.xml
-Sitemap: https://masdiri.vercel.app/image-sitemap.xml
-Sitemap: https://masdiri.vercel.app/sitemap-news.xml
-
