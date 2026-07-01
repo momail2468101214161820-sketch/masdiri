@@ -73,7 +73,7 @@ const App = () => {
             <Route path="/most-viewed" element={<CollectionPage mode="most-read" />} />
             <Route path="/tag/:slug" element={<CollectionPage mode="tag" />} />
             <Route path="/governorate/:slug" element={<CollectionPage mode="governorate" />} />
-            <Route path="/entity/:slug" element={<CollectionPage mode="entity" />} />
+            
             <Route path="/archive/:yyyy" element={<CollectionPage mode="archive" />} />
             <Route path="/archive/:yyyy/:mm" element={<CollectionPage mode="archive" />} />
             <Route path="/archive/:yyyy/:mm/:dd" element={<CollectionPage mode="archive" />} />
